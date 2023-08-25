@@ -1,0 +1,643 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBCC85632A9826C000416D97 /* CreditKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */; };
+		EBCC85652A9826C000416D97 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85642A9826C000416D97 /* Persistence.swift */; };
+		EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85662A9826C000416D97 /* CreditKeeper.xcdatamodeld */; };
+		EBCC856A2A9826C000416D97 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85692A9826C000416D97 /* ContentView.swift */; };
+		EBCC856C2A9826C400416D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856B2A9826C400416D97 /* Assets.xcassets */; };
+		EBCC85702A9826C400416D97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856F2A9826C400416D97 /* Preview Assets.xcassets */; };
+		EBCC857A2A9826C400416D97 /* CreditKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85792A9826C400416D97 /* CreditKeeperTests.swift */; };
+		EBCC85842A9826C400416D97 /* CreditKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85832A9826C400416D97 /* CreditKeeperUITests.swift */; };
+		EBCC85862A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBCC85762A9826C400416D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBCC85572A9826C000416D97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBCC855E2A9826C000416D97;
+			remoteInfo = CreditKeeper;
+		};
+		EBCC85802A9826C400416D97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBCC85572A9826C000416D97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBCC855E2A9826C000416D97;
+			remoteInfo = CreditKeeper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBCC855F2A9826C000416D97 /* CreditKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperApp.swift; sourceTree = "<group>"; };
+		EBCC85642A9826C000416D97 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		EBCC85672A9826C000416D97 /* CreditKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CreditKeeper.xcdatamodel; sourceTree = "<group>"; };
+		EBCC85692A9826C000416D97 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EBCC856B2A9826C400416D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreditKeeper.entitlements; sourceTree = "<group>"; };
+		EBCC856F2A9826C400416D97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EBCC85752A9826C400416D97 /* CreditKeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditKeeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCC85792A9826C400416D97 /* CreditKeeperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperTests.swift; sourceTree = "<group>"; };
+		EBCC857F2A9826C400416D97 /* CreditKeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditKeeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCC85832A9826C400416D97 /* CreditKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperUITests.swift; sourceTree = "<group>"; };
+		EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBCC855C2A9826C000416D97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCC85722A9826C400416D97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCC857C2A9826C400416D97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBCC85562A9826C000416D97 = {
+			isa = PBXGroup;
+			children = (
+				EBCC85612A9826C000416D97 /* CreditKeeper */,
+				EBCC85782A9826C400416D97 /* CreditKeeperTests */,
+				EBCC85822A9826C400416D97 /* CreditKeeperUITests */,
+				EBCC85602A9826C000416D97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBCC85602A9826C000416D97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBCC855F2A9826C000416D97 /* CreditKeeper.app */,
+				EBCC85752A9826C400416D97 /* CreditKeeperTests.xctest */,
+				EBCC857F2A9826C400416D97 /* CreditKeeperUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBCC85612A9826C000416D97 /* CreditKeeper */ = {
+			isa = PBXGroup;
+			children = (
+				EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */,
+				EBCC85642A9826C000416D97 /* Persistence.swift */,
+				EBCC85692A9826C000416D97 /* ContentView.swift */,
+				EBCC856B2A9826C400416D97 /* Assets.xcassets */,
+				EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */,
+				EBCC85662A9826C000416D97 /* CreditKeeper.xcdatamodeld */,
+				EBCC856E2A9826C400416D97 /* Preview Content */,
+			);
+			path = CreditKeeper;
+			sourceTree = "<group>";
+		};
+		EBCC856E2A9826C400416D97 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EBCC856F2A9826C400416D97 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EBCC85782A9826C400416D97 /* CreditKeeperTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBCC85792A9826C400416D97 /* CreditKeeperTests.swift */,
+			);
+			path = CreditKeeperTests;
+			sourceTree = "<group>";
+		};
+		EBCC85822A9826C400416D97 /* CreditKeeperUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBCC85832A9826C400416D97 /* CreditKeeperUITests.swift */,
+				EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */,
+			);
+			path = CreditKeeperUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBCC855E2A9826C000416D97 /* CreditKeeper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBCC85892A9826C400416D97 /* Build configuration list for PBXNativeTarget "CreditKeeper" */;
+			buildPhases = (
+				EBCC855B2A9826C000416D97 /* Sources */,
+				EBCC855C2A9826C000416D97 /* Frameworks */,
+				EBCC855D2A9826C000416D97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CreditKeeper;
+			productName = CreditKeeper;
+			productReference = EBCC855F2A9826C000416D97 /* CreditKeeper.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBCC85742A9826C400416D97 /* CreditKeeperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBCC858C2A9826C400416D97 /* Build configuration list for PBXNativeTarget "CreditKeeperTests" */;
+			buildPhases = (
+				EBCC85712A9826C400416D97 /* Sources */,
+				EBCC85722A9826C400416D97 /* Frameworks */,
+				EBCC85732A9826C400416D97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBCC85772A9826C400416D97 /* PBXTargetDependency */,
+			);
+			name = CreditKeeperTests;
+			productName = CreditKeeperTests;
+			productReference = EBCC85752A9826C400416D97 /* CreditKeeperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EBCC857E2A9826C400416D97 /* CreditKeeperUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBCC858F2A9826C400416D97 /* Build configuration list for PBXNativeTarget "CreditKeeperUITests" */;
+			buildPhases = (
+				EBCC857B2A9826C400416D97 /* Sources */,
+				EBCC857C2A9826C400416D97 /* Frameworks */,
+				EBCC857D2A9826C400416D97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBCC85812A9826C400416D97 /* PBXTargetDependency */,
+			);
+			name = CreditKeeperUITests;
+			productName = CreditKeeperUITests;
+			productReference = EBCC857F2A9826C400416D97 /* CreditKeeperUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBCC85572A9826C000416D97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					EBCC855E2A9826C000416D97 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					EBCC85742A9826C400416D97 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = EBCC855E2A9826C000416D97;
+					};
+					EBCC857E2A9826C400416D97 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = EBCC855E2A9826C000416D97;
+					};
+				};
+			};
+			buildConfigurationList = EBCC855A2A9826C000416D97 /* Build configuration list for PBXProject "CreditKeeper" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBCC85562A9826C000416D97;
+			productRefGroup = EBCC85602A9826C000416D97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBCC855E2A9826C000416D97 /* CreditKeeper */,
+				EBCC85742A9826C400416D97 /* CreditKeeperTests */,
+				EBCC857E2A9826C400416D97 /* CreditKeeperUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBCC855D2A9826C000416D97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCC85702A9826C400416D97 /* Preview Assets.xcassets in Resources */,
+				EBCC856C2A9826C400416D97 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCC85732A9826C400416D97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCC857D2A9826C400416D97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBCC855B2A9826C000416D97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCC85632A9826C000416D97 /* CreditKeeperApp.swift in Sources */,
+				EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */,
+				EBCC856A2A9826C000416D97 /* ContentView.swift in Sources */,
+				EBCC85652A9826C000416D97 /* Persistence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCC85712A9826C400416D97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCC857A2A9826C400416D97 /* CreditKeeperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBCC857B2A9826C400416D97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBCC85842A9826C400416D97 /* CreditKeeperUITests.swift in Sources */,
+				EBCC85862A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBCC85772A9826C400416D97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBCC855E2A9826C000416D97 /* CreditKeeper */;
+			targetProxy = EBCC85762A9826C400416D97 /* PBXContainerItemProxy */;
+		};
+		EBCC85812A9826C400416D97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBCC855E2A9826C000416D97 /* CreditKeeper */;
+			targetProxy = EBCC85802A9826C400416D97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		EBCC85872A9826C400416D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBCC85882A9826C400416D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		EBCC858A2A9826C400416D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CreditKeeper/CreditKeeper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CreditKeeper/Preview Content\"";
+				DEVELOPMENT_TEAM = R8Q8DM58C6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBCC858B2A9826C400416D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CreditKeeper/CreditKeeper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CreditKeeper/Preview Content\"";
+				DEVELOPMENT_TEAM = R8Q8DM58C6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EBCC858D2A9826C400416D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R8Q8DM58C6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CreditKeeper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CreditKeeper";
+			};
+			name = Debug;
+		};
+		EBCC858E2A9826C400416D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R8Q8DM58C6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CreditKeeper.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CreditKeeper";
+			};
+			name = Release;
+		};
+		EBCC85902A9826C400416D97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R8Q8DM58C6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CreditKeeper;
+			};
+			name = Debug;
+		};
+		EBCC85912A9826C400416D97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R8Q8DM58C6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CreditKeeper;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBCC855A2A9826C000416D97 /* Build configuration list for PBXProject "CreditKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBCC85872A9826C400416D97 /* Debug */,
+				EBCC85882A9826C400416D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBCC85892A9826C400416D97 /* Build configuration list for PBXNativeTarget "CreditKeeper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBCC858A2A9826C400416D97 /* Debug */,
+				EBCC858B2A9826C400416D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBCC858C2A9826C400416D97 /* Build configuration list for PBXNativeTarget "CreditKeeperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBCC858D2A9826C400416D97 /* Debug */,
+				EBCC858E2A9826C400416D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBCC858F2A9826C400416D97 /* Build configuration list for PBXNativeTarget "CreditKeeperUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBCC85902A9826C400416D97 /* Debug */,
+				EBCC85912A9826C400416D97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EBCC85662A9826C000416D97 /* CreditKeeper.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EBCC85672A9826C000416D97 /* CreditKeeper.xcdatamodel */,
+			);
+			currentVersion = EBCC85672A9826C000416D97 /* CreditKeeper.xcdatamodel */;
+			path = CreditKeeper.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EBCC85572A9826C000416D97 /* Project object */;
+}
