@@ -74,7 +74,6 @@ struct TabBarView: View {
         .shadow(radius: 5, x: 6, y: 5)
         .offset(x: offset.width * 0.08, y: offset.height * 0.08)
         .gesture(dragBar)
-        
     }
     
     var dragBar : some Gesture {

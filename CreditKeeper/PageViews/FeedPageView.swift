@@ -13,8 +13,12 @@ struct FeedPageView: View {
             Color("uiBackground")
                 .ignoresSafeArea()
             
-            Text("Feed Page")
-                .foregroundColor(.white)
+            VStack {
+                NewsCarousel()
+                
+                Spacer()
+            }
+            .padding(.top, 55)
         }
     }
 }

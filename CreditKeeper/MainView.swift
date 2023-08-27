@@ -30,7 +30,6 @@ struct MainView: View {
                     
                 case .profile :
                     ProfilePageView()
-                    
                 }
             }
             
