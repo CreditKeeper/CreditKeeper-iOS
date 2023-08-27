@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB89D2942A9AE83100A525BE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2932A9AE83100A525BE /* FirebaseAnalytics */; };
+		EB89D2962A9AE83100A525BE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2952A9AE83100A525BE /* FirebaseAuth */; };
+		EB89D2982A9AE83100A525BE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2972A9AE83100A525BE /* FirebaseFirestore */; };
+		EB89D29A2A9AE85700A525BE /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D2992A9AE85700A525BE /* TabBarView.swift */; };
+		EB89D29C2A9AF2E700A525BE /* FeedPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */; };
+		EB89D29E2A9AF2F700A525BE /* RidePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D29D2A9AF2F700A525BE /* RidePageView.swift */; };
+		EB89D2A02A9AF30100A525BE /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D29F2A9AF30100A525BE /* ProfilePageView.swift */; };
+		EB89D2A22A9AF30F00A525BE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D2A12A9AF30F00A525BE /* HeaderView.swift */; };
+		EB89D2A42A9B6AF100A525BE /* SettingsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D2A32A9B6AF100A525BE /* SettingsPageView.swift */; };
+		EB89D2A72A9BADDF00A525BE /* MapPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB89D2A62A9BADDF00A525BE /* MapPageView.swift */; };
 		EBCC85632A9826C000416D97 /* CreditKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */; };
 		EBCC85652A9826C000416D97 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85642A9826C000416D97 /* Persistence.swift */; };
 		EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85662A9826C000416D97 /* CreditKeeper.xcdatamodeld */; };
-		EBCC856A2A9826C000416D97 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85692A9826C000416D97 /* ContentView.swift */; };
+		EBCC856A2A9826C000416D97 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85692A9826C000416D97 /* MainView.swift */; };
 		EBCC856C2A9826C400416D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856B2A9826C400416D97 /* Assets.xcassets */; };
 		EBCC85702A9826C400416D97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856F2A9826C400416D97 /* Preview Assets.xcassets */; };
 		EBCC857A2A9826C400416D97 /* CreditKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85792A9826C400416D97 /* CreditKeeperTests.swift */; };
@@ -36,11 +46,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB89D2992A9AE85700A525BE /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
+		EB89D29D2A9AF2F700A525BE /* RidePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidePageView.swift; sourceTree = "<group>"; };
+		EB89D29F2A9AF30100A525BE /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
+		EB89D2A12A9AF30F00A525BE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EB89D2A32A9B6AF100A525BE /* SettingsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPageView.swift; sourceTree = "<group>"; };
+		EB89D2A62A9BADDF00A525BE /* MapPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageView.swift; sourceTree = "<group>"; };
 		EBCC855F2A9826C000416D97 /* CreditKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CreditKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperApp.swift; sourceTree = "<group>"; };
 		EBCC85642A9826C000416D97 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EBCC85672A9826C000416D97 /* CreditKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CreditKeeper.xcdatamodel; sourceTree = "<group>"; };
-		EBCC85692A9826C000416D97 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EBCC85692A9826C000416D97 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EBCC856B2A9826C400416D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreditKeeper.entitlements; sourceTree = "<group>"; };
 		EBCC856F2A9826C400416D97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -56,6 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB89D2942A9AE83100A525BE /* FirebaseAnalytics in Frameworks */,
+				EB89D2962A9AE83100A525BE /* FirebaseAuth in Frameworks */,
+				EB89D2982A9AE83100A525BE /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +96,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB89D2912A9AE78200A525BE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EB89D2A52A9B7A4600A525BE /* PageViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB89D2A62A9BADDF00A525BE /* MapPageView.swift */,
+				EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */,
+				EB89D29D2A9AF2F700A525BE /* RidePageView.swift */,
+				EB89D29F2A9AF30100A525BE /* ProfilePageView.swift */,
+				EB89D2A32A9B6AF100A525BE /* SettingsPageView.swift */,
+			);
+			path = PageViews;
+			sourceTree = "<group>";
+		};
 		EBCC85562A9826C000416D97 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +140,11 @@
 			children = (
 				EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */,
 				EBCC85642A9826C000416D97 /* Persistence.swift */,
-				EBCC85692A9826C000416D97 /* ContentView.swift */,
+				EB89D2912A9AE78200A525BE /* Utilities */,
+				EBCC85692A9826C000416D97 /* MainView.swift */,
+				EB89D2A12A9AF30F00A525BE /* HeaderView.swift */,
+				EB89D2992A9AE85700A525BE /* TabBarView.swift */,
+				EB89D2A52A9B7A4600A525BE /* PageViews */,
 				EBCC856B2A9826C400416D97 /* Assets.xcassets */,
 				EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */,
 				EBCC85662A9826C000416D97 /* CreditKeeper.xcdatamodeld */,
@@ -151,6 +194,11 @@
 			dependencies = (
 			);
 			name = CreditKeeper;
+			packageProductDependencies = (
+				EB89D2932A9AE83100A525BE /* FirebaseAnalytics */,
+				EB89D2952A9AE83100A525BE /* FirebaseAuth */,
+				EB89D2972A9AE83100A525BE /* FirebaseFirestore */,
+			);
 			productName = CreditKeeper;
 			productReference = EBCC855F2A9826C000416D97 /* CreditKeeper.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +271,9 @@
 				Base,
 			);
 			mainGroup = EBCC85562A9826C000416D97;
+			packageReferences = (
+				EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EBCC85602A9826C000416D97 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,10 +316,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB89D2A72A9BADDF00A525BE /* MapPageView.swift in Sources */,
 				EBCC85632A9826C000416D97 /* CreditKeeperApp.swift in Sources */,
+				EB89D2A22A9AF30F00A525BE /* HeaderView.swift in Sources */,
+				EB89D2A02A9AF30100A525BE /* ProfilePageView.swift in Sources */,
+				EB89D29C2A9AF2E700A525BE /* FeedPageView.swift in Sources */,
+				EB89D2A42A9B6AF100A525BE /* SettingsPageView.swift in Sources */,
 				EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */,
-				EBCC856A2A9826C000416D97 /* ContentView.swift in Sources */,
+				EBCC856A2A9826C000416D97 /* MainView.swift in Sources */,
+				EB89D29A2A9AE85700A525BE /* TabBarView.swift in Sources */,
 				EBCC85652A9826C000416D97 /* Persistence.swift in Sources */,
+				EB89D29E2A9AF2F700A525BE /* RidePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +693,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EB89D2932A9AE83100A525BE /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		EB89D2952A9AE83100A525BE /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EB89D2972A9AE83100A525BE /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		EBCC85662A9826C000416D97 /* CreditKeeper.xcdatamodeld */ = {
