@@ -17,8 +17,6 @@ struct NewsCarousel: View {
                     .padding(.horizontal)
                     .foregroundStyle(.uiCapsulePrimary)
                     .shadow(radius: 10)
-                
-                
             }
             
             HStack {

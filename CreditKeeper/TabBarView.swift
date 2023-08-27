@@ -40,7 +40,7 @@ struct TabBarView: View {
                 Spacer()
                 
                 Button (action: {
-                    withAnimation(.easeIn(duration: 0.1)) {
+                    withAnimation(.linear(duration: 0.1)) {
                         selectedTab=tab
                     }
                 }, label: {

@@ -10,6 +10,11 @@
 		B51893362A9BB4810073D3B1 /* CodeSigning.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B51893342A9BB4810073D3B1 /* CodeSigning.xcconfig */; };
 		B51893372A9BB4810073D3B1 /* Build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B51893352A9BB4810073D3B1 /* Build.xcconfig */; };
 		EB76ED752A9BC35200EFB341 /* NewsCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */; };
+		EB76ED792A9BD15000EFB341 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED782A9BD15000EFB341 /* SplashView.swift */; };
+		EB76ED7B2A9BD16100EFB341 /* IntroToCreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED7A2A9BD16100EFB341 /* IntroToCreditView.swift */; };
+		EB76ED7D2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED7C2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift */; };
+		EB76ED7F2A9BD35D00EFB341 /* TermsConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED7E2A9BD35D00EFB341 /* TermsConditionsView.swift */; };
+		EB76ED812A9BD51E00EFB341 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED802A9BD51E00EFB341 /* OnboardingView.swift */; };
 		EB89D2942A9AE83100A525BE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2932A9AE83100A525BE /* FirebaseAnalytics */; };
 		EB89D2962A9AE83100A525BE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2952A9AE83100A525BE /* FirebaseAuth */; };
 		EB89D2982A9AE83100A525BE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2972A9AE83100A525BE /* FirebaseFirestore */; };
@@ -53,6 +58,11 @@
 		B51893352A9BB4810073D3B1 /* Build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
 		B51893382A9BB4CE0073D3B1 /* CodeSigning.xcconfig.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeSigning.xcconfig.sample; sourceTree = "<group>"; };
 		EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCarousel.swift; sourceTree = "<group>"; };
+		EB76ED782A9BD15000EFB341 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		EB76ED7A2A9BD16100EFB341 /* IntroToCreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroToCreditView.swift; sourceTree = "<group>"; };
+		EB76ED7C2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPhoneOnCoasterView.swift; sourceTree = "<group>"; };
+		EB76ED7E2A9BD35D00EFB341 /* TermsConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsView.swift; sourceTree = "<group>"; };
+		EB76ED802A9BD51E00EFB341 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		EB89D2992A9AE85700A525BE /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
 		EB89D29D2A9AF2F700A525BE /* RidePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidePageView.swift; sourceTree = "<group>"; };
@@ -111,6 +121,18 @@
 			path = ParentViews;
 			sourceTree = "<group>";
 		};
+		EB76ED772A9BD10A00EFB341 /* OnboardingViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB76ED802A9BD51E00EFB341 /* OnboardingView.swift */,
+				EB76ED782A9BD15000EFB341 /* SplashView.swift */,
+				EB76ED7A2A9BD16100EFB341 /* IntroToCreditView.swift */,
+				EB76ED7E2A9BD35D00EFB341 /* TermsConditionsView.swift */,
+				EB76ED7C2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift */,
+			);
+			path = OnboardingViews;
+			sourceTree = "<group>";
+		};
 		EB89D2912A9AE78200A525BE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +185,7 @@
 				EB89D2A12A9AF30F00A525BE /* HeaderView.swift */,
 				EB76ED762A9BC36100EFB341 /* ParentViews */,
 				EB89D2992A9AE85700A525BE /* TabBarView.swift */,
+				EB76ED772A9BD10A00EFB341 /* OnboardingViews */,
 				EB89D2A52A9B7A4600A525BE /* PageViews */,
 				EBCC856B2A9826C400416D97 /* Assets.xcassets */,
 				EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */,
@@ -340,14 +363,19 @@
 				EB89D2A72A9BADDF00A525BE /* MapPageView.swift in Sources */,
 				EBCC85632A9826C000416D97 /* CreditKeeperApp.swift in Sources */,
 				EB89D2A22A9AF30F00A525BE /* HeaderView.swift in Sources */,
+				EB76ED7B2A9BD16100EFB341 /* IntroToCreditView.swift in Sources */,
+				EB76ED7F2A9BD35D00EFB341 /* TermsConditionsView.swift in Sources */,
 				EB89D2A02A9AF30100A525BE /* ProfilePageView.swift in Sources */,
 				EB89D29C2A9AF2E700A525BE /* FeedPageView.swift in Sources */,
+				EB76ED7D2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift in Sources */,
 				EB89D2A42A9B6AF100A525BE /* SettingsPageView.swift in Sources */,
 				EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */,
 				EBCC856A2A9826C000416D97 /* MainView.swift in Sources */,
+				EB76ED792A9BD15000EFB341 /* SplashView.swift in Sources */,
 				EB76ED752A9BC35200EFB341 /* NewsCarousel.swift in Sources */,
 				EB89D29A2A9AE85700A525BE /* TabBarView.swift in Sources */,
 				EBCC85652A9826C000416D97 /* Persistence.swift in Sources */,
+				EB76ED812A9BD51E00EFB341 /* OnboardingView.swift in Sources */,
 				EB89D29E2A9AF2F700A525BE /* RidePageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

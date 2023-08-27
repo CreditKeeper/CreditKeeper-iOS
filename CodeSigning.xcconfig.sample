@@ -1,7 +1,7 @@
 // Your Team ID.
 // If you have a paid Apple Developer account, you can find your Team ID at
 // https://developer.apple.com/account/#/membership
-DEVELOPMENT_TEAM = XYZ0123456
+DEVELOPMENT_TEAM = R8Q8DM58C6
 
 // Prefix of unique bundle IDs registered to you in Apple Developer Portal.
 // You need to register:

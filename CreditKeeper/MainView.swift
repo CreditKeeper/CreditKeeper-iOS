@@ -9,36 +9,41 @@ import SwiftUI
 import CoreData
 
 struct MainView: View {
-    @State private var selectedTab : Tab = .ride
+    @State private var selectedTab : Tab = .feed
+    @State private var onboarding : Bool = true
     
     init () {
         UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
-        ZStack {
-            TabView(selection: $selectedTab) {
-                switch (selectedTab) {
-                case .feed :
-                    FeedPageView()
-                    
-                case .ride :
-                    RidePageView()
-                    
-                case .map :
-                    MapPageView()
-                    
-                case .profile :
-                    ProfilePageView()
+        if (onboarding) {
+            OnboardingView(onboarding: $onboarding)
+        } else {
+            ZStack {
+                TabView(selection: $selectedTab) {
+                    switch (selectedTab) {
+                    case .feed :
+                        FeedPageView()
+                        
+                    case .ride :
+                        RidePageView()
+                        
+                    case .map :
+                        MapPageView()
+                        
+                    case .profile :
+                        ProfilePageView()
+                    }
                 }
-            }
-            
-            VStack {
-                HeaderView(selectedTab: $selectedTab)
                 
-                Spacer()
-                
-                TabBarView(selectedTab: $selectedTab)
+                VStack {
+                    HeaderView(selectedTab: $selectedTab)
+                    
+                    Spacer()
+                    
+                    TabBarView(selectedTab: $selectedTab)
+                }
             }
         }
     }
