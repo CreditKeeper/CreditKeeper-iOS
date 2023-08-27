@@ -16,8 +16,7 @@ struct HeaderView: View {
                 Text(selectedTab.getName(tab: selectedTab))
                     .fontWeight(.bold)
                     .font(.title)
-                    .foregroundColor(Color("uiNavPrimary"))
-                    .colorInvert()
+                    .foregroundColor(.white)
                 
                 
                 Spacer(minLength: 0)
@@ -27,8 +26,7 @@ struct HeaderView: View {
                    
                 }, label: {
                    Image(systemName: "cloud.sun")
-                        .foregroundColor(Color("uiNavPrimary"))
-                        .colorInvert()
+                        .foregroundColor(.white)
                 })
             }
             .padding(.bottom, 10)

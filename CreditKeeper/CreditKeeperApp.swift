@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct CreditKeeperApp: App {
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {

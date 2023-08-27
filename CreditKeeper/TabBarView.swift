@@ -68,7 +68,7 @@ struct TabBarView: View {
             }
         }
         .frame(width: nil, height: 50)
-        .background(Color("uiNavPrimary"))
+        .background(.thinMaterial)
         .cornerRadius(25)
         .padding(.horizontal, 10)
         .shadow(radius: 5, x: 6, y: 5)

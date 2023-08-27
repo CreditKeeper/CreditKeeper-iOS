@@ -17,7 +17,7 @@ struct MainView: View {
     }
     
     var body: some View {
-        if (onboarding) {
+        if (onboarding && UserDefaults.standard.bool(forKey: "KeyOnBoardingViewShown") == false) {
             OnboardingView(onboarding: $onboarding)
         } else {
             ZStack {

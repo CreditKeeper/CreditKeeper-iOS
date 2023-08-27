@@ -15,8 +15,8 @@ enum OnboardingPage: String, CaseIterable {
 }
 
 struct OnboardingView: View {
-    @State private var onboardingPage : OnboardingPage = .splash
     @Binding var onboarding : Bool
+    @State private var onboardingPage : OnboardingPage = .splash
     
     var body: some View {
         switch (onboardingPage) {

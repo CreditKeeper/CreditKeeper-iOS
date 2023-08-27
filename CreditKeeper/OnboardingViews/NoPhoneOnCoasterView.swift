@@ -20,6 +20,7 @@ struct NoPhoneOnCoasterView: View {
                 
                 Button(action: {
                     withAnimation {
+                        UserDefaults.standard.setValue(true, forKey: "KeyOnBoardingViewShown")
                         onboarding = false
                     }
                 }, label: {
