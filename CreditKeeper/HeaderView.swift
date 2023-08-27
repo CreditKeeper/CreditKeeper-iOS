@@ -34,7 +34,7 @@ struct HeaderView: View {
             .padding(.bottom, 10)
         }
         .padding(.horizontal)
-        .background(Color("uiNavPrimary"))
+        .background(.thinMaterial)
         .shadow(radius: 20)
     }
 }

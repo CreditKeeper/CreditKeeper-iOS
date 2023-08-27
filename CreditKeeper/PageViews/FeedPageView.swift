@@ -12,13 +12,14 @@ struct FeedPageView: View {
         ZStack {
             Color("uiBackground")
                 .ignoresSafeArea()
-            
-            VStack {
-                NewsCarousel()
-                
-                Spacer()
+            ScrollView {
+                VStack {
+                    NewsCarousel()
+                    
+                    Spacer()
+                }
+                .padding(.top, 55)
             }
-            .padding(.top, 55)
         }
     }
 }
