@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct MainView: View {
-    @State private var selectedTab : Tab = .feed
+    @State private var selectedTab : Tab = .ride
     @State private var onboarding : Bool = true
     
     init () {
