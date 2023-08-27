@@ -18,7 +18,7 @@ struct FeedPageView: View {
                     
                     Spacer()
                 }
-                .padding(.top, 55)
+                .padding(.top, 70)
             }
         }
     }

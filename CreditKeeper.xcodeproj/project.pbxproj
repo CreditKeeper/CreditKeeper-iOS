@@ -15,6 +15,7 @@
 		EB76ED7D2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED7C2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift */; };
 		EB76ED7F2A9BD35D00EFB341 /* TermsConditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED7E2A9BD35D00EFB341 /* TermsConditionsView.swift */; };
 		EB76ED812A9BD51E00EFB341 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED802A9BD51E00EFB341 /* OnboardingView.swift */; };
+		EB76ED832A9BE6CE00EFB341 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED822A9BE6CE00EFB341 /* AppDelegate.swift */; };
 		EB89D2942A9AE83100A525BE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2932A9AE83100A525BE /* FirebaseAnalytics */; };
 		EB89D2962A9AE83100A525BE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2952A9AE83100A525BE /* FirebaseAuth */; };
 		EB89D2982A9AE83100A525BE /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EB89D2972A9AE83100A525BE /* FirebaseFirestore */; };
@@ -63,6 +64,7 @@
 		EB76ED7C2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoPhoneOnCoasterView.swift; sourceTree = "<group>"; };
 		EB76ED7E2A9BD35D00EFB341 /* TermsConditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsConditionsView.swift; sourceTree = "<group>"; };
 		EB76ED802A9BD51E00EFB341 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		EB76ED822A9BE6CE00EFB341 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB89D2992A9AE85700A525BE /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageView.swift; sourceTree = "<group>"; };
 		EB89D29D2A9AF2F700A525BE /* RidePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RidePageView.swift; sourceTree = "<group>"; };
@@ -133,9 +135,20 @@
 			path = OnboardingViews;
 			sourceTree = "<group>";
 		};
+		EB76ED842A9BE6F600EFB341 /* MajorViews */ = {
+			isa = PBXGroup;
+			children = (
+				EBCC85692A9826C000416D97 /* MainView.swift */,
+				EB89D2A12A9AF30F00A525BE /* HeaderView.swift */,
+				EB89D2992A9AE85700A525BE /* TabBarView.swift */,
+			);
+			path = MajorViews;
+			sourceTree = "<group>";
+		};
 		EB89D2912A9AE78200A525BE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				EB76ED822A9BE6CE00EFB341 /* AppDelegate.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -181,11 +194,9 @@
 				EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */,
 				EBCC85642A9826C000416D97 /* Persistence.swift */,
 				EB89D2912A9AE78200A525BE /* Utilities */,
-				EBCC85692A9826C000416D97 /* MainView.swift */,
-				EB89D2A12A9AF30F00A525BE /* HeaderView.swift */,
-				EB76ED762A9BC36100EFB341 /* ParentViews */,
-				EB89D2992A9AE85700A525BE /* TabBarView.swift */,
 				EB76ED772A9BD10A00EFB341 /* OnboardingViews */,
+				EB76ED842A9BE6F600EFB341 /* MajorViews */,
+				EB76ED762A9BC36100EFB341 /* ParentViews */,
 				EB89D2A52A9B7A4600A525BE /* PageViews */,
 				EBCC856B2A9826C400416D97 /* Assets.xcassets */,
 				EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */,
@@ -372,6 +383,7 @@
 				EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */,
 				EBCC856A2A9826C000416D97 /* MainView.swift in Sources */,
 				EB76ED792A9BD15000EFB341 /* SplashView.swift in Sources */,
+				EB76ED832A9BE6CE00EFB341 /* AppDelegate.swift in Sources */,
 				EB76ED752A9BC35200EFB341 /* NewsCarousel.swift in Sources */,
 				EB89D29A2A9AE85700A525BE /* TabBarView.swift in Sources */,
 				EBCC85652A9826C000416D97 /* Persistence.swift in Sources */,
