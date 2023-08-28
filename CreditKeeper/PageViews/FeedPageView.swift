@@ -9,21 +9,22 @@ import SwiftUI
 
 struct FeedPageView: View {
     var body: some View {
-        ZStack {
-            Color("uiBackground")
-                .ignoresSafeArea()
-            ScrollView {
-                VStack {
-                    NewsCarousel()
-                    
-                    Spacer()
-                }
-                .padding(.top, 70)
+        ScrollView {
+            VStack {
+                NewsCarousel()
+                
+                Spacer()
             }
+            .padding(.top, 70)
         }
     }
 }
 
 #Preview {
-    FeedPageView()
+    ZStack {
+        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
+            .ignoresSafeArea()
+        
+        FeedPageView()
+    }
 }

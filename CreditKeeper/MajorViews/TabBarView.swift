@@ -60,7 +60,7 @@ struct TabBarView: View {
                     }
                 })
                 .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
-                .foregroundColor(selectedTab == tab ? tabColor : (colorScheme == .dark ? .white : .black))
+                .foregroundColor(selectedTab == tab ? tabColor : .white)
                 .font(.system(size: 22))
                 
                 Spacer()
@@ -69,6 +69,7 @@ struct TabBarView: View {
         }
         .frame(width: nil, height: 50)
         .background(.thinMaterial)
+        .environment(\.colorScheme, .dark)
         .cornerRadius(25)
         .padding(.horizontal, 10)
         .shadow(radius: 5, x: 6, y: 5)

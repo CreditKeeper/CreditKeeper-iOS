@@ -19,7 +19,7 @@ struct HeaderView: View {
                     .foregroundColor(.white)
                 
                 
-                Spacer(minLength: 0)
+                Spacer()
                 
                        
                 Button(action: {
@@ -33,6 +33,7 @@ struct HeaderView: View {
         }
         .padding(.horizontal)
         .background(.thinMaterial)
+        .environment(\.colorScheme, .dark)
         .shadow(radius: 20)
     }
 }

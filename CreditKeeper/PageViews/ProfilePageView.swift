@@ -9,16 +9,16 @@ import SwiftUI
 
 struct ProfilePageView: View {
     var body: some View {
-        ZStack {
-            Color("uiBackground")
-                .ignoresSafeArea()
-            
-            Text("Profile Page")
-                .foregroundColor(.white)
-        }
+        Text("Profile Page")
+            .foregroundColor(.white)
     }
 }
 
 #Preview {
-    ProfilePageView()
+    ZStack {
+        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
+            .ignoresSafeArea()
+        
+        ProfilePageView()
+    }
 }

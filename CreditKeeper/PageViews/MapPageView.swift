@@ -19,5 +19,10 @@ struct MapPageView: View {
 }
 
 #Preview {
-    MapPageView()
+    ZStack {
+        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
+            .ignoresSafeArea()
+        
+        MapPageView()
+    }
 }

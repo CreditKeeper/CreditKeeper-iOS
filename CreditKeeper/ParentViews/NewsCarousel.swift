@@ -8,32 +8,22 @@
 import SwiftUI
 
 struct NewsCarousel: View {
+    @State private var index = 1
     var body: some View {
         VStack {
-            HStack {
-                Rectangle()
-                    .cornerRadius(20)
-                    .frame(width: nil, height: 140)
-                    .padding(.horizontal)
-                    .foregroundStyle(.uiCapsulePrimary)
-                    .shadow(radius: 10)
+            TabView(selection: $index) {
+                ForEach((0..<3), id: \.self) { index in
+                    Rectangle()
+                        .cornerRadius(20)
+                        .frame(width: nil, height: 130)
+                        .padding(.horizontal)
+                        .foregroundStyle(.uiCapsulePrimary)
+                        .shadow(radius: 10)
+                }
             }
-            
-            HStack {
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundColor(.gray)
-                
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundColor(.black)
-                
-                Circle()
-                    .frame(width: 10, height: 10)
-                    .foregroundColor(.gray)
-
-            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
         }
+        .frame(width: nil, height: 200)
     }
 }
 

@@ -169,9 +169,9 @@
 		EB89D2A52A9B7A4600A525BE /* PageViews */ = {
 			isa = PBXGroup;
 			children = (
-				EB89D2A62A9BADDF00A525BE /* MapPageView.swift */,
 				EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */,
 				EB89D29D2A9AF2F700A525BE /* RidePageView.swift */,
+				EB89D2A62A9BADDF00A525BE /* MapPageView.swift */,
 				EB89D29F2A9AF30100A525BE /* ProfilePageView.swift */,
 				EB89D2A32A9B6AF100A525BE /* SettingsPageView.swift */,
 			);

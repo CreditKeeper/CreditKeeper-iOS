@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct MainView: View {
-    @State private var selectedTab : Tab = .ride
+    @State private var selectedTab : Tab = .feed
     @State private var onboarding : Bool = true
     
     init () {
@@ -19,21 +19,31 @@ struct MainView: View {
     var body: some View {
         if (onboarding && UserDefaults.standard.bool(forKey: "KeyOnBoardingViewShown") == false) {
             OnboardingView(onboarding: $onboarding)
+            
         } else {
             ZStack {
                 TabView(selection: $selectedTab) {
-                    switch (selectedTab) {
-                    case .feed :
-                        FeedPageView()
+                    ZStack {
+                        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
+                            .ignoresSafeArea()
                         
-                    case .ride :
-                        RidePageView()
-                        
-                    case .map :
-                        MapPageView()
-                        
-                    case .profile :
-                        ProfilePageView()
+                        switch (selectedTab) {
+                        case .feed :
+                            FeedPageView()
+                                .tag("feed")
+                            
+                        case .ride :
+                            RidePageView()
+                                .tag("rides")
+                            
+                        case .map :
+                            MapPageView()
+                                .tag("map")
+                            
+                        case .profile :
+                            ProfilePageView()
+                                .tag("profile")
+                        }
                     }
                 }
                 

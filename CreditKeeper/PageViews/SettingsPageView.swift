@@ -9,17 +9,16 @@ import SwiftUI
 
 struct SettingsPageView: View {
     var body: some View {
-        ZStack {
-            Color("uiBackground")
-                .ignoresSafeArea()
-            
-            Text("Settings Page")
-                .foregroundColor(.white)
-        }
-        
+        Text("Settings Page")
+            .foregroundColor(.white)
     }
 }
 
 #Preview {
-    SettingsPageView()
+    ZStack {
+        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
+            .ignoresSafeArea()
+        
+        SettingsPageView()
+    }
 }
