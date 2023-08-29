@@ -14,7 +14,7 @@ struct TermsConditionsView: View {
         ZStack {
             VStack {
                 Text("Terms and Conditions")
-                    .font(.title2)
+                    .font(.title)
                 
                 Spacer()
                 
@@ -25,7 +25,8 @@ struct TermsConditionsView: View {
                 }, label: {
                     ZStack {
                         Capsule()
-                            .frame(width: nil, height: 80)
+                            .frame(width: 160, height: 60)
+                            .foregroundStyle(Color("uiCapsuleGreen"))
                         
                         Text("Continue")
                             .foregroundStyle(.white)

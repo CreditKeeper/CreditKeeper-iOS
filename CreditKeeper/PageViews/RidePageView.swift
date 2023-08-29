@@ -15,6 +15,7 @@ struct RidePageView: View {
             ScrollView {
                 Text("Looks like you're at King's Island...\nHere ya go! Or start typing.")
                     .bold()
+                    .foregroundStyle(.white)
                     .padding(.top, 70)
                     .font(.system(size: 15))
                     .multilineTextAlignment(.center)
@@ -23,15 +24,20 @@ struct RidePageView: View {
                     RideCapsuleView()
                 }
             }
-            
-            
+            .padding(.bottom, -10)
             
             Spacer()
             
-            SearchFieldView(searchText: $searchText)
+            Rectangle()
+                .frame(width: nil, height: 2)
+                .foregroundStyle(.white)
+                .padding(.horizontal, -10)
+            
+            Spacer()
+                
         }
         .padding(.horizontal, 10)
-        .padding(.bottom, 60)
+        .padding(.bottom, 120)
     }
 }
 

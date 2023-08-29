@@ -25,7 +25,8 @@ struct IntroToCreditView: View {
                 }, label: {
                     ZStack {
                         Capsule()
-                            .frame(width: nil, height: 80)
+                            .frame(width: 160, height: 60)
+                            .foregroundStyle(Color("uiCapsuleRed"))
                         
                         Text("Continue")
                             .foregroundStyle(.white)

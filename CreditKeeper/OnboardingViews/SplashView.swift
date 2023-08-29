@@ -15,6 +15,7 @@ struct SplashView: View {
             VStack {
                 Text("CreditKeeper")
                     .font(.largeTitle)
+                    .bold()
                 
                 Spacer()
                 
@@ -25,7 +26,8 @@ struct SplashView: View {
                 }, label: {
                     ZStack {
                         Capsule()
-                            .frame(width: nil, height: 80)
+                            .frame(width: 160, height: 60)
+                            .foregroundStyle(Color("uiCapsuleBlue"))
                         
                         Text("Continue")
                             .foregroundStyle(.white)

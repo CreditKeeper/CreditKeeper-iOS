@@ -11,6 +11,7 @@ import CoreData
 struct MainView: View {
     @State private var selectedTab : Tab = .feed
     @State private var onboarding : Bool = true
+    @State private var searchText : String = ""
     
     init () {
         UITabBar.appearance().isHidden = true
@@ -24,7 +25,7 @@ struct MainView: View {
             ZStack {
                 TabView(selection: $selectedTab) {
                     ZStack {
-                        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
+                        RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: selectedTab), .black]), center: .center, startRadius: 2, endRadius: 650)
                             .ignoresSafeArea()
                         
                         switch (selectedTab) {
@@ -46,15 +47,30 @@ struct MainView: View {
                         }
                     }
                 }
+                .tabViewStyle(.page(indexDisplayMode: .never))
+                .ignoresSafeArea()
                 
                 VStack {
                     HeaderView(selectedTab: $selectedTab)
                     
                     Spacer()
                     
-                    TabBarView(selectedTab: $selectedTab)
+                    TabBarView(selectedTab: $selectedTab, searchText: $searchText)
                 }
             }
+        }
+    }
+    
+    func getBackgroundColor(tab: Tab) -> Color {
+        switch (tab) {
+        case .feed :
+            return .blue
+        case .ride :
+            return .red
+        case .map :
+            return .clear
+        case .profile :
+            return .orange
         }
     }
 }

@@ -8,14 +8,45 @@
 import SwiftUI
 
 struct SearchFieldView: View {
+    @State private var showFilter = true
     @Binding var searchText : String
     
     var body: some View {
         HStack {
-            Image(systemName: "magnifyingglass")
             TextField("Search...", text: $searchText)
+                .onTapGesture {
+                    withAnimation (.linear) {
+                        showFilter = false
+                    }
+                }
+                .onSubmit {
+                    withAnimation (.linear) {
+                        showFilter = true
+                    }
+                }
+            
+            if (showFilter) {
+                Button(action: {
+                    
+                }, label: {
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(.thinMaterial)
+                            .frame(width: 40, height: 40)
+                            .padding()
+                        
+                        Image(systemName: "slider.horizontal.3")
+                            .foregroundStyle(.green)
+                            .font(.system(size: 20))
+                            
+                    }
+            
+                })
+            }
         }
         .textFieldStyle(OvalTextFieldStyle())
+        .padding(.horizontal, 10)
+        .shadow(radius: 10, y: 10)
     }
 }
 

@@ -17,7 +17,7 @@ struct NewsCarousel: View {
                         .cornerRadius(20)
                         .frame(width: nil, height: 130)
                         .padding(.horizontal)
-                        .foregroundStyle(.uiCapsulePrimary)
+                        .foregroundStyle(.uiCapsuleBlue)
                         .shadow(radius: 10)
                 }
             }

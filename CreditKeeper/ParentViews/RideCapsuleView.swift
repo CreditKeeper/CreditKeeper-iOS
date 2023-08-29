@@ -12,7 +12,7 @@ struct RideCapsuleView: View {
         ZStack {
             Capsule()
                 .frame(width: nil, height: 60)
-                .foregroundColor(Color("uiCapsulePrimary"))
+                .foregroundColor(Color("uiCapsuleRed"))
                 .shadow(radius: 10)
         }
         .padding(.horizontal, 15)

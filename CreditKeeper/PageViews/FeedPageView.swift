@@ -17,6 +17,9 @@ struct FeedPageView: View {
             }
             .padding(.top, 70)
         }
+        .refreshable {
+            
+        }
     }
 }
 
