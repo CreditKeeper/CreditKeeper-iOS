@@ -38,6 +38,8 @@
 		EBCC857A2A9826C400416D97 /* CreditKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85792A9826C400416D97 /* CreditKeeperTests.swift */; };
 		EBCC85842A9826C400416D97 /* CreditKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85832A9826C400416D97 /* CreditKeeperUITests.swift */; };
 		EBCC85862A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */; };
+		EBE4D4062A9FEC36008EBD22 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4D4052A9FEC36008EBD22 /* ServerManager.swift */; };
+		EBE4D4092A9FECBB008EBD22 /* PostgresNIO in Frameworks */ = {isa = PBXBuildFile; productRef = EBE4D4082A9FECBB008EBD22 /* PostgresNIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,7 @@
 		EBCC857F2A9826C400416D97 /* CreditKeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditKeeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCC85832A9826C400416D97 /* CreditKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperUITests.swift; sourceTree = "<group>"; };
 		EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EBE4D4052A9FEC36008EBD22 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE4D4092A9FECBB008EBD22 /* PostgresNIO in Frameworks */,
 				EB89D2942A9AE83100A525BE /* FirebaseAnalytics in Frameworks */,
 				EB89D2962A9AE83100A525BE /* FirebaseAuth in Frameworks */,
 				EB89D2982A9AE83100A525BE /* FirebaseFirestore in Frameworks */,
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				EB76ED822A9BE6CE00EFB341 /* AppDelegate.swift */,
+				EBE4D4052A9FEC36008EBD22 /* ServerManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				EB89D2932A9AE83100A525BE /* FirebaseAnalytics */,
 				EB89D2952A9AE83100A525BE /* FirebaseAuth */,
 				EB89D2972A9AE83100A525BE /* FirebaseFirestore */,
+				EBE4D4082A9FECBB008EBD22 /* PostgresNIO */,
 			);
 			productName = CreditKeeper;
 			productReference = EBCC855F2A9826C000416D97 /* CreditKeeper.app */;
@@ -343,6 +349,7 @@
 			mainGroup = EBCC85562A9826C000416D97;
 			packageReferences = (
 				EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				EBE4D4072A9FECBB008EBD22 /* XCRemoteSwiftPackageReference "postgres-nio" */,
 			);
 			productRefGroup = EBCC85602A9826C000416D97 /* Products */;
 			projectDirPath = "";
@@ -398,6 +405,7 @@
 				EB89D29C2A9AF2E700A525BE /* FeedPageView.swift in Sources */,
 				EB76ED892A9BEBE900EFB341 /* RideCapsuleView.swift in Sources */,
 				EB76ED7D2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift in Sources */,
+				EBE4D4062A9FEC36008EBD22 /* ServerManager.swift in Sources */,
 				EB89D2A42A9B6AF100A525BE /* SettingsPageView.swift in Sources */,
 				EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */,
 				EBCC856A2A9826C000416D97 /* MainView.swift in Sources */,
@@ -789,6 +797,14 @@
 				minimumVersion = 10.14.0;
 			};
 		};
+		EBE4D4072A9FECBB008EBD22 /* XCRemoteSwiftPackageReference "postgres-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/postgres-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.18.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -806,6 +822,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		EBE4D4082A9FECBB008EBD22 /* PostgresNIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EBE4D4072A9FECBB008EBD22 /* XCRemoteSwiftPackageReference "postgres-nio" */;
+			productName = PostgresNIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 
