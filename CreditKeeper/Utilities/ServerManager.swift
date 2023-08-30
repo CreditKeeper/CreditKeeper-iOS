@@ -17,6 +17,12 @@ class ServerManager: ObservableObject {
         self.openConnection()
     }
     
+    deinit {
+        connection?.close().whenComplete { _ in
+            // Handle closure completion if needed
+        }
+    }
+    
     let logger = Logger(label: "postgres-logger")
     let config = PostgresConnection.Configuration(
         host: "209.126.87.142",
