@@ -11,6 +11,7 @@ import SwiftUI
 struct CreditKeeperApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     let persistenceController = PersistenceController.shared
+    let serverManager = ServerManager()
 
     var body: some Scene {
         WindowGroup {

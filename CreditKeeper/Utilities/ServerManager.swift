@@ -11,6 +11,12 @@ import PostgresNIO
 import Logging
 
 class ServerManager: ObservableObject {
+    var connection: PostgresConnection?
+    
+    init() {
+        self.openConnection()
+    }
+    
     let logger = Logger(label: "postgres-logger")
     let config = PostgresConnection.Configuration(
         host: "209.126.87.142",
@@ -21,14 +27,16 @@ class ServerManager: ObservableObject {
         tls: .disable)
     
     
-    func openConnection() async {
-        do {
-            let connection = try await PostgresConnection.connect(
-                configuration: config,
-                id: 1,
-                logger: logger)
-        } catch {
-            print("CRITICAL ERROR - Could not open connection to CreditKeeper server!")
-        }
+    func openConnection() {
+        let eventLoopGroup = MultiThreadedEventLoopGroup(numberOfThreads: 1)
+        PostgresConnection.connect(
+            on: eventLoopGroup.next(),
+            configuration: config,
+            id: 1,
+            logger: logger
+        ).whenSuccess { connection in
+                print("Connected to DB!")
+                self.connection = connection
+            }
     }
 }
