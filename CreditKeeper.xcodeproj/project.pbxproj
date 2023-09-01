@@ -38,7 +38,13 @@
 		EBCC857A2A9826C400416D97 /* CreditKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85792A9826C400416D97 /* CreditKeeperTests.swift */; };
 		EBCC85842A9826C400416D97 /* CreditKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85832A9826C400416D97 /* CreditKeeperUITests.swift */; };
 		EBCC85862A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */; };
-		EBE4D4062A9FEC36008EBD22 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4D4052A9FEC36008EBD22 /* ServerManager.swift */; };
+		EBE4B7562AA25F00007CF67F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBE4B7552AA25F00007CF67F /* GoogleService-Info.plist */; };
+		EBE4B7582AA260F8007CF67F /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7572AA260F8007CF67F /* FirestoreManager.swift */; };
+		EBE4B75B2AA26170007CF67F /* RideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B75A2AA26170007CF67F /* RideModel.swift */; };
+		EBE4B75D2AA26315007CF67F /* ParkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B75C2AA26315007CF67F /* ParkModel.swift */; };
+		EBE4B75F2AA26365007CF67F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B75E2AA26365007CF67F /* UserModel.swift */; };
+		EBE4B7612AA263C5007CF67F /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7602AA263C5007CF67F /* CreditModel.swift */; };
+		EBE4B7632AA2675B007CF67F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7622AA2675A007CF67F /* MainViewModel.swift */; };
 		EBE4D4092A9FECBB008EBD22 /* PostgresNIO in Frameworks */ = {isa = PBXBuildFile; productRef = EBE4D4082A9FECBB008EBD22 /* PostgresNIO */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +99,13 @@
 		EBCC857F2A9826C400416D97 /* CreditKeeperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditKeeperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBCC85832A9826C400416D97 /* CreditKeeperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperUITests.swift; sourceTree = "<group>"; };
 		EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditKeeperUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EBE4D4052A9FEC36008EBD22 /* ServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		EBE4B7552AA25F00007CF67F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EBE4B7572AA260F8007CF67F /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		EBE4B75A2AA26170007CF67F /* RideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideModel.swift; sourceTree = "<group>"; };
+		EBE4B75C2AA26315007CF67F /* ParkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkModel.swift; sourceTree = "<group>"; };
+		EBE4B75E2AA26365007CF67F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		EBE4B7602AA263C5007CF67F /* CreditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = "<group>"; };
+		EBE4B7622AA2675A007CF67F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				EB76ED822A9BE6CE00EFB341 /* AppDelegate.swift */,
-				EBE4D4052A9FEC36008EBD22 /* ServerManager.swift */,
+				EBE4B7572AA260F8007CF67F /* FirestoreManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -192,6 +204,7 @@
 				B51893352A9BB4810073D3B1 /* Build.xcconfig */,
 				B51893342A9BB4810073D3B1 /* CodeSigning.xcconfig */,
 				B51893382A9BB4CE0073D3B1 /* CodeSigning.xcconfig.sample */,
+				EBE4B7552AA25F00007CF67F /* GoogleService-Info.plist */,
 				EBCC85612A9826C000416D97 /* CreditKeeper */,
 				EBCC85782A9826C400416D97 /* CreditKeeperTests */,
 				EBCC85822A9826C400416D97 /* CreditKeeperUITests */,
@@ -214,6 +227,7 @@
 			children = (
 				EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */,
 				EBCC85642A9826C000416D97 /* Persistence.swift */,
+				EBE4B7592AA2615D007CF67F /* Models */,
 				EB89D2912A9AE78200A525BE /* Utilities */,
 				EB76ED772A9BD10A00EFB341 /* OnboardingViews */,
 				EB76ED842A9BE6F600EFB341 /* MajorViews */,
@@ -251,6 +265,18 @@
 				EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */,
 			);
 			path = CreditKeeperUITests;
+			sourceTree = "<group>";
+		};
+		EBE4B7592AA2615D007CF67F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EBE4B7622AA2675A007CF67F /* MainViewModel.swift */,
+				EBE4B75A2AA26170007CF67F /* RideModel.swift */,
+				EBE4B75C2AA26315007CF67F /* ParkModel.swift */,
+				EBE4B75E2AA26365007CF67F /* UserModel.swift */,
+				EBE4B7602AA263C5007CF67F /* CreditModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,6 +395,7 @@
 			files = (
 				EBCC85702A9826C400416D97 /* Preview Assets.xcassets in Resources */,
 				B51893372A9BB4810073D3B1 /* Build.xcconfig in Resources */,
+				EBE4B7562AA25F00007CF67F /* GoogleService-Info.plist in Resources */,
 				B51893362A9BB4810073D3B1 /* CodeSigning.xcconfig in Resources */,
 				EBCC856C2A9826C400416D97 /* Assets.xcassets in Resources */,
 			);
@@ -396,19 +423,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB89D2A72A9BADDF00A525BE /* MapPageView.swift in Sources */,
+				EBE4B75D2AA26315007CF67F /* ParkModel.swift in Sources */,
 				EBCC85632A9826C000416D97 /* CreditKeeperApp.swift in Sources */,
 				EB89D2A22A9AF30F00A525BE /* HeaderView.swift in Sources */,
+				EBE4B75B2AA26170007CF67F /* RideModel.swift in Sources */,
 				EB76ED7B2A9BD16100EFB341 /* IntroToCreditView.swift in Sources */,
+				EBE4B7612AA263C5007CF67F /* CreditModel.swift in Sources */,
 				EB76ED7F2A9BD35D00EFB341 /* TermsConditionsView.swift in Sources */,
 				EB89D2A02A9AF30100A525BE /* ProfilePageView.swift in Sources */,
+				EBE4B75F2AA26365007CF67F /* UserModel.swift in Sources */,
 				EB76ED872A9BEA0A00EFB341 /* SearchFieldView.swift in Sources */,
 				EB89D29C2A9AF2E700A525BE /* FeedPageView.swift in Sources */,
 				EB76ED892A9BEBE900EFB341 /* RideCapsuleView.swift in Sources */,
 				EB76ED7D2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift in Sources */,
-				EBE4D4062A9FEC36008EBD22 /* ServerManager.swift in Sources */,
 				EB89D2A42A9B6AF100A525BE /* SettingsPageView.swift in Sources */,
 				EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */,
 				EBCC856A2A9826C000416D97 /* MainView.swift in Sources */,
+				EBE4B7632AA2675B007CF67F /* MainViewModel.swift in Sources */,
 				EB76ED792A9BD15000EFB341 /* SplashView.swift in Sources */,
 				EB76ED832A9BE6CE00EFB341 /* AppDelegate.swift in Sources */,
 				EB76ED752A9BC35200EFB341 /* NewsCarousel.swift in Sources */,
@@ -417,6 +448,7 @@
 				EB76ED812A9BD51E00EFB341 /* OnboardingView.swift in Sources */,
 				EB89D29E2A9AF2F700A525BE /* RidePageView.swift in Sources */,
 				EB88A61F2A9D87AE00819834 /* ProfileSettingCapsules.swift in Sources */,
+				EBE4B7582AA260F8007CF67F /* FirestoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

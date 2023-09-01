@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct CreditKeeperApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @StateObject var viewModel = MainViewModel()
     let persistenceController = PersistenceController.shared
-    let serverManager = ServerManager()
 
     var body: some Scene {
         WindowGroup {
-            MainView()
+            MainView(viewModel: viewModel)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

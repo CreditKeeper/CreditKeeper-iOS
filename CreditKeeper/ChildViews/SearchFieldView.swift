@@ -24,6 +24,7 @@ struct SearchFieldView: View {
                         showFilter = true
                     }
                 }
+                .padding(.vertical)
             
             if (showFilter) {
                 Button(action: {

@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct RidePageView: View {
+    @StateObject var viewModel : MainViewModel
     @State private var searchText = ""
     @State private var atAPark = true
+    
     var body: some View {
         VStack {
             ScrollView {
@@ -46,7 +48,7 @@ struct RidePageView: View {
         RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
             .ignoresSafeArea()
         
-        RidePageView()
+        RidePageView(viewModel: MainViewModel())
     }
 }
 

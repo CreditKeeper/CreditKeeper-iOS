@@ -15,11 +15,12 @@ struct FeedPageView: View {
                 
                 Spacer()
             }
-            .padding(.top, 70)
+            .padding(.top, 10)
         }
         .refreshable {
             
         }
+        .padding(.top, 40)
     }
 }
 

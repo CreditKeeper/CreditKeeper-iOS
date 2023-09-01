@@ -17,11 +17,9 @@ struct HeaderView: View {
                     .fontWeight(.bold)
                     .font(.title)
                     .foregroundColor(.white)
-                
-                
+                                
                 Spacer()
                 
-                       
                 Button(action: {
                    
                 }, label: {

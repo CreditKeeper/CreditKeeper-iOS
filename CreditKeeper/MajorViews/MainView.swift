@@ -12,10 +12,7 @@ struct MainView: View {
     @State private var selectedTab : Tab = .feed
     @State private var onboarding : Bool = true
     @State private var searchText : String = ""
-    
-    init () {
-        UITabBar.appearance().isHidden = true
-    }
+    @StateObject var viewModel : MainViewModel
     
     var body: some View {
         if (onboarding && UserDefaults.standard.bool(forKey: "KeyOnBoardingViewShown") == false) {
@@ -34,7 +31,7 @@ struct MainView: View {
                                 .tag("feed")
                             
                         case .ride :
-                            RidePageView()
+                            RidePageView(viewModel: viewModel)
                                 .tag("rides")
                             
                         case .map :
@@ -76,7 +73,7 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainView(viewModel: MainViewModel())
 }
 
 
