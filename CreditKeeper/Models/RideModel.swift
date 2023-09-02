@@ -9,7 +9,7 @@ import Foundation
 import FirebaseCore
 import FirebaseFirestore
 
-struct Ride: Identifiable {
+struct Ride: Identifiable, Hashable {
     var id: String
     let name: String
     let parkID: String

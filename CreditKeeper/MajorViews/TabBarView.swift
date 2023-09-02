@@ -38,6 +38,7 @@ struct TabBarView: View {
         VStack {
             if (selectedTab == .ride) {
                 SearchFieldView(searchText: $searchText)
+                    .environment(\.colorScheme, .dark)
             }
             
             HStack {

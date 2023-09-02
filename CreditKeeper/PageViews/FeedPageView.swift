@@ -20,7 +20,7 @@ struct FeedPageView: View {
         .refreshable {
             
         }
-        .padding(.top, 40)
+        .padding(.top, 90)
     }
 }
 

@@ -35,39 +35,49 @@ final class MainViewModel: ObservableObject {
 //            print("Location services are disabled by user")
 //        }
         
-        getAllRides()
         getAllParks()
+        getAllRides()
+        
         print("MVM init complete")
     }
-        
-    func getAllRides() {
-        print("Retrieving all rides from Firebase...")
+      
+    func getAllParks() {
+        print("Retrieving all parks from Firebase...")
+        var parks = [Park]()
         
         Task.init {
             do {
-                let gatheredRides = try await self.firestoreManager.makeAllRides()
-                if (gatheredRides.count > 0) {
-                    self.rides.append(contentsOf: gatheredRides)
-                    print("Rides gathered!")
+                let query = try await self.firestoreManager.db.collection("park").getDocuments(source: .server)
+                for document in query.documents {
+                    parks.append(self.firestoreManager.makePark(document: document))
+                }
+                if (parks.count > 0) {
+                    self.parks.append(contentsOf: parks)
+                    print("Parks gathered!")
                 } else {
-                    print("Got zero rides.")
+                    print("Got zero parks.")
                 }
             }
         }
     }
     
-    func getAllParks() {
-        print("Retrieving all parks from Firebase...")
+    func getAllRides() {
+        print("Retrieving all rides from Firebase...")
+        var rides = [Ride]()
         
         Task.init {
             do {
-                let gatheredParks = try await self.firestoreManager.makeAllParks()
-                if (gatheredParks.count > 0) {
-                    self.parks.append(contentsOf: gatheredParks)
-                    print("Parks gathered!")
-                } else {
-                    print("Got zero parks.")
+                let query = try await self.firestoreManager.db.collection("ride").getDocuments(source: .server)
+                for document in query.documents {
+                    rides.append(self.firestoreManager.makeRide(document: document))
                 }
+                if (rides.count > 0) {
+                    self.rides = rides
+                    print("Rides gathered!")
+                } else {
+                    print("Got zero rides.")
+                }
+                
             }
         }
     }

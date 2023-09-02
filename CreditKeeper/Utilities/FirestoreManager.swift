@@ -42,30 +42,4 @@ class FirestoreManager {
         let description = data["description"] as? String ?? "Unknown"
         return Park(id: id, name: name, city: city, region: region, country: country, owner: owner, description: description)
     }
-    
-    func makeAllRides() async throws -> [Ride] {
-        var rides = [Ride]()
-        
-        do {
-            let query = try await db.collection("ride").getDocuments(source: .server)
-            for document in query.documents {
-                rides.append(self.makeRide(document: document))
-            }
-        }
-        
-        return rides
-    }
-    
-    func makeAllParks() async throws -> [Park] {
-        var parks = [Park]()
-        
-        do {
-            let query = try await db.collection("park").getDocuments(source: .server)
-            for document in query.documents {
-                parks.append(self.makePark(document: document))
-            }
-        }
-        
-        return parks
-    }
 }
