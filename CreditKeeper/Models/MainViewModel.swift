@@ -13,6 +13,8 @@ final class MainViewModel: ObservableObject {
     @Published var rides = [Ride]()
     @Published var parks = [Park]()
     @Published var firestoreManager = FirestoreManager()
+    @Published var selectedRide : Ride? = nil
+    @Published var selectedPark : Park? = nil
 //    @Published var locationManager: CLLocationManager = CLLocationManager()
 //    @Published var locationEnabled: Bool = false
     

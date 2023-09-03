@@ -15,6 +15,7 @@ enum Tab: String, CaseIterable {
 }
 
 struct TabBarView: View {
+    @StateObject var viewModel : MainViewModel
     @Environment(\.colorScheme) var colorScheme
     @State private var offset = CGSize.zero
     @Binding var selectedTab : Tab
@@ -37,7 +38,7 @@ struct TabBarView: View {
 
         VStack {
             if (selectedTab == .ride) {
-                SearchFieldView(searchText: $searchText)
+                SearchFieldView(viewModel: viewModel, searchText: $searchText)
                     .environment(\.colorScheme, .dark)
                     .offset(x: offset.width * 0.08, y: offset.height * 0.08)
             }
@@ -109,7 +110,7 @@ struct TabBarView: View {
             .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
         VStack {
             Spacer()
-            TabBarView(selectedTab: .constant(.ride), searchText: .constant(""))
+            TabBarView(viewModel: MainViewModel(), selectedTab: .constant(.ride), searchText: .constant(""))
         }
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SearchFieldView: View {
+    @StateObject var viewModel : MainViewModel
     @State private var showFilter = true
     @Binding var searchText : String
     
@@ -62,5 +63,5 @@ struct OvalTextFieldStyle: TextFieldStyle {
 }
 
 #Preview {
-    SearchFieldView(searchText: .constant("Search"))
+    SearchFieldView(viewModel: MainViewModel(), searchText: .constant("Search"))
 }

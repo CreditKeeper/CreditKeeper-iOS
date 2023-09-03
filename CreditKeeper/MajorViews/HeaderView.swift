@@ -51,7 +51,7 @@ extension Tab {
             return "Rides"
             
         case .map :
-            return "Map"
+            return "Parks"
             
         case .profile :
             return "You"

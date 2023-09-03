@@ -8,13 +8,17 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import CoreLocation
 
 struct Park: Identifiable {
     var id: String
     let name: String
+    let address: String
     let city: String
     let region: String
     let country: String
     let owner: String
-    let description: String
+    let link: String
+    let phone: String
+    let location: CLLocation
 }

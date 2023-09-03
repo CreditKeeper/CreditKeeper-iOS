@@ -8,10 +8,12 @@
 import SwiftUI
 import FirebaseCore
 import FirebaseFirestore
+import CoreLocation
 
 class FirestoreManager {
     var lastDocument : QueryDocumentSnapshot?
     let db = Firestore.firestore() // Firestore Initialization
+    let geoCoder = CLGeocoder()
     
     func makeRide(document: QueryDocumentSnapshot) -> Ride {
         let id = document.documentID
@@ -35,11 +37,16 @@ class FirestoreManager {
         let id = document.documentID
         let data = document.data()
         let name = data["name"] as? String ?? "Unknown"
+        let owner = data["owner"] as? String ?? "Unknown"
+        let address = data["address"] as? String ?? ""
         let city = data["city"] as? String ?? "Unknown"
         let region = data["region"] as? String ?? "Unknown"
         let country = data["country"] as? String ?? "Unknown"
-        let owner = data["owner"] as? String ?? "Unknown"
-        let description = data["description"] as? String ?? "Unknown"
-        return Park(id: id, name: name, city: city, region: region, country: country, owner: owner, description: description)
+        let link = data["link"] as? String ?? ""
+        let phone = data["telephone"] as? String ?? ""
+        
+        let location = CLLocation() // this needs fixed to get location from address
+        
+        return Park(id: id, name: name, address: address, city: city, region: region, country: country, owner: owner, link: link, phone: phone, location: location)
     }
 }

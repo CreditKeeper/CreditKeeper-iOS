@@ -10,10 +10,9 @@ import CoreData
 
 struct MainView: View {
     @State private var selectedTab : Tab = .feed
-    @State private var onboarding : Bool = true
+    @State private var onboarding : Bool = false
     @State private var searchText : String = ""
     @State private var showTabView = true
-    @State private var selectedRide : Ride? = nil
     @StateObject var viewModel : MainViewModel
     
     var body: some View {
@@ -29,10 +28,10 @@ struct MainView: View {
                         FeedPageView()
                         
                     case .ride :
-                        RidePageView(viewModel: viewModel, selectedRide: $selectedRide)
+                        RidePageView(viewModel: viewModel)
                         
                     case .map :
-                        MapPageView()
+                        MapPageView(viewModel: viewModel)
                         
                     case .profile :
                         ProfilePageView()
@@ -42,13 +41,13 @@ struct MainView: View {
                 }
                 .ignoresSafeArea()
                 
-                if (selectedRide == nil) {
+                if (viewModel.selectedRide == nil) {
                     VStack {
                         HeaderView(selectedTab: $selectedTab)
                         
                         Spacer()
                         
-                        TabBarView(selectedTab: $selectedTab, searchText: $searchText)
+                        TabBarView(viewModel: viewModel, selectedTab: $selectedTab, searchText: $searchText)
                     }.transition(.opacity)
                 }
             }

@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct RideCapsuleView: View {
     @State var ride : Ride
-    @State private var park = Park(id: "", name: "Unknown Park", city: "", region: "", country: "", owner: "", description: "")
+    @State private var park = Park(id: "", name: "Unknown", address: "", city: "", region: "", country: "", owner: "", link: "", phone: "", location: CLLocation())
     @ObservedObject var viewModel : MainViewModel
     @Binding var showRideSheet : Bool
-    @Binding var selectedRide : Ride?
     
     var body: some View {
         ZStack {
@@ -24,15 +24,15 @@ struct RideCapsuleView: View {
             
             HStack {
                 NavigationLink {
-                    RideDetailView(ride: $selectedRide)
+                    RideDetailView(viewModel: viewModel, ride: .constant(viewModel.selectedRide))
                         .onAppear {
                             withAnimation {
-                                selectedRide = ride
+                                viewModel.selectedRide = ride
                             }
                         }
                         .onDisappear {
                             withAnimation {
-                                selectedRide = nil
+                                viewModel.selectedRide = nil
                             }
                         }
                 } label: {
@@ -81,12 +81,12 @@ struct RideCapsuleView: View {
             park = viewModel.parks.first(where: {$0.id == ride.parkID}) ?? park
         }
         .onTapGesture {
-            selectedRide = ride
+            viewModel.selectedRide = ride
             showRideSheet = true
         }
     }
 }
 
 #Preview {
-    RideCapsuleView(ride: Ride(id: "", name: "A ride", parkID: "esdfsefsfsdfs", manufacturer: "Nick Inc", opening: Date(), legacy: false, height: 10.2, length: 12.2, inversions: 2, thrillLevel: "Thrilling", type: "Stand Up", speed: 200.3, description: "It's a big one"), viewModel: MainViewModel(), showRideSheet: .constant(false), selectedRide: .constant(nil))
+    RideCapsuleView(ride: Ride(id: "", name: "A ride", parkID: "esdfsefsfsdfs", manufacturer: "Nick Inc", opening: Date(), legacy: false, height: 10.2, length: 12.2, inversions: 2, thrillLevel: "Thrilling", type: "Stand Up", speed: 200.3, description: "It's a big one"), viewModel: MainViewModel(), showRideSheet: .constant(false))
 }
