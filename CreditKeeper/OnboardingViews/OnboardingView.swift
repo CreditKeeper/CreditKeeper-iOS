@@ -26,12 +26,16 @@ struct OnboardingView: View {
             switch (onboardingPage) {
             case .splash:
                 SplashView(onboardingPage: $onboardingPage)
+                    .transition(.move(edge: .trailing))
             case .credits:
                 IntroToCreditView(onboardingPage: $onboardingPage)
+                    .transition(.move(edge: .trailing))
             case .terms:
                 TermsConditionsView(onboardingPage: $onboardingPage)
+                    .transition(.move(edge: .trailing))
             case .phone:
                 NoPhoneOnCoasterView(onboarding: $onboarding)
+                    .transition(.move(edge: .trailing))
             }
         }
     }

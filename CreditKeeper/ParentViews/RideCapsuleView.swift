@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RideCapsuleView: View {
     @State var ride : Ride
-    @State private var park = Park(id: "", name: "", city: "", region: "", country: "", owner: "", description: "")
+    @State private var park = Park(id: "", name: "Unknown Park", city: "", region: "", country: "", owner: "", description: "")
     @ObservedObject var viewModel : MainViewModel
     var body: some View {
         ZStack {

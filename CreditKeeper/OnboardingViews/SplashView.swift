@@ -8,16 +8,49 @@
 import SwiftUI
 
 struct SplashView: View {
+    @State private var hasTimeElapsed = false
     @Binding var onboardingPage : OnboardingPage
     
     var body: some View {
         ZStack {
             VStack {
-                Text("CreditKeeper")
-                    .font(.largeTitle)
+                Text("Welcome To")
                     .bold()
+                    .foregroundStyle(.white)
+                    .font(.subheadline)
+                    .transition(.slide)
+                    .padding(.top)
+                
+                Text("CreditKeeper")
+                    .font(.system(size: 40))
+                    .bold()
+                    .italic()
+                    .shadow(radius: 10)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal)
+                    .task(delayText)
+                
+                if (hasTimeElapsed) {
+                    Text("The best place to claim your coasters!")
+                        .bold()
+                        .foregroundStyle(.white)
+                        .font(.subheadline)
+                        .transition(.scale)
+                }
                 
                 Spacer()
+                
+                Image("rollercoaster")
+                    .colorInvert()
+                    .shadow(radius: 10)
+                
+                Spacer()
+                
+                Text("Just a bit of info to cover first!")
+                    .bold()
+                    .foregroundStyle(.white)
+                    .font(.subheadline)
+                    .transition(.slide)
                 
                 Button(action: {
                     withAnimation {
@@ -26,16 +59,24 @@ struct SplashView: View {
                 }, label: {
                     ZStack {
                         Capsule()
-                            .frame(width: 160, height: 60)
+                            .frame(width: 140, height: 50)
                             .foregroundStyle(Color("uiCapsuleBlue"))
+                            .shadow(radius: 10)
                         
-                        Text("Continue")
+                        Text("Let's Go!")
                             .foregroundStyle(.white)
                             .font(.title)
                     }
                 })
             }
             .padding()
+        }
+    }
+    
+    private func delayText() async {
+        try? await Task.sleep(nanoseconds: 500_000_000)
+        withAnimation {
+            hasTimeElapsed = true
         }
     }
 }

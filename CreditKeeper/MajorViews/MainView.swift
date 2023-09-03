@@ -18,6 +18,7 @@ struct MainView: View {
     var body: some View {
         if (onboarding && UserDefaults.standard.bool(forKey: "KeyOnBoardingViewShown") == false) {
             OnboardingView(onboarding: $onboarding)
+                .transition(.move(edge: .trailing))
             
         } else {
             ZStack {
@@ -52,6 +53,7 @@ struct MainView: View {
                     TabBarView(selectedTab: $selectedTab, searchText: $searchText)
                 }
             }
+            .transition(.move(edge: .trailing))
         }
     }
     

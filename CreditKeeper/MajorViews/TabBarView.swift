@@ -56,7 +56,10 @@ struct TabBarView: View {
                             Image(systemName: "list.bullet.below.rectangle")
                                 .shadow(radius: 10)
                         case .ride :
-                            Image(systemName: "circle.dotted.circle")
+                            Image("rollercoaster")
+                                .resizable()
+                                .colorInvert()
+                                .frame(width: 28, height: 30)
                                 .shadow(radius: 10)
                         case .map :
                             Image(systemName: "map")
