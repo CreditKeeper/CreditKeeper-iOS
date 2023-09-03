@@ -47,7 +47,6 @@
 		EBE4B75F2AA26365007CF67F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B75E2AA26365007CF67F /* UserModel.swift */; };
 		EBE4B7612AA263C5007CF67F /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7602AA263C5007CF67F /* CreditModel.swift */; };
 		EBE4B7632AA2675B007CF67F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7622AA2675A007CF67F /* MainViewModel.swift */; };
-		EBE4D4092A9FECBB008EBD22 /* PostgresNIO in Frameworks */ = {isa = PBXBuildFile; productRef = EBE4D4082A9FECBB008EBD22 /* PostgresNIO */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +116,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBE4D4092A9FECBB008EBD22 /* PostgresNIO in Frameworks */,
 				EB89D2942A9AE83100A525BE /* FirebaseAnalytics in Frameworks */,
 				EB89D2962A9AE83100A525BE /* FirebaseAuth in Frameworks */,
 				EB89D2982A9AE83100A525BE /* FirebaseFirestore in Frameworks */,
@@ -305,7 +303,6 @@
 				EB89D2932A9AE83100A525BE /* FirebaseAnalytics */,
 				EB89D2952A9AE83100A525BE /* FirebaseAuth */,
 				EB89D2972A9AE83100A525BE /* FirebaseFirestore */,
-				EBE4D4082A9FECBB008EBD22 /* PostgresNIO */,
 			);
 			productName = CreditKeeper;
 			productReference = EBCC855F2A9826C000416D97 /* CreditKeeper.app */;
@@ -381,7 +378,6 @@
 			mainGroup = EBCC85562A9826C000416D97;
 			packageReferences = (
 				EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				EBE4D4072A9FECBB008EBD22 /* XCRemoteSwiftPackageReference "postgres-nio" */,
 			);
 			productRefGroup = EBCC85602A9826C000416D97 /* Products */;
 			projectDirPath = "";
@@ -839,14 +835,6 @@
 				minimumVersion = 10.14.0;
 			};
 		};
-		EBE4D4072A9FECBB008EBD22 /* XCRemoteSwiftPackageReference "postgres-nio" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vapor/postgres-nio.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.18.1;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -864,11 +852,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
-		};
-		EBE4D4082A9FECBB008EBD22 /* PostgresNIO */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EBE4D4072A9FECBB008EBD22 /* XCRemoteSwiftPackageReference "postgres-nio" */;
-			productName = PostgresNIO;
 		};
 /* End XCSwiftPackageProductDependency section */
 
