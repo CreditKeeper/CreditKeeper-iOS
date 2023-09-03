@@ -9,18 +9,23 @@ import SwiftUI
 
 struct FeedPageView: View {
     var body: some View {
-        ScrollView {
-            VStack {
-                NewsCarousel()
-                
-                Spacer()
-            }
-            .padding(.top, 10)
-        }
-        .refreshable {
+        ZStack {
+            RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .feed), .black]), center: .center, startRadius: 2, endRadius: 650)
+                .ignoresSafeArea()
             
-        }
+            ScrollView {
+                VStack {
+                    NewsCarousel()
+                    
+                    Spacer()
+                }
+                .padding(.top, 10)
+            }
+            .refreshable {
+                
+            }
         .padding(.top, 90)
+        }
     }
 }
 

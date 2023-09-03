@@ -11,26 +11,34 @@ struct RidePageView: View {
     @ObservedObject var viewModel : MainViewModel
     @State private var searchText = ""
     @State private var atAPark = true
+    @State private var showRideSheet = false
+    @Binding var selectedRide : Ride?
     
     var body: some View {
-        VStack {
-            ScrollView {
-                Text("Looks like you're at Cedar Point...\nHere ya go! Or start typing.")
-                    .bold()
-                    .foregroundStyle(.white)
-                    .padding(.top, 70)
-                    .font(.system(size: 15))
-                    .multilineTextAlignment(.center)
-
-                    ForEach(viewModel.rides, id: \.self) { ride in
-                        RideCapsuleView(ride: ride, viewModel: viewModel)
-                    }
-                    .padding(.bottom, -10)
+        NavigationView {
+            ZStack {
+                RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .ride), .black]), center: .center, startRadius: 2, endRadius: 650)
+                    .ignoresSafeArea()
                 
+                VStack {
+                    ScrollView {
+                        Text("Looks like you're at Cedar Point...\nHere ya go! Or start typing.")
+                            .bold()
+                            .foregroundStyle(.white)
+                            .padding(.top, 70)
+                            .font(.system(size: 15))
+                            .multilineTextAlignment(.center)
+                        
+                        ForEach(viewModel.rides, id: \.self) { ride in
+                                RideCapsuleView(ride: ride, viewModel: viewModel, showRideSheet: $showRideSheet, selectedRide: $selectedRide)
+                        }
+                        .padding(.bottom, -10)
+                        
+                    }
+                    .padding(.horizontal, 10)
+                    .padding(.bottom, 120)
+                }
             }
-            .padding(.horizontal, 10)
-            .padding(.bottom, 120)
-            .padding(.top, 50)
         }
     }
 }
@@ -40,7 +48,7 @@ struct RidePageView: View {
         RadialGradient(gradient: Gradient(colors: [.red, .black]), center: .center, startRadius: 2, endRadius: 650)
             .ignoresSafeArea()
         
-        RidePageView(viewModel: MainViewModel())
+        RidePageView(viewModel: MainViewModel(), selectedRide: .constant(nil))
     }
 }
 

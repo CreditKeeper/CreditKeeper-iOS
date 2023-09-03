@@ -39,6 +39,7 @@ struct TabBarView: View {
             if (selectedTab == .ride) {
                 SearchFieldView(searchText: $searchText)
                     .environment(\.colorScheme, .dark)
+                    .offset(x: offset.width * 0.08, y: offset.height * 0.08)
             }
             
             HStack {

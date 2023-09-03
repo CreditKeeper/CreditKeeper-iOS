@@ -11,6 +11,9 @@ struct RideCapsuleView: View {
     @State var ride : Ride
     @State private var park = Park(id: "", name: "Unknown Park", city: "", region: "", country: "", owner: "", description: "")
     @ObservedObject var viewModel : MainViewModel
+    @Binding var showRideSheet : Bool
+    @Binding var selectedRide : Ride?
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -20,19 +23,34 @@ struct RideCapsuleView: View {
                 .shadow(radius: 10)
             
             HStack {
-                VStack (alignment: .leading) {
-                    Text(ride.name)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundStyle(.white)
-                    
-                    Text(park.name)
-                        .font(.callout)
-                        .foregroundStyle(.white)
+                NavigationLink {
+                    RideDetailView(ride: $selectedRide)
+                        .onAppear {
+                            withAnimation {
+                                selectedRide = ride
+                            }
+                        }
+                        .onDisappear {
+                            withAnimation {
+                                selectedRide = nil
+                            }
+                        }
+                } label: {
+                    Group {
+                        VStack (alignment: .leading) {
+                            Text(ride.name)
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.white)
+                            
+                            Text(park.name)
+                                .font(.callout)
+                                .foregroundStyle(.white)
+                        }
+                        
+                        Spacer()
+                    }
                 }
-                
-                Spacer()
-                
                 
                 Button (action: {
                     
@@ -52,24 +70,23 @@ struct RideCapsuleView: View {
                             
                     }
                 })
-                
-                
             }
             .padding()
         }
         .padding(.horizontal, 15)
         .padding(.vertical, 4)
         .onAppear {
-            // check if user already has credit
+            // check if user already has credit, then show ride button if so
             
             park = viewModel.parks.first(where: {$0.id == ride.parkID}) ?? park
         }
         .onTapGesture {
-             // open ride sheet
+            selectedRide = ride
+            showRideSheet = true
         }
     }
 }
 
 #Preview {
-    RideCapsuleView(ride: Ride(id: "", name: "A ride", parkID: "esdfsefsfsdfs", manufacturer: "Nick Inc", opening: Date(), legacy: false, height: 10.2, length: 12.2, inversions: 2, thrillLevel: "Thrilling", type: "Stand Up", speed: 200.3, description: "It's a big one"), viewModel: MainViewModel())
+    RideCapsuleView(ride: Ride(id: "", name: "A ride", parkID: "esdfsefsfsdfs", manufacturer: "Nick Inc", opening: Date(), legacy: false, height: 10.2, length: 12.2, inversions: 2, thrillLevel: "Thrilling", type: "Stand Up", speed: 200.3, description: "It's a big one"), viewModel: MainViewModel(), showRideSheet: .constant(false), selectedRide: .constant(nil))
 }

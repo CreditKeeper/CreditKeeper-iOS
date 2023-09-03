@@ -13,6 +13,7 @@ struct MainView: View {
     @State private var onboarding : Bool = true
     @State private var searchText : String = ""
     @State private var showTabView = true
+    @State private var selectedRide : Ride? = nil
     @StateObject var viewModel : MainViewModel
     
     var body: some View {
@@ -23,16 +24,12 @@ struct MainView: View {
         } else {
             ZStack {
                 Group {
-                    RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: selectedTab), .black]), center: .center, startRadius: 2, endRadius: 650)
-                        .ignoresSafeArea()
-                    
                     switch (selectedTab) {
                     case .feed :
                         FeedPageView()
                         
-                        
                     case .ride :
-                        RidePageView(viewModel: viewModel)
+                        RidePageView(viewModel: viewModel, selectedRide: $selectedRide)
                         
                     case .map :
                         MapPageView()
@@ -45,29 +42,31 @@ struct MainView: View {
                 }
                 .ignoresSafeArea()
                 
-                VStack {
-                    HeaderView(selectedTab: $selectedTab)
-                    
-                    Spacer()
-                    
-                    TabBarView(selectedTab: $selectedTab, searchText: $searchText)
+                if (selectedRide == nil) {
+                    VStack {
+                        HeaderView(selectedTab: $selectedTab)
+                        
+                        Spacer()
+                        
+                        TabBarView(selectedTab: $selectedTab, searchText: $searchText)
+                    }.transition(.opacity)
                 }
             }
             .transition(.move(edge: .trailing))
         }
     }
-    
-    func getBackgroundColor(tab: Tab) -> Color {
-        switch (tab) {
-        case .feed :
-            return .blue
-        case .ride :
-            return .red
-        case .map :
-            return .clear
-        case .profile :
-            return .orange
-        }
+}
+
+func getBackgroundColor(tab: Tab) -> Color {
+    switch (tab) {
+    case .feed :
+        return .blue
+    case .ride :
+        return .red
+    case .map :
+        return .clear
+    case .profile :
+        return .orange
     }
 }
 
