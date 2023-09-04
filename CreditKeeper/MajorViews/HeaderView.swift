@@ -21,7 +21,7 @@ struct HeaderView: View {
                 Spacer()
                 
                 Button(action: {
-                   
+                    playHaptic()
                 }, label: {
                    Image(systemName: "cloud.sun")
                         .foregroundColor(.white)

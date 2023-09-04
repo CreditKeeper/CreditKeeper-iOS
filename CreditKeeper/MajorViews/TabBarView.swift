@@ -49,8 +49,9 @@ struct TabBarView: View {
                     Spacer()
                     
                     Button (action: {
+                        playHaptic()
                         withAnimation(.easeInOut) {
-                            selectedTab=tab
+                            selectedTab = tab
                         }
                     }, label: {
                         switch (tab) {
@@ -61,6 +62,7 @@ struct TabBarView: View {
                             Image("rollercoaster")
                                 .resizable()
                                 .colorInvert()
+                                .colorMultiply(selectedTab == .ride ? .red : .white)
                                 .frame(width: 28, height: 30)
                                 .shadow(radius: 10)
                         case .map :
@@ -107,7 +109,7 @@ struct TabBarView: View {
 #Preview {
     ZStack {
         Color.black
-            .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            .ignoresSafeArea()
         VStack {
             Spacer()
             TabBarView(viewModel: MainViewModel(), selectedTab: .constant(.ride), searchText: .constant(""))

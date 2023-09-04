@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfilePageView: View {
+    @StateObject var viewModel : MainViewModel
+    
     var body: some View {
         ZStack {
             RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .profile), .black]), center: .center, startRadius: 2, endRadius: 650)
@@ -81,7 +83,7 @@ struct ProfilePageView: View {
                     }
                 }
             }
-            .padding(.top, 50)
+            .padding(.top, 100)
         }
     }
 }
@@ -91,6 +93,7 @@ struct ProfilePageView: View {
         RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
             .ignoresSafeArea()
         
-        ProfilePageView()
+        ProfilePageView(viewModel: MainViewModel())
+
     }
 }

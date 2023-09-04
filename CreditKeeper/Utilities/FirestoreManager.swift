@@ -49,4 +49,16 @@ class FirestoreManager {
         
         return Park(id: id, name: name, address: address, city: city, region: region, country: country, owner: owner, link: link, phone: phone, location: location)
     }
+    
+    func makeUser(document: DocumentSnapshot) -> User {
+        let id = document.documentID
+        let data = document.data()
+        let handle = data?["handle"] as? String ?? "Unknown"
+        let email = data?["email"] as? String ?? ""
+        let favPark = data?["favPark"] as? String ?? ""
+        let admin = data?["admin"] as? Bool ?? false
+        let joined = data?["joined"] as? Date ?? Date()
+        
+        return User(id: id, handle: handle, email: email, favPark: favPark, admin: admin, joined: joined)
+    }
 }

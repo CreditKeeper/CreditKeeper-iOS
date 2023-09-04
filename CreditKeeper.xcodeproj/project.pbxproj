@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		B51893362A9BB4810073D3B1 /* CodeSigning.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B51893342A9BB4810073D3B1 /* CodeSigning.xcconfig */; };
 		B51893372A9BB4810073D3B1 /* Build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B51893352A9BB4810073D3B1 /* Build.xcconfig */; };
+		EB44A06C2AA529190008116D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A06B2AA529190008116D /* LocationManager.swift */; };
+		EB44A06F2AA52BD10008116D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A06E2AA52BD10008116D /* MapView.swift */; };
+		EB44A0712AA5332D0008116D /* CreditFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0702AA5332D0008116D /* CreditFeedView.swift */; };
+		EB44A0742AA5348F0008116D /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0732AA5348F0008116D /* RegisterView.swift */; };
+		EB44A0762AA549080008116D /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0752AA549080008116D /* AuthManager.swift */; };
+		EB44A0782AA54F2C0008116D /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0772AA54F2C0008116D /* BackButtonView.swift */; };
+		EB44A07A2AA559AD0008116D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0792AA559AD0008116D /* LoginView.swift */; };
 		EB76ED752A9BC35200EFB341 /* NewsCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */; };
 		EB76ED792A9BD15000EFB341 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED782A9BD15000EFB341 /* SplashView.swift */; };
 		EB76ED7B2A9BD16100EFB341 /* IntroToCreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED7A2A9BD16100EFB341 /* IntroToCreditView.swift */; };
@@ -70,6 +77,14 @@
 		B51893342A9BB4810073D3B1 /* CodeSigning.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CodeSigning.xcconfig; sourceTree = "<group>"; };
 		B51893352A9BB4810073D3B1 /* Build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
 		B51893382A9BB4CE0073D3B1 /* CodeSigning.xcconfig.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeSigning.xcconfig.sample; sourceTree = "<group>"; };
+		EB44A06B2AA529190008116D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		EB44A06D2AA52B590008116D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EB44A06E2AA52BD10008116D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		EB44A0702AA5332D0008116D /* CreditFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditFeedView.swift; sourceTree = "<group>"; };
+		EB44A0732AA5348F0008116D /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		EB44A0752AA549080008116D /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		EB44A0772AA54F2C0008116D /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
+		EB44A0792AA559AD0008116D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCarousel.swift; sourceTree = "<group>"; };
 		EB76ED782A9BD15000EFB341 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		EB76ED7A2A9BD16100EFB341 /* IntroToCreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroToCreditView.swift; sourceTree = "<group>"; };
@@ -139,9 +154,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EB44A0722AA534750008116D /* AuthViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB44A0732AA5348F0008116D /* RegisterView.swift */,
+				EB44A0792AA559AD0008116D /* LoginView.swift */,
+			);
+			path = AuthViews;
+			sourceTree = "<group>";
+		};
 		EB76ED762A9BC36100EFB341 /* ParentViews */ = {
 			isa = PBXGroup;
 			children = (
+				EB44A06E2AA52BD10008116D /* MapView.swift */,
 				EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */,
 			);
 			path = ParentViews;
@@ -172,7 +197,9 @@
 		EB76ED852A9BE9F300EFB341 /* ChildViews */ = {
 			isa = PBXGroup;
 			children = (
+				EB44A0702AA5332D0008116D /* CreditFeedView.swift */,
 				EB76ED882A9BEBE900EFB341 /* RideCapsuleView.swift */,
+				EB44A0772AA54F2C0008116D /* BackButtonView.swift */,
 				EB76ED862A9BEA0A00EFB341 /* SearchFieldView.swift */,
 				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,
 			);
@@ -184,6 +211,8 @@
 			children = (
 				EB76ED822A9BE6CE00EFB341 /* AppDelegate.swift */,
 				EBE4B7572AA260F8007CF67F /* FirestoreManager.swift */,
+				EB44A06B2AA529190008116D /* LocationManager.swift */,
+				EB44A0752AA549080008116D /* AuthManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -228,11 +257,13 @@
 		EBCC85612A9826C000416D97 /* CreditKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				EB44A06D2AA52B590008116D /* Info.plist */,
 				EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */,
 				EBCC85642A9826C000416D97 /* Persistence.swift */,
 				EBE4B7592AA2615D007CF67F /* Models */,
 				EB89D2912A9AE78200A525BE /* Utilities */,
 				EB76ED772A9BD10A00EFB341 /* OnboardingViews */,
+				EB44A0722AA534750008116D /* AuthViews */,
 				EB76ED842A9BE6F600EFB341 /* MajorViews */,
 				EB76ED762A9BC36100EFB341 /* ParentViews */,
 				EB76ED852A9BE9F300EFB341 /* ChildViews */,
@@ -431,16 +462,22 @@
 				EB89D2A22A9AF30F00A525BE /* HeaderView.swift in Sources */,
 				EBE4B75B2AA26170007CF67F /* RideModel.swift in Sources */,
 				EB76ED7B2A9BD16100EFB341 /* IntroToCreditView.swift in Sources */,
+				EB44A06C2AA529190008116D /* LocationManager.swift in Sources */,
+				EB44A0782AA54F2C0008116D /* BackButtonView.swift in Sources */,
+				EB44A07A2AA559AD0008116D /* LoginView.swift in Sources */,
+				EB44A06F2AA52BD10008116D /* MapView.swift in Sources */,
 				EBE4B7612AA263C5007CF67F /* CreditModel.swift in Sources */,
 				EB76ED7F2A9BD35D00EFB341 /* TermsConditionsView.swift in Sources */,
 				EB89D2A02A9AF30100A525BE /* ProfilePageView.swift in Sources */,
 				EBE4B75F2AA26365007CF67F /* UserModel.swift in Sources */,
 				EB76ED872A9BEA0A00EFB341 /* SearchFieldView.swift in Sources */,
+				EB44A0742AA5348F0008116D /* RegisterView.swift in Sources */,
 				EB89D29C2A9AF2E700A525BE /* FeedPageView.swift in Sources */,
 				EB76ED892A9BEBE900EFB341 /* RideCapsuleView.swift in Sources */,
 				EB76ED7D2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift in Sources */,
 				EB89D2A42A9B6AF100A525BE /* SettingsPageView.swift in Sources */,
 				EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */,
+				EB44A0762AA549080008116D /* AuthManager.swift in Sources */,
 				EBCC856A2A9826C000416D97 /* MainView.swift in Sources */,
 				EBE4B7632AA2675B007CF67F /* MainViewModel.swift in Sources */,
 				EB76ED792A9BD15000EFB341 /* SplashView.swift in Sources */,
@@ -450,6 +487,7 @@
 				EBCC85652A9826C000416D97 /* Persistence.swift in Sources */,
 				EB76ED812A9BD51E00EFB341 /* OnboardingView.swift in Sources */,
 				EB89D29E2A9AF2F700A525BE /* RidePageView.swift in Sources */,
+				EB44A0712AA5332D0008116D /* CreditFeedView.swift in Sources */,
 				EB88A61F2A9D87AE00819834 /* ProfileSettingCapsules.swift in Sources */,
 				EBDBF3772AA5059D00A3ED1D /* RideDetailView.swift in Sources */,
 				EBE4B7582AA260F8007CF67F /* FirestoreManager.swift in Sources */,
@@ -622,8 +660,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CreditKeeper/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CreditKeeper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to determine the rides nearest to you.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -666,8 +706,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CreditKeeper/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CreditKeeper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to determine the rides nearest to you.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

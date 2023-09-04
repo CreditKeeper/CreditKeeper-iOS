@@ -46,6 +46,7 @@ struct IntroToCreditView: View {
                 Spacer()
                 
                 Button(action: {
+                    playHaptic()
                     withAnimation {
                         onboardingPage = .terms
                     }
@@ -70,6 +71,7 @@ struct IntroToCreditView: View {
         try? await Task.sleep(nanoseconds: 500_000_000)
         withAnimation {
             hasTimeElapsed = true
+            playHaptic()
         }
     }
 }

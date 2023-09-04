@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct FeedPageView: View {
+    @StateObject var viewModel : MainViewModel
     var body: some View {
         ZStack {
             RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .feed), .black]), center: .center, startRadius: 2, endRadius: 650)
@@ -15,7 +16,9 @@ struct FeedPageView: View {
             
             ScrollView {
                 VStack {
-                    NewsCarousel()
+                    NewsCarousel(viewModel: viewModel)
+                    
+                    CreditFeedView(viewModel: viewModel)
                     
                     Spacer()
                 }
@@ -34,6 +37,6 @@ struct FeedPageView: View {
         RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
             .ignoresSafeArea()
         
-        FeedPageView()
+        FeedPageView(viewModel: MainViewModel())
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct NewsCarousel: View {
+    @ObservedObject var viewModel : MainViewModel
     @State private var index = 1
     var body: some View {
         VStack {
@@ -28,5 +29,5 @@ struct NewsCarousel: View {
 }
 
 #Preview {
-    NewsCarousel()
+    NewsCarousel(viewModel: MainViewModel())
 }

@@ -16,6 +16,7 @@ struct SearchFieldView: View {
         HStack {
             TextField("Search...", text: $searchText)
                 .onTapGesture {
+                    playHaptic()
                     withAnimation (.linear) {
                         showFilter = false
                     }
@@ -29,7 +30,7 @@ struct SearchFieldView: View {
             
             if (showFilter) {
                 Button(action: {
-                    
+                    playHaptic()
                 }, label: {
                     ZStack {
                         Circle()

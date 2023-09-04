@@ -10,14 +10,45 @@ import MapKit
 
 struct MapPageView: View {
     @StateObject var viewModel : MainViewModel
-
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 41.4808, longitude: -82.6834), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-
-        var body: some View {
-            Map(coordinateRegion: $region)
-                .ignoresSafeArea()
-        }
+    @State private var userTrackingMode : MapUserTrackingMode = .none
     
+    var body: some View {
+        ZStack {
+            MapView(viewModel: viewModel, userTrackingMode: $userTrackingMode)
+                .ignoresSafeArea()
+            
+            VStack {
+                Spacer()
+                
+                HStack {
+                    Button (action: {
+                        if (userTrackingMode == .follow) {
+                            userTrackingMode = .none
+                        } else {
+                            userTrackingMode = .follow
+                        }
+                    }, label: {
+                        ZStack {
+                            Circle()
+                                .frame(width: 50, height: 50)
+                                .foregroundStyle(.ultraThinMaterial)
+                                
+                            Image(systemName: userTrackingMode == .follow ? "location.fill" : "location")
+                                .font(.system(size: 30))
+                                
+                        }
+                    })
+                    
+                    Spacer()
+                }
+                .padding()
+                
+                if (viewModel.selectedPark != nil) {
+                    // show park popup
+                }
+            }
+        }
+    }
 }
 
 #Preview {

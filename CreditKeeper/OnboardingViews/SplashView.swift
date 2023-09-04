@@ -53,6 +53,7 @@ struct SplashView: View {
                     .transition(.slide)
                 
                 Button(action: {
+                    playHaptic()
                     withAnimation {
                         onboardingPage = .credits
                     }

@@ -29,6 +29,7 @@ struct TermsConditionsView: View {
                 
                 if (hasTimeElapsed) {
                     Button(action: {
+                        playHaptic()
                         withAnimation {
                             onboardingPage = .phone
                         }

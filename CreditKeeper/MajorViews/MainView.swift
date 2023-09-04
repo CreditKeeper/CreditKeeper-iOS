@@ -13,6 +13,7 @@ struct MainView: View {
     @State private var onboarding : Bool = false
     @State private var searchText : String = ""
     @State private var showTabView = true
+    @State private var signingUp = false
     @StateObject var viewModel : MainViewModel
     
     var body: some View {
@@ -25,25 +26,40 @@ struct MainView: View {
                 Group {
                     switch (selectedTab) {
                     case .feed :
-                        FeedPageView()
+                        FeedPageView(viewModel: viewModel)
+                            .transition(.slide)
                         
                     case .ride :
                         RidePageView(viewModel: viewModel)
+                            .transition(.slide)
                         
                     case .map :
                         MapPageView(viewModel: viewModel)
+                            .transition(.slide)
                         
                     case .profile :
-                        ProfilePageView()
-                            .environment(\.colorScheme, .dark)
-                        
+                        if (viewModel.loggedIn) {
+                            ProfilePageView(viewModel: viewModel)
+                                .environment(\.colorScheme, .dark)
+                                .transition(.slide)
+                        } else if (signingUp) {
+                            RegisterView(viewModel: viewModel)
+                            
+                        } else {
+                            LoginView(viewModel: viewModel, signingUp: $signingUp)
+                            
+                        }
                     }
                 }
                 .ignoresSafeArea()
                 
                 if (viewModel.selectedRide == nil) {
                     VStack {
-                        HeaderView(selectedTab: $selectedTab)
+                        if (selectedTab != .profile &&
+                            !viewModel.loggedIn) {
+                            HeaderView(selectedTab: $selectedTab)
+                                .transition(.slide)
+                        }
                         
                         Spacer()
                         
@@ -67,6 +83,11 @@ func getBackgroundColor(tab: Tab) -> Color {
     case .profile :
         return .orange
     }
+}
+
+func playHaptic() {
+    let impactMed = UIImpactFeedbackGenerator(style: .medium)
+        impactMed.impactOccurred()
 }
 
 #Preview {

@@ -26,6 +26,7 @@ struct RideCapsuleView: View {
                 NavigationLink {
                     RideDetailView(viewModel: viewModel, ride: .constant(viewModel.selectedRide))
                         .onAppear {
+                            playHaptic()
                             withAnimation {
                                 viewModel.selectedRide = ride
                             }
@@ -52,28 +53,30 @@ struct RideCapsuleView: View {
                     }
                 }
                 
-                Button (action: {
-                    
-                }, label: {
-                    ZStack {
-                        Capsule()
-                            .frame(width: 80, height: 40)
-                            .foregroundStyle(.clear)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.white, lineWidth: 2)
-                            )
+                if (viewModel.loggedIn) {
+                    Button (action: {
+                        playHaptic()
+                    }, label: {
+                        ZStack {
+                            Capsule()
+                                .frame(width: 80, height: 40)
+                                .foregroundStyle(.clear)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color.white, lineWidth: 2)
+                                )
                             
-                        Text("Claim")
-                            .fontWeight(.bold)
-                            .foregroundStyle(.white)
+                            Text("Claim")
+                                .fontWeight(.bold)
+                                .foregroundStyle(.white)
                             
-                    }
-                })
+                        }
+                    })
+                }
             }
             .padding()
         }
-        .padding(.horizontal, 15)
+        .padding(.horizontal, 20)
         .padding(.vertical, 4)
         .onAppear {
             // check if user already has credit, then show ride button if so

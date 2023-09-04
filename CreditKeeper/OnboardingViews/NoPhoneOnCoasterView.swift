@@ -49,6 +49,7 @@ struct NoPhoneOnCoasterView: View {
                 
                 if (hasTimeElapsed) {
                     Button(action: {
+                        playHaptic()
                         withAnimation {
                             onboarding = false
                         }
