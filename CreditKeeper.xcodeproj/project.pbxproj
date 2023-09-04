@@ -54,6 +54,8 @@
 		EBE4B75F2AA26365007CF67F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B75E2AA26365007CF67F /* UserModel.swift */; };
 		EBE4B7612AA263C5007CF67F /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7602AA263C5007CF67F /* CreditModel.swift */; };
 		EBE4B7632AA2675B007CF67F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7622AA2675A007CF67F /* MainViewModel.swift */; };
+		EBF5A6262AA682130004B904 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5A6252AA682130004B904 /* ReviewView.swift */; };
+		EBF5A6282AA682810004B904 /* ClaimButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5A6272AA682810004B904 /* ClaimButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		EBE4B75E2AA26365007CF67F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		EBE4B7602AA263C5007CF67F /* CreditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = "<group>"; };
 		EBE4B7622AA2675A007CF67F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		EBF5A6252AA682130004B904 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
+		EBF5A6272AA682810004B904 /* ClaimButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +203,8 @@
 			children = (
 				EB44A0702AA5332D0008116D /* CreditFeedView.swift */,
 				EB76ED882A9BEBE900EFB341 /* RideCapsuleView.swift */,
+				EBF5A6272AA682810004B904 /* ClaimButtonView.swift */,
+				EBF5A6252AA682130004B904 /* ReviewView.swift */,
 				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,
 				EB44A0772AA54F2C0008116D /* BackButtonView.swift */,
 				EB76ED862A9BEA0A00EFB341 /* SearchFieldView.swift */,
@@ -484,8 +490,10 @@
 				EB76ED832A9BE6CE00EFB341 /* AppDelegate.swift in Sources */,
 				EB76ED752A9BC35200EFB341 /* NewsCarousel.swift in Sources */,
 				EB89D29A2A9AE85700A525BE /* TabBarView.swift in Sources */,
+				EBF5A6262AA682130004B904 /* ReviewView.swift in Sources */,
 				EBCC85652A9826C000416D97 /* Persistence.swift in Sources */,
 				EB76ED812A9BD51E00EFB341 /* OnboardingView.swift in Sources */,
+				EBF5A6282AA682810004B904 /* ClaimButtonView.swift in Sources */,
 				EB89D29E2A9AF2F700A525BE /* RidePageView.swift in Sources */,
 				EB44A0712AA5332D0008116D /* CreditFeedView.swift in Sources */,
 				EB88A61F2A9D87AE00819834 /* ProfileSettingCapsules.swift in Sources */,

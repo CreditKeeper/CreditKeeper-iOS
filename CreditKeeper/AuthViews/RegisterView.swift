@@ -16,6 +16,7 @@ struct RegisterView: View {
     @State private var password = ""
     @State private var handle = ""
     @State private var confirmPassword = ""
+    @State private var networkProgress = false
     
 
     var body: some View {
@@ -72,7 +73,7 @@ struct RegisterView: View {
                     ZStack {
                         Rectangle()
                             .frame(width: nil, height: 100)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.ultraThinMaterial)
                             .padding()
                             .cornerRadius(20)
                         
@@ -87,35 +88,41 @@ struct RegisterView: View {
                     }
                 }
                 
-                Group {
-                    Button(action: {
-                        playHaptic()
-                        withAnimation {
-                            print("Registering new user")
-                            viewModel.createUser(email: email, password: password, handle: handle) { created in
-                                if (created) {
-                                    self.presentationMode.wrappedValue.dismiss()
+                if (!networkProgress) {
+                    Group {
+                        Button(action: {
+                            networkProgress = true
+                            playHaptic()
+                            withAnimation {
+                                print("Registering new user")
+                                viewModel.createUser(email: email, password: password, handle: handle) { created in
+                                    if (created) {
+                                        self.presentationMode.wrappedValue.dismiss()
+                                    }
+                                    networkProgress = false
                                 }
                             }
-                        }
-                    }, label: {
-                        ZStack {
-                            Capsule()
-                                .frame(width: 100, height: 40)
-                                .foregroundColor(.blue)
-                            
-                            Text("Register")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                        }
-                    })
-                    .disabled(password != confirmPassword)
-                    .padding()
-                    
-                    Spacer()
+                        }, label: {
+                            ZStack {
+                                Capsule()
+                                    .frame(width: 100, height: 40)
+                                    .foregroundColor(.blue)
+                                
+                                Text("Register")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                            }
+                        })
+                        .disabled(password != confirmPassword)
+                        .padding()
+                        
+                        Spacer()
+                    }
+                } else {
+                    ProgressView()
                 }
             }
-            .padding(.top, 70)
+            .padding(.top, 80)
             .onDisappear() {
                 viewModel.authError = ""
             }

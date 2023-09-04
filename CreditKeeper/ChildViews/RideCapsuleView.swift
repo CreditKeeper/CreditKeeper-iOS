@@ -12,77 +12,48 @@ struct RideCapsuleView: View {
     @State var ride : Ride
     @State private var park = Park(id: "", name: "Unknown", address: "", city: "", region: "", country: "", owner: "", link: "", phone: "", location: CLLocation())
     @State private var hasCredit = false
+    @State private var showReview = false
     @ObservedObject var viewModel : MainViewModel
+    
     
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(width: nil, height: 90)
                 .cornerRadius(15)
-                .foregroundColor(hasCredit ? Color.green : Color("uiCapsuleRed"))
-                .shadow(radius: 10)
+                .foregroundStyle(ride.legacy ? .yellow : (hasCredit ? .green :  Color("uiCapsuleRed")))
             
-            HStack {
-                Group {
-                    VStack (alignment: .leading) {
-                        Text(ride.name)
-                            .font(.title3)
-                            .fontWeight(.bold)
-                            .foregroundStyle(.white)
+            if (showReview) {
+                ReviewView(viewModel: viewModel, ride: $ride, showReview: $showReview)
+                
+            } else {
+                HStack {
+                    Group {
+                        VStack (alignment: .leading) {
+                            Text(ride.name)
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.white)
+                            
+                            Text(park.name)
+                                .font(.callout)
+                                .foregroundStyle(.white)
+                        }
                         
-                        Text(park.name)
-                            .font(.callout)
-                            .foregroundStyle(.white)
+                        Spacer()
                     }
                     
-                    Spacer()
+                    if (viewModel.loggedIn) {
+                        ClaimButtonView(viewModel: viewModel, ride: $ride, hasCredit: $hasCredit, showReview: $showReview)
+                        
+                    } else {
+                        Image(systemName: "chevron.right")
+                            .foregroundStyle(.white)
+                            .padding()
+                    }
                 }
-                
-                if (viewModel.loggedIn) {
-                    Button (action: {
-                        playHaptic()
-                        if (hasCredit) {
-                            Task.init {
-                                withAnimation {
-                                    viewModel.claimCredit(ride: ride.id, { created in
-                                        hasCredit = created
-                                        
-                                    })
-                                }
-                            }
-                        }
-                        else {
-                            Task.init {
-                                withAnimation {
-                                    viewModel.claimCredit(ride: ride.id, { created in
-                                        hasCredit = created
-                                        
-                                    })
-                                }
-                            }
-                            // Open review
-                            
-                        }
-                    }, label: {
-                        ZStack {
-                            Capsule()
-                                .frame(width: 80, height: 40)
-                                .foregroundStyle(.white)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .stroke(hasCredit ? Color.green : Color.white, lineWidth: 2)
-                                )
-                            
-                            Text(hasCredit ? "Ride" : "Claim")
-                                .fontWeight(.bold)
-                                .foregroundStyle(hasCredit ? .green : Color("uiCapsuleRed"))
-                                .transition(.opacity)
-                            
-                        }
-                    })
-                }
+                .padding()
             }
-            .padding()
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 4)

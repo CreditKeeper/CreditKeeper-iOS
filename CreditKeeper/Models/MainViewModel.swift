@@ -37,6 +37,15 @@ final class MainViewModel: ObservableObject {
     init() {
         print("Initializing MVM")
         
+        if (!self.loggedIn) {
+
+            if let storedUser = Auth.auth().currentUser {
+                self.loggedIn = true
+                self.initUser(user: storedUser)
+                
+            }
+        }
+        
         self.onboarding = self.onboardingUD
         self.onboardingUD = false
         
@@ -197,11 +206,26 @@ final class MainViewModel: ObservableObject {
         }
     }
     
+    func initUser(user: FirebaseAuth.User?) {
+        withAnimation {
+            self.loggedIn = true
+            self.showAuth = false
+        }
+        
+        let userDocRef = Firestore.firestore().collection("user").document(user!.uid)
+        userDocRef.getDocument { (snapshot, error) in
+            if error == nil && snapshot?.exists == false {
+                self.authError = "An error has occured. Network connection lost or no account found!"
+            } else if snapshot?.exists == true {
+                self.currentUser = self.firestoreManager.makeUser(document: snapshot!)
+            }
+        }
+    }
     
     func usernameIsAvailable(username: String, _ completion: @escaping (Bool) -> Void) {
         // Get a reference to the users collection
         let db = Firestore.firestore()
-        let usersRef = db.collection("users")
+        let usersRef = db.collection("user")
         
         // Create a query to get the user document with the specified username
         let query = usersRef.whereField("username", isEqualTo: username)
