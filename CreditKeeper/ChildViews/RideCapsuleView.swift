@@ -11,64 +11,72 @@ import CoreLocation
 struct RideCapsuleView: View {
     @State var ride : Ride
     @State private var park = Park(id: "", name: "Unknown", address: "", city: "", region: "", country: "", owner: "", link: "", phone: "", location: CLLocation())
+    @State private var hasCredit = false
     @ObservedObject var viewModel : MainViewModel
-    @Binding var showRideSheet : Bool
     
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(width: nil, height: 90)
                 .cornerRadius(15)
-                .foregroundColor(Color("uiCapsuleRed"))
+                .foregroundColor(hasCredit ? Color.green : Color("uiCapsuleRed"))
                 .shadow(radius: 10)
             
             HStack {
-                NavigationLink {
-                    RideDetailView(viewModel: viewModel, ride: .constant(viewModel.selectedRide))
-                        .onAppear {
-                            playHaptic()
-                            withAnimation {
-                                viewModel.selectedRide = ride
-                            }
-                        }
-                        .onDisappear {
-                            withAnimation {
-                                viewModel.selectedRide = nil
-                            }
-                        }
-                } label: {
-                    Group {
-                        VStack (alignment: .leading) {
-                            Text(ride.name)
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .foregroundStyle(.white)
-                            
-                            Text(park.name)
-                                .font(.callout)
-                                .foregroundStyle(.white)
-                        }
+                Group {
+                    VStack (alignment: .leading) {
+                        Text(ride.name)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.white)
                         
-                        Spacer()
+                        Text(park.name)
+                            .font(.callout)
+                            .foregroundStyle(.white)
                     }
+                    
+                    Spacer()
                 }
                 
                 if (viewModel.loggedIn) {
                     Button (action: {
                         playHaptic()
+                        if (hasCredit) {
+                            Task.init {
+                                withAnimation {
+                                    viewModel.claimCredit(ride: ride.id, { created in
+                                        hasCredit = created
+                                        
+                                    })
+                                }
+                            }
+                        }
+                        else {
+                            Task.init {
+                                withAnimation {
+                                    viewModel.claimCredit(ride: ride.id, { created in
+                                        hasCredit = created
+                                        
+                                    })
+                                }
+                            }
+                            // Open review
+                            
+                        }
                     }, label: {
                         ZStack {
                             Capsule()
                                 .frame(width: 80, height: 40)
-                                .foregroundStyle(.clear)
+                                .foregroundStyle(.white)
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 20)
-                                        .stroke(Color.white, lineWidth: 2)
+                                        .stroke(hasCredit ? Color.green : Color.white, lineWidth: 2)
                                 )
                             
-                            Text("Claim")
+                            Text(hasCredit ? "Ride" : "Claim")
                                 .fontWeight(.bold)
-                                .foregroundStyle(.white)
+                                .foregroundStyle(hasCredit ? .green : Color("uiCapsuleRed"))
+                                .transition(.opacity)
                             
                         }
                     })
@@ -79,17 +87,17 @@ struct RideCapsuleView: View {
         .padding(.horizontal, 20)
         .padding(.vertical, 4)
         .onAppear {
-            // check if user already has credit, then show ride button if so
-            
+            hasCredit = viewModel.checkCredit(ride: ride.id)
             park = viewModel.parks.first(where: {$0.id == ride.parkID}) ?? park
         }
         .onTapGesture {
-            viewModel.selectedRide = ride
-            showRideSheet = true
+            withAnimation {
+                viewModel.selectedRide = ride
+            }
         }
     }
 }
 
 #Preview {
-    RideCapsuleView(ride: Ride(id: "", name: "A ride", parkID: "esdfsefsfsdfs", manufacturer: "Nick Inc", opening: Date(), legacy: false, height: 10.2, length: 12.2, inversions: 2, thrillLevel: "Thrilling", type: "Stand Up", speed: 200.3, description: "It's a big one"), viewModel: MainViewModel(), showRideSheet: .constant(false))
+    RideCapsuleView(ride: Ride(id: "", name: "A ride", parkID: "esdfsefsfsdfs", manufacturer: "Nick Inc", opening: Date(), legacy: false, height: 10.2, length: 12.2, inversions: 2, thrillLevel: "Thrilling", type: "Stand Up", speed: 200.3, description: "It's a big one"), viewModel: MainViewModel())
 }

@@ -61,4 +61,14 @@ class FirestoreManager {
         
         return User(id: id, handle: handle, email: email, favPark: favPark, admin: admin, joined: joined)
     }
+    
+    func makeCredit(document: DocumentSnapshot) -> Credit {
+        let id = document.documentID
+        let data = document.data()
+        let userID = data?["userID"] as? String ?? "Unknown"
+        let rideID = data?["rideID"] as? String ?? ""
+        let created = data?["created"] as? Date ?? Date()
+        
+        return Credit(id: id, userID: userID, rideID: rideID, created: created)
+    }
 }

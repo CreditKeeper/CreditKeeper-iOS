@@ -15,6 +15,8 @@ import Firebase
 final class MainViewModel: ObservableObject {
     @Published var rides = [Ride]()
     @Published var parks = [Park]()
+    @Published var myCredits = [Credit]()
+    @Published var latestCredits = [Credit]()
     @Published var firestoreManager = FirestoreManager()
     @Published var selectedRide : Ride? = nil
     @Published var selectedPark : Park? = nil
@@ -60,6 +62,7 @@ final class MainViewModel: ObservableObject {
     func getAllTheGoods() {
         getAllParks()
         getAllRides()
+        getMyCredits()
     }
       
     func getAllParks() {
@@ -101,7 +104,51 @@ final class MainViewModel: ObservableObject {
             }
         }
     }
+    // this is currently getting all credits, change it to get my credits.
+    func getMyCredits() {
+        print("Retrieving my credits from Firebase...")
+        var credits = [Credit]()
+        
+        Task.init {
+            do {
+                let query = try await self.firestoreManager.db.collection("credit").getDocuments(source: .server)
+                for document in query.documents {
+                    credits.append(self.firestoreManager.makeCredit(document: document))
+                }
+                if (credits.count > 0) {
+                    self.myCredits = credits
+                    print("Credits gathered!")
+                } else {
+                    print("Got zero credits.")
+                }
+            }
+        }
+    }
     
+    func claimCredit(ride: String, _ completion: @escaping (Bool) -> Void) {
+        var ref: DocumentReference? = nil
+        let date = Date()
+        ref = self.firestoreManager.db.collection("credit").addDocument(data: [
+            "userID": self.currentUser?.id ?? "",
+            "rideID": ride,
+            "created": date.description
+        ]) { err in
+            if let err = err {
+                print("Error adding credit document: \(err)")
+                completion(false)
+            } else {
+                print("Credit document added with ID: \(ref!.documentID)")
+                withAnimation {
+                    self.myCredits.append(Credit(id: ref!.documentID, userID: self.currentUser?.id ?? "", rideID: ride, created: date))
+                    completion(true)
+                }
+            }
+        }
+    }
+    
+    func checkCredit(ride: String) -> Bool {
+        return self.myCredits.contains(where: {$0.rideID == ride})
+    }
     
     func createUser(email: String, password: String, handle: String, _ completion: @escaping (Bool) -> Void) {
         usernameIsAvailable(username: handle, { available in
@@ -126,7 +173,7 @@ final class MainViewModel: ObservableObject {
                                     self.showAuth = false
                                     let newUser = User(id: UUID().uuidString, handle: handle, email: email, favPark: "", admin: false, joined: Date())
                                     self.currentUser = newUser
-                                    //self.writeUserDocument(user: self.currentUser!)
+                                    self.writeUserDocument(user: self.currentUser!)
                                     completion(true)
                                 }
                             }
@@ -136,6 +183,20 @@ final class MainViewModel: ObservableObject {
             }
         })
     }
+    
+    func writeUserDocument(user: User) {
+        let db = Firestore.firestore()
+        let userRef = db.collection("user").document(user.id)
+        
+        userRef.setData(["handle": user.handle,"email": self.currentUser?.email ?? "", "bio": "", "admin": false, "pro": false, "authID": self.currentUser?.id ?? ""]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
+    
     
     func usernameIsAvailable(username: String, _ completion: @escaping (Bool) -> Void) {
         // Get a reference to the users collection

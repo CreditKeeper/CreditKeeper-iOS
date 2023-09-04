@@ -199,9 +199,9 @@
 			children = (
 				EB44A0702AA5332D0008116D /* CreditFeedView.swift */,
 				EB76ED882A9BEBE900EFB341 /* RideCapsuleView.swift */,
+				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,
 				EB44A0772AA54F2C0008116D /* BackButtonView.swift */,
 				EB76ED862A9BEA0A00EFB341 /* SearchFieldView.swift */,
-				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,
 			);
 			path = ChildViews;
 			sourceTree = "<group>";

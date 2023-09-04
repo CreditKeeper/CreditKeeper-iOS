@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct RideDetailView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @ObservedObject var viewModel : MainViewModel
     @Binding var ride : Ride?
     
     var body: some View {
         ZStack {
-            Color(.black)
+            Rectangle()
                 .ignoresSafeArea()
+                .foregroundStyle(.thinMaterial)
             
             ScrollView {
                 VStack {
@@ -43,7 +43,9 @@ struct RideDetailView: View {
                     
                     HStack {
                         Button(action: {
-                            self.presentationMode.wrappedValue.dismiss()
+                            withAnimation {
+                                viewModel.selectedRide = nil
+                            }
                         }, label: {
                             HStack {
                                 Image(systemName: "arrow.left")
@@ -62,7 +64,7 @@ struct RideDetailView: View {
                 }
             }
         }
-        .transition(.move(edge: .leading))
+        .transition(.move(edge: .bottom))
         .navigationBarBackButtonHidden()
     }
 }

@@ -11,7 +11,6 @@ struct RidePageView: View {
     @ObservedObject var viewModel : MainViewModel
     @State private var searchText = ""
     @State private var atAPark = true
-    @State private var showRideSheet = false
     
     var body: some View {
         NavigationView {
@@ -29,7 +28,7 @@ struct RidePageView: View {
                             .multilineTextAlignment(.center)
                         
                         ForEach(viewModel.rides, id: \.self) { ride in
-                                RideCapsuleView(ride: ride, viewModel: viewModel, showRideSheet: $showRideSheet)
+                            RideCapsuleView(ride: ride, viewModel: viewModel)
                         }
                         .padding(.bottom, -10)
                         
@@ -37,18 +36,18 @@ struct RidePageView: View {
                     .padding(.horizontal, 10)
                     .padding(.bottom, 120)
                 }
+                
+                if (viewModel.selectedRide != nil) {
+                    RideDetailView(viewModel: viewModel, ride: $viewModel.selectedRide)
+                        .transition(.move(edge: .bottom))
+                }
             }
         }
     }
 }
 
 #Preview {
-    ZStack {
-        RadialGradient(gradient: Gradient(colors: [.red, .black]), center: .center, startRadius: 2, endRadius: 650)
-            .ignoresSafeArea()
-        
-        RidePageView(viewModel: MainViewModel())
-    }
+    RidePageView(viewModel: MainViewModel())
 }
 
 
