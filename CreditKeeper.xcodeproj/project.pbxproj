@@ -40,7 +40,6 @@
 		EBCC85652A9826C000416D97 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85642A9826C000416D97 /* Persistence.swift */; };
 		EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85662A9826C000416D97 /* CreditKeeper.xcdatamodeld */; };
 		EBCC856A2A9826C000416D97 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85692A9826C000416D97 /* MainView.swift */; };
-		EBCC856C2A9826C400416D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856B2A9826C400416D97 /* Assets.xcassets */; };
 		EBCC85702A9826C400416D97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856F2A9826C400416D97 /* Preview Assets.xcassets */; };
 		EBCC857A2A9826C400416D97 /* CreditKeeperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85792A9826C400416D97 /* CreditKeeperTests.swift */; };
 		EBCC85842A9826C400416D97 /* CreditKeeperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCC85832A9826C400416D97 /* CreditKeeperUITests.swift */; };
@@ -54,6 +53,7 @@
 		EBE4B75F2AA26365007CF67F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B75E2AA26365007CF67F /* UserModel.swift */; };
 		EBE4B7612AA263C5007CF67F /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7602AA263C5007CF67F /* CreditModel.swift */; };
 		EBE4B7632AA2675B007CF67F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7622AA2675A007CF67F /* MainViewModel.swift */; };
+		EBEBEF9D2AA758E000880C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856B2A9826C400416D97 /* Assets.xcassets */; };
 		EBF5A6262AA682130004B904 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5A6252AA682130004B904 /* ReviewView.swift */; };
 		EBF5A6282AA682810004B904 /* ClaimButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5A6272AA682810004B904 /* ClaimButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -109,7 +109,7 @@
 		EBCC85642A9826C000416D97 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EBCC85672A9826C000416D97 /* CreditKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CreditKeeper.xcdatamodel; sourceTree = "<group>"; };
 		EBCC85692A9826C000416D97 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		EBCC856B2A9826C400416D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBCC856B2A9826C400416D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/Assets.xcassets"; sourceTree = "<absolute>"; };
 		EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreditKeeper.entitlements; sourceTree = "<group>"; };
 		EBCC856F2A9826C400416D97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBCC85752A9826C400416D97 /* CreditKeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditKeeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -436,8 +436,8 @@
 				EBCC85702A9826C400416D97 /* Preview Assets.xcassets in Resources */,
 				B51893372A9BB4810073D3B1 /* Build.xcconfig in Resources */,
 				EBE4B7562AA25F00007CF67F /* GoogleService-Info.plist in Resources */,
+				EBEBEF9D2AA758E000880C0D /* Assets.xcassets in Resources */,
 				B51893362A9BB4810073D3B1 /* CodeSigning.xcconfig in Resources */,
-				EBCC856C2A9826C400416D97 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

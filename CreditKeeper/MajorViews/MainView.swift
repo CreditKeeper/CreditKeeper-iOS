@@ -55,8 +55,7 @@ struct MainView: View {
                 
                 if (viewModel.selectedRide == nil) {
                     VStack {
-                        if (selectedTab != .profile &&
-                            !viewModel.loggedIn) {
+                        if (selectedTab != .profile || viewModel.loggedIn) {
                             HeaderView(selectedTab: $selectedTab)
                                 .transition(.slide)
                         }
