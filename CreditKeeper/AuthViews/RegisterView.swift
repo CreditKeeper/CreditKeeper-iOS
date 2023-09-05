@@ -19,7 +19,6 @@ struct RegisterView: View {
     @State private var networkProgress = false
     @Binding var registeringUser : Bool
     
-
     var body: some View {
         VStack {
             Button(action: {

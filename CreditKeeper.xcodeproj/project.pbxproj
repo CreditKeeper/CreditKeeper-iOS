@@ -55,6 +55,7 @@
 		EBE4B7632AA2675B007CF67F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7622AA2675A007CF67F /* MainViewModel.swift */; };
 		EBEBEF9D2AA758E000880C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856B2A9826C400416D97 /* Assets.xcassets */; };
 		EBEBEF9F2AA794BA00880C0D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBEF9E2AA794BA00880C0D /* AuthView.swift */; };
+		EBEBEFA12AA7A66500880C0D /* StampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBEFA02AA7A66500880C0D /* StampView.swift */; };
 		EBF5A6262AA682130004B904 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5A6252AA682130004B904 /* ReviewView.swift */; };
 		EBF5A6282AA682810004B904 /* ClaimButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5A6272AA682810004B904 /* ClaimButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		EBE4B7602AA263C5007CF67F /* CreditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = "<group>"; };
 		EBE4B7622AA2675A007CF67F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EBEBEF9E2AA794BA00880C0D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		EBEBEFA02AA7A66500880C0D /* StampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampView.swift; sourceTree = "<group>"; };
 		EBF5A6252AA682130004B904 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		EBF5A6272AA682810004B904 /* ClaimButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,6 +210,7 @@
 				EB76ED882A9BEBE900EFB341 /* RideCapsuleView.swift */,
 				EBF5A6272AA682810004B904 /* ClaimButtonView.swift */,
 				EBF5A6252AA682130004B904 /* ReviewView.swift */,
+				EBEBEFA02AA7A66500880C0D /* StampView.swift */,
 				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,
 				EB44A0772AA54F2C0008116D /* BackButtonView.swift */,
 				EB76ED862A9BEA0A00EFB341 /* SearchFieldView.swift */,
@@ -503,6 +506,7 @@
 				EB88A61F2A9D87AE00819834 /* ProfileSettingCapsules.swift in Sources */,
 				EBDBF3772AA5059D00A3ED1D /* RideDetailView.swift in Sources */,
 				EBE4B7582AA260F8007CF67F /* FirestoreManager.swift in Sources */,
+				EBEBEFA12AA7A66500880C0D /* StampView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,8 +689,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -731,8 +735,8 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -758,8 +762,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8Q8DM58C6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -781,8 +785,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8Q8DM58C6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -803,8 +807,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8Q8DM58C6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -825,8 +829,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8Q8DM58C6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -40,12 +40,11 @@ struct HeaderView: View {
     HeaderView(selectedTab: .constant(.feed))
 }
 
-
 extension Tab {
     func getName(tab : Tab) -> String {
         switch (tab) {
         case .feed :
-            return "CreditKeeper"
+            return "Feed"
             
         case .ride :
             return "Rides"

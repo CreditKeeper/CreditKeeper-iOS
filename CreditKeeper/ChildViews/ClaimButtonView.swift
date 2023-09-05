@@ -15,83 +15,86 @@ struct ClaimButtonView: View {
     @State private var networkProgress = false
     
     var body: some View {
-        if (networkProgress) {
-            ProgressView()
-                .progressViewStyle(.circular)
-        } else {
-            Button (action: {
-                playHaptic()
-                if (hasCredit) {
-                    Task.init {
-                        withAnimation {
-                            networkProgress = true
-                            viewModel.claimCredit(ride: ride.id, { created in
-                                hasCredit = created
-                                playHaptic()
-                                networkProgress = false
-                                
-                            })
-                        }
+        Button (action: {
+            playHaptic()
+            if (hasCredit) {
+                Task.init {
+                    withAnimation {
+                        networkProgress = true
+                        viewModel.claimCredit(ride: ride.id, { created in
+                            hasCredit = created
+                            playHaptic()
+                            networkProgress = false
+                            
+                        })
                     }
                 }
-                else {
-                    Task.init {
-                        withAnimation {
-                            networkProgress = true
-                            viewModel.claimCredit(ride: ride.id, { created in
-                                hasCredit = created
-                                
-                                if (!ride.legacy) {
-                                    showReview = true
-                                }
-                                playHaptic()
-                                networkProgress = false
-                            })
-                        }
+            }
+            else {
+                Task.init {
+                    withAnimation {
+                        networkProgress = true
+                        viewModel.claimCredit(ride: ride.id, { created in
+                            hasCredit = created
+                            
+                            if (!ride.legacy) {
+                                showReview = true
+                            }
+                            playHaptic()
+                            networkProgress = false
+                        })
                     }
                 }
-            }, label: {
-                if (!hasCredit) {
+            }
+        }, label: {
+            if (!hasCredit) {
+                ZStack {
+                    Capsule()
+                        .frame(width: 80, height: 40)
+                        .foregroundStyle(.white)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(hasCredit ? Color("uiCapsuleGreen") : Color.white, lineWidth: 2)
+                        )
+                    if (networkProgress) {
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                    } else {
+                        Text("Claim")
+                            .fontWeight(.bold)
+                            .foregroundStyle(ride.legacy ? Color("") : Color("uiCapsuleRed"))
+                            .transition(.opacity)
+                    }
+                    
+                }
+            } else {
+                if (ride.legacy) {
+                    Image(systemName: "chevron.right")
+                        .foregroundStyle(.white)
+                        .padding()
+                } else {
                     ZStack {
                         Capsule()
                             .frame(width: 80, height: 40)
                             .foregroundStyle(.white)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
-                                    .stroke(hasCredit ? Color("uiCapsuleGreen") : Color.white, lineWidth: 2)
+                                    .stroke(.green, lineWidth: 2)
                             )
-                        
-                        Text("Claim")
-                            .fontWeight(.bold)
-                            .foregroundStyle(ride.legacy ? Color("") : Color("uiCapsuleRed"))
-                            .transition(.opacity)
-                        
-                    }
-                } else {
-                    if (ride.legacy) {
-                        Image(systemName: "chevron.right")
-                            .foregroundStyle(.white)
-                            .padding()
-                    } else {
-                        ZStack {
-                            Capsule()
-                                .frame(width: 80, height: 40)
-                                .foregroundStyle(.white)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 20)
-                                        .stroke(.green, lineWidth: 2)
-                                )
-                            
+                        if (networkProgress) {
+                            ProgressView()
+                                .progressViewStyle(.circular)
+                        } else {
                             Text("Ride")
                                 .fontWeight(.bold)
                                 .foregroundStyle(.green)
                                 .transition(.opacity)
-                            
                         }
                     }
                 }
-            })
-        }
+            }
+        })
+        .disabled(networkProgress)
     }
 }
 

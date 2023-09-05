@@ -31,8 +31,6 @@ struct BackButtonView: View {
 #Preview {
     VStack {
         BackButtonView(text: "Back", color: Color.blue)
-        BackButtonView(text: "Filters", color: Color.green)
         BackButtonView(text: "Log In", color: Color.orange)
-        BackButtonView(text: "Save", color: Color.red)
     }
 }

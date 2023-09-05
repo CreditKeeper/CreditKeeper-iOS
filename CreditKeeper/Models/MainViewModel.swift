@@ -29,7 +29,6 @@ final class MainViewModel: ObservableObject {
     @Published var showAuth = false
     @Published var loginType = ""
     @Published var onboarding = false
-    
     @AppStorage("onboarding") var onboardingUD = true
     
     let defaults = UserDefaults.standard
@@ -42,7 +41,7 @@ final class MainViewModel: ObservableObject {
             if let storedUser = Auth.auth().currentUser {
                 self.loggedIn = true
                 self.initUser(user: storedUser)
-                
+                getMyCredits()
             }
         }
         
@@ -71,7 +70,6 @@ final class MainViewModel: ObservableObject {
     func getAllTheGoods() {
         getAllParks()
         getAllRides()
-        getMyCredits()
     }
       
     func getAllParks() {

@@ -35,7 +35,6 @@ struct TabBarView: View {
     }
     
     var body: some View {
-
         VStack {
             if (selectedTab == .ride) {
                 SearchFieldView(viewModel: viewModel, searchText: $searchText)

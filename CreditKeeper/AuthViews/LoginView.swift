@@ -25,21 +25,19 @@ struct LoginView: View {
                 Group {
                     Text("Ready to Ride?")
                         .bold()
-                        .foregroundStyle(.white)
                         .font(.title)
                         .shadow(radius: 10)
                         .padding(.top)
                     
                     Text("Log in to get started!")
-                        .foregroundStyle(.white)
                         .font(.callout)
                         .padding(.bottom)
                     
                     Image(systemName: "person.3.fill")
-                        .foregroundStyle(.white)
                         .font(.system(size: 70))
                         .shadow(radius: 10)
                 }
+                .foregroundStyle(.white)
                 
                 Text("Use your Email and Password:")
                     .bold()
@@ -185,6 +183,7 @@ struct LoginView: View {
                         .frame(height: 50)
                         .padding(.horizontal)
                         .autocapitalization(.none)
+                        .textFieldStyle(RoundedTextFieldStyle())
                     
                     Button(action: {
                         withAnimation {
