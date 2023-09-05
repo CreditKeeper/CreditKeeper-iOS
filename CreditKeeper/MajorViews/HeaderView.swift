@@ -16,7 +16,7 @@ struct HeaderView: View {
                 Text(selectedTab.getName(tab: selectedTab))
                     .fontWeight(.bold)
                     .font(.title)
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                                 
                 Spacer()
                 
@@ -24,7 +24,7 @@ struct HeaderView: View {
                     playHaptic()
                 }, label: {
                    Image(systemName: "cloud.sun")
-                        .foregroundColor(.white)
+                        .foregroundStyle(.white)
                 })
             }
             .padding(.bottom, 10)

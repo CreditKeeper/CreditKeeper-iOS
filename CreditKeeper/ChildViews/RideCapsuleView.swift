@@ -15,13 +15,12 @@ struct RideCapsuleView: View {
     @State private var showReview = false
     @ObservedObject var viewModel : MainViewModel
     
-    
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(width: nil, height: 90)
                 .cornerRadius(15)
-                .foregroundStyle(ride.legacy ? .yellow : (hasCredit ? .green :  Color("uiCapsuleRed")))
+                .foregroundStyle(ride.legacy ? Color("uiCapsuleYellow") : (hasCredit ? Color("uiCapsuleGreen") :  Color("uiCapsuleRed")))
             
             if (showReview) {
                 ReviewView(viewModel: viewModel, ride: $ride, showReview: $showReview)
@@ -53,6 +52,23 @@ struct RideCapsuleView: View {
                     }
                 }
                 .padding()
+            }
+            
+            if (hasCredit) {
+                VStack {
+                    HStack {
+                        Spacer()
+                        
+                        ZStack {
+                            Circle()
+                                .foregroundStyle(.white)
+                                .frame(width: 30)
+                            
+                            Text("✔")
+                        }
+                    }
+                    .offset(x: 5, y: -30)
+                }
             }
         }
         .padding(.horizontal, 20)

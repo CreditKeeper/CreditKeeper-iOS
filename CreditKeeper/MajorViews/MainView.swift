@@ -13,7 +13,7 @@ struct MainView: View {
     @State private var onboarding : Bool = false
     @State private var searchText : String = ""
     @State private var showTabView = true
-    @State private var signingUp = false
+    @State private var registeringUser = false
     @StateObject var viewModel : MainViewModel
     
     var body: some View {
@@ -42,18 +42,14 @@ struct MainView: View {
                             ProfilePageView(viewModel: viewModel)
                                 .environment(\.colorScheme, .dark)
                                 .transition(.slide)
-                        } else if (signingUp) {
-                            RegisterView(viewModel: viewModel)
-                            
                         } else {
-                            LoginView(viewModel: viewModel, signingUp: $signingUp)
-                            
+                            AuthView(viewModel: viewModel, registeringUser: $registeringUser)
                         }
                     }
                 }
                 .ignoresSafeArea()
                 
-                if (viewModel.selectedRide == nil) {
+                if (viewModel.selectedRide == nil && !registeringUser) {
                     VStack {
                         if (selectedTab != .profile || viewModel.loggedIn) {
                             HeaderView(selectedTab: $selectedTab)

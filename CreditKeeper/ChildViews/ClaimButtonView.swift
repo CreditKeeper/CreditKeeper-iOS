@@ -58,12 +58,12 @@ struct ClaimButtonView: View {
                             .foregroundStyle(.white)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
-                                    .stroke(hasCredit ? Color.green : Color.white, lineWidth: 2)
+                                    .stroke(hasCredit ? Color("uiCapsuleGreen") : Color.white, lineWidth: 2)
                             )
                         
                         Text("Claim")
                             .fontWeight(.bold)
-                            .foregroundStyle(ride.legacy ? .yellow : Color("uiCapsuleRed"))
+                            .foregroundStyle(ride.legacy ? Color("") : Color("uiCapsuleRed"))
                             .transition(.opacity)
                         
                     }

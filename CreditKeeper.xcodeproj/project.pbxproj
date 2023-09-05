@@ -54,6 +54,7 @@
 		EBE4B7612AA263C5007CF67F /* CreditModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7602AA263C5007CF67F /* CreditModel.swift */; };
 		EBE4B7632AA2675B007CF67F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7622AA2675A007CF67F /* MainViewModel.swift */; };
 		EBEBEF9D2AA758E000880C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBCC856B2A9826C400416D97 /* Assets.xcassets */; };
+		EBEBEF9F2AA794BA00880C0D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBEBEF9E2AA794BA00880C0D /* AuthView.swift */; };
 		EBF5A6262AA682130004B904 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5A6252AA682130004B904 /* ReviewView.swift */; };
 		EBF5A6282AA682810004B904 /* ClaimButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF5A6272AA682810004B904 /* ClaimButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		EBE4B75E2AA26365007CF67F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		EBE4B7602AA263C5007CF67F /* CreditModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModel.swift; sourceTree = "<group>"; };
 		EBE4B7622AA2675A007CF67F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		EBEBEF9E2AA794BA00880C0D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		EBF5A6252AA682130004B904 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		EBF5A6272AA682810004B904 /* ClaimButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +163,7 @@
 		EB44A0722AA534750008116D /* AuthViews */ = {
 			isa = PBXGroup;
 			children = (
+				EBEBEF9E2AA794BA00880C0D /* AuthView.swift */,
 				EB44A0732AA5348F0008116D /* RegisterView.swift */,
 				EB44A0792AA559AD0008116D /* LoginView.swift */,
 			);
@@ -470,6 +473,7 @@
 				EB76ED7B2A9BD16100EFB341 /* IntroToCreditView.swift in Sources */,
 				EB44A06C2AA529190008116D /* LocationManager.swift in Sources */,
 				EB44A0782AA54F2C0008116D /* BackButtonView.swift in Sources */,
+				EBEBEF9F2AA794BA00880C0D /* AuthView.swift in Sources */,
 				EB44A07A2AA559AD0008116D /* LoginView.swift in Sources */,
 				EB44A06F2AA52BD10008116D /* MapView.swift in Sources */,
 				EBE4B7612AA263C5007CF67F /* CreditModel.swift in Sources */,

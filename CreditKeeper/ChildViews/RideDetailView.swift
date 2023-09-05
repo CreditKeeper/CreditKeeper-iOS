@@ -64,7 +64,7 @@ struct RideDetailView: View {
                 }
             }
         }
-        .transition(.move(edge: .bottom))
+        .transition(.move(edge: .trailing))
         .navigationBarBackButtonHidden()
     }
 }

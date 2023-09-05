@@ -19,7 +19,7 @@ struct ReviewView: View {
                 Image(systemName: index <= rating ? "star.fill" : "star")
                     .resizable()
                     .frame(width: 30, height: 30)
-                    .foregroundColor(index <= rating ? .yellow : .gray)
+                    .foregroundStyle(index <= rating ? Color("uiCapsuleYellow") : .gray)
                     .onTapGesture {
                         rating = index
                         playHaptic()

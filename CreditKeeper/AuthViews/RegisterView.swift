@@ -17,115 +17,97 @@ struct RegisterView: View {
     @State private var handle = ""
     @State private var confirmPassword = ""
     @State private var networkProgress = false
+    @Binding var registeringUser : Bool
     
 
     var body: some View {
-        ZStack {
-            RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .profile), .black]), center: .center, startRadius: 2, endRadius: 650)
-                .ignoresSafeArea()
+        VStack {
+            Button(action: {
+                withAnimation {
+                    registeringUser = false
+                }
+            }, label: {
+                BackButtonView(text: "Log In Instead", color: Color.white)
+            })
             
-            VStack {
-                Button(action: {
-                    withAnimation {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-                }, label: {
-                    BackButtonView(text: "Log In Instead", color: Color.white)
-                })
-                
-                Text("Register as a New User")
-                    .font(.title)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.white)
-                    .padding(.top, 20)
+            Spacer()
+            
+            Text("Register as a New User")
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.white)
+                .padding(.top, 20)
 
+            Group {
+                TextField("Email Address", text: $email)
+                    .padding(.horizontal)
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                
+                ZStack {
+                    TextField("Username", text: $handle)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled(true)
+                        .limitInputLength(value: $handle, length: 20)
+                        .padding(.horizontal, 15)
+                        .padding(.top, 3)
+                    
+                    Text("\(handle.count)/20")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .padding(.trailing, 30)
+                }
+                SecureField("Password", text: $password)
+                    .border(password != confirmPassword ? Color.red : Color.clear)
+                    .padding(.horizontal)
+                
+                SecureField("Confirm password", text: $confirmPassword)
+                    .border(password != confirmPassword ? Color.red : Color.clear)
+                    .padding(.horizontal)
+            }
+            .textFieldStyle(RoundedTextFieldStyle())
+            .frame(maxWidth: 350)
+            
+            if (!networkProgress) {
                 Group {
-                    TextField("Email Address", text: $email)
-                        .padding(.horizontal)
-                        .keyboardType(.emailAddress)
-                        .autocapitalization(.none)
-                    
-                    ZStack {
-                        TextField("Username", text: $handle)
-                            .textInputAutocapitalization(.never)
-                            .autocorrectionDisabled(true)
-                            .limitInputLength(value: $handle, length: 20)
-                            .padding(.horizontal)
-                        
-                        Text("\(handle.count)/20")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .padding(.trailing, 30)
-                    }
-                    SecureField("Password", text: $password)
-                        .border(password != confirmPassword ? Color.red : Color.clear)
-                        .padding(.horizontal)
-                    
-                    SecureField("Confirm password", text: $confirmPassword)
-                        .border(password != confirmPassword ? Color.red : Color.clear)
-                        .padding(.horizontal)
-                }
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .frame(maxWidth: 350)
-                
-                if viewModel.authError != "" {
-                    ZStack {
-                        Rectangle()
-                            .frame(width: nil, height: 100)
-                            .foregroundStyle(.ultraThinMaterial)
-                            .padding()
-                            .cornerRadius(20)
-                        
-                        Text(viewModel.authError)
-                            .foregroundColor(.red)
-                            .padding(.horizontal)
-                            .fixedSize(horizontal: false, vertical: true)
-                            .multilineTextAlignment(.center)
-                            .onAppear {
-                                playHaptic()
-                            }
-                    }
-                }
-                
-                if (!networkProgress) {
-                    Group {
-                        Button(action: {
-                            networkProgress = true
-                            playHaptic()
-                            withAnimation {
-                                print("Registering new user")
-                                viewModel.createUser(email: email, password: password, handle: handle) { created in
-                                    if (created) {
-                                        self.presentationMode.wrappedValue.dismiss()
-                                    }
-                                    networkProgress = false
+                    Button(action: {
+                        networkProgress = true
+                        playHaptic()
+                        withAnimation {
+                            print("Registering new user")
+                            viewModel.createUser(email: email, password: password, handle: handle) { created in
+                                if (created) {
+                                    self.presentationMode.wrappedValue.dismiss()
                                 }
+                                networkProgress = false
                             }
-                        }, label: {
-                            ZStack {
-                                Capsule()
-                                    .frame(width: 100, height: 40)
-                                    .foregroundColor(.blue)
-                                
-                                Text("Register")
-                                    .foregroundColor(.white)
-                                    .fontWeight(.bold)
-                            }
-                        })
-                        .disabled(password != confirmPassword)
-                        .padding()
-                        
-                        Spacer()
-                    }
-                } else {
-                    ProgressView()
+                        }
+                    }, label: {
+                        ZStack {
+                            Capsule()
+                                .frame(width: 100, height: 40)
+                                .foregroundStyle(.blue)
+                            
+                            Text("Register")
+                                .bold()
+                                .foregroundStyle(.white)
+                        }
+                    })
+                    .disabled(password != confirmPassword)
+                    .padding()
+                    
+                    Spacer()
                 }
+            } else {
+                ProgressView()
             }
-            .padding(.top, 80)
-            .onDisappear() {
-                viewModel.authError = ""
-            }
+        }
+        .padding(.top, 50)
+        .alert("Auth Alert", isPresented: .constant(viewModel.authError != ""), actions: {Button (action: {
+            viewModel.authError = ""}, label: {Text("Ok")})}, message: {Text(viewModel.authError)})
+        .onDisappear() {
+            viewModel.authError = ""
         }
     }
 }
@@ -149,5 +131,5 @@ extension View {
 }
 
 #Preview {
-    RegisterView(viewModel: MainViewModel())
+    RegisterView(viewModel: MainViewModel(), registeringUser: .constant(true))
 }

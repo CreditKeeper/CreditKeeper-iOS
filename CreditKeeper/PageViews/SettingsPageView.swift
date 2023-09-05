@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsPageView: View {
     var body: some View {
         Text("Settings Page")
-            .foregroundColor(.white)
+            .foregroundStyle(.white)
     }
 }
 

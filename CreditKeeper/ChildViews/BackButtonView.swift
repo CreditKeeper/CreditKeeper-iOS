@@ -16,12 +16,12 @@ struct BackButtonView: View {
     var body: some View {
         HStack {
             Image(systemName: "arrow.left")
-                .foregroundColor(color)
+                .foregroundStyle(color)
                 .font(.system(size: 30))
             
             Text(text)
-                .foregroundColor(color)
-                .fontWeight(.bold)
+                .bold()
+                .foregroundStyle(color)
             
             Spacer()
         }.padding([.leading, .top])

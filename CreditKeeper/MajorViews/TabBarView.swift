@@ -74,7 +74,7 @@ struct TabBarView: View {
                         }
                     })
                     .scaleEffect(selectedTab == tab ? 1.25 : 1.0)
-                    .foregroundColor(selectedTab == tab ? tabColor : .white)
+                    .foregroundStyle(selectedTab == tab ? tabColor : .white)
                     .font(.system(size: 22))
                     
                     Spacer()
