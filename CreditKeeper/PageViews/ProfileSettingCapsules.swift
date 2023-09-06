@@ -8,32 +8,41 @@
 import SwiftUI
 
 struct ProfileSettingCapsules: View {
+    @Binding var showSettings : Bool
+    @Binding var editProflie : Bool
+    
     var body: some View {
         Group {
             HStack {
                 Button (action: {
-                    
+                    withAnimation {
+                        editProflie = true
+                    }
                 }, label: {
                     ZStack {
-                        Capsule()
-                            .foregroundStyle(Color("uiCapsuleOrange"))
-                            .frame(width: 100, height: 30)
-                        Text("Edit Profile")
+                        Circle()
                             .foregroundStyle(.white)
+                            .frame(width: 30)
+                        
+                        Image(systemName: "pencil.circle.fill")
+                            .font(.system(size: 30))
+                            .foregroundStyle(.orange)
                     }
                 })
                 
-                Spacer()
-                
                 Button (action: {
-                    
+                    withAnimation {
+                        showSettings = true
+                    }
                 }, label: {
                     ZStack {
-                        Capsule()
-                            .foregroundStyle(Color("uiCapsuleOrange"))
-                            .frame(width: 100, height: 30)
-                        Text("Settings")
+                        Circle()
                             .foregroundStyle(.white)
+                            .frame(width: 30)
+                        
+                        Image(systemName: "gear.circle.fill")
+                            .font(.system(size: 30))
+                            .foregroundStyle(.orange)
                     }
                 })
             }
@@ -43,5 +52,5 @@ struct ProfileSettingCapsules: View {
 }
 
 #Preview {
-    ProfileSettingCapsules()
+    ProfileSettingCapsules(showSettings: .constant(false), editProflie: .constant(false))
 }

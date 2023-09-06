@@ -67,7 +67,7 @@ struct RideCapsuleView: View {
                             Text("✔")
                         }
                     }
-                    .offset(x: 5, y: -30)
+                    .offset(x: 8, y: -35)
                 }
             }
         }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfilePageView: View {
     @StateObject var viewModel : MainViewModel
+    @Binding var showSettings : Bool
+    @Binding var editProfile : Bool
     
     var body: some View {
         ZStack {
@@ -29,7 +31,7 @@ struct ProfilePageView: View {
                     }
                     .padding()
                     
-                    ProfileSettingCapsules()
+                    ProfileSettingCapsules(showSettings: $showSettings, editProflie: $editProfile)
                     
                     Rectangle()
                         .frame(width: nil, height: 50)
@@ -84,6 +86,10 @@ struct ProfilePageView: View {
                 }
             }
             .padding(.top, 100)
+            
+            if (showSettings) {
+                SettingsPageView(viewModel: viewModel, showSettings: $showSettings)
+            }
         }
     }
 }
@@ -93,7 +99,7 @@ struct ProfilePageView: View {
         RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 2, endRadius: 650)
             .ignoresSafeArea()
         
-        ProfilePageView(viewModel: MainViewModel())
+        ProfilePageView(viewModel: MainViewModel(), showSettings: .constant(false), editProfile: .constant(false))
 
     }
 }

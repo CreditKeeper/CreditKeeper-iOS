@@ -14,6 +14,8 @@ struct MainView: View {
     @State private var searchText : String = ""
     @State private var showTabView = true
     @State private var registeringUser = false
+    @State private var showSettings = false
+    @State private var editProfile = false
     @StateObject var viewModel : MainViewModel
     
     var body: some View {
@@ -39,7 +41,7 @@ struct MainView: View {
                         
                     case .profile :
                         if (viewModel.loggedIn) {
-                            ProfilePageView(viewModel: viewModel)
+                            ProfilePageView(viewModel: viewModel, showSettings: $showSettings, editProfile: $editProfile)
                                 .environment(\.colorScheme, .dark)
                                 .transition(.slide)
                         } else {
@@ -49,7 +51,7 @@ struct MainView: View {
                 }
                 .ignoresSafeArea()
                 
-                if (viewModel.selectedRide == nil && !registeringUser) {
+                if (viewModel.selectedRide == nil && !registeringUser && !showSettings && !editProfile) {
                     VStack {
                         if (selectedTab != .profile || viewModel.loggedIn) {
                             HeaderView(selectedTab: $selectedTab)
@@ -59,6 +61,7 @@ struct MainView: View {
                         Spacer()
                         
                         TabBarView(viewModel: viewModel, selectedTab: $selectedTab, searchText: $searchText)
+                        
                     }.transition(.opacity)
                 }
             }
