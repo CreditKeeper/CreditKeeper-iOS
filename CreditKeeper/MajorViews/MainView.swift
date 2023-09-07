@@ -56,7 +56,7 @@ struct MainView: View {
                     VStack {
                         if (selectedTab != .profile || viewModel.loggedIn) {
                             HeaderView(selectedTab: $selectedTab)
-                                .transition(.slide)
+                                .transition(.move(edge: .top))
                         }
                         
                         Spacer()
