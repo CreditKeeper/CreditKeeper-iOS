@@ -62,11 +62,10 @@ struct RideDetailView: View {
                     }
                     .padding(.horizontal)
                 }
-            }
+            }.padding(.vertical, 50)
         }
         .transition(.move(edge: .trailing))
         .navigationBarBackButtonHidden()
-        .padding(.vertical, 50)
     }
 }
 
