@@ -17,7 +17,7 @@ struct HeaderView: View {
                     .fontWeight(.bold)
                     .font(.title)
                     .foregroundStyle(.white)
-                                
+    
                 Spacer()
                 
                 // add in weather

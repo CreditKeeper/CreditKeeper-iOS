@@ -94,6 +94,7 @@ struct RegisterView: View, KeyboardReadable {
                                 self.presentationMode.wrappedValue.dismiss()
                             }
                             networkProgress = false
+                            viewModel.keyboardVisible = false
                         }
                     }
                 }, label: {
