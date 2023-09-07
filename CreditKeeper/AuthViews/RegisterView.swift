@@ -36,12 +36,6 @@ struct RegisterView: View, KeyboardReadable {
                 .foregroundStyle(.white)
                 .padding(.top, 20)
             
-            Text("Sweeeeeeet")
-                .multilineTextAlignment(.center)
-                .foregroundStyle(.white)
-            
-            Spacer()
-            
             Group {
                 TextField("Email Address", text: $email)
                     .padding(.horizontal)
@@ -121,8 +115,11 @@ struct RegisterView: View, KeyboardReadable {
                 .disabled(password != confirmPassword || networkProgress)
                 .padding()
             }
+            
+            Spacer()
         }
         .padding(.top, 50)
+        .padding(.bottom, 50)
         .alert("Auth Alert", isPresented: .constant(viewModel.authError != ""), actions: {Button (action: {
             viewModel.authError = ""}, label: {Text("Ok")})}, message: {Text(viewModel.authError)})
         .onDisappear() {
