@@ -36,11 +36,13 @@ struct LoginView: View, KeyboardReadable {
                     Image(systemName: "person.3.fill")
                         .font(.system(size: 70))
                         .shadow(radius: 10)
+                    
+                    Text("Use your Email and Password:")
+                        .bold()
                 }
                 .foregroundStyle(.white)
                 
-                Text("Use your Email and Password:")
-                    .bold()
+                
                 
                 Group {
                     TextField("Email Address", text: $email)
@@ -128,7 +130,7 @@ struct LoginView: View, KeyboardReadable {
                         ZStack {
                             Capsule()
                                 .frame(width: 200, height: 40)
-                                .foregroundStyle(.purple)
+                                .foregroundStyle(.green)
                             
                             Text("Sign Up with Email")
                                 .bold()

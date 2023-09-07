@@ -35,6 +35,7 @@ struct RideDetailView: View {
                     // all sorts of stuff, including a second place to claim / ride
                     
                 }
+                .padding(.top, 40)
             }
             
             VStack {
@@ -62,7 +63,7 @@ struct RideDetailView: View {
                     }
                     .padding(.horizontal)
                 }
-            }.padding(.vertical, 50)
+            }.padding(.bottom, 40)
         }
         .transition(.move(edge: .trailing))
         .navigationBarBackButtonHidden()
