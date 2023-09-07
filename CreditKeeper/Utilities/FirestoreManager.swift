@@ -67,9 +67,11 @@ class FirestoreManager {
         let data = document.data()
         let userID = data?["userID"] as? String ?? "Unknown"
         let rideID = data?["rideID"] as? String ?? ""
+        let type = data?["type"] as? String ?? "ride"
+        let likes = data?["likes"] as? Int ?? 0
         let created = data?["created"] as? Date ?? Date()
         
-        return Credit(id: id, userID: userID, rideID: rideID, created: created)
+        return Credit(id: id, userID: userID, rideID: rideID, type: type, likes: likes, created: created)
     }
     
     func makeRating(document: DocumentSnapshot) -> Rating {

@@ -24,7 +24,7 @@ struct ClaimButtonView: View {
                 Task.init {
                     withAnimation {
                         networkProgress = true
-                        viewModel.claimCredit(ride: ride.id, { created in
+                        viewModel.claimCredit(ride: ride.id, type: "rode", { created in
                             hasCredit = created
                             confettiCounter+=1
                             playHaptic()
@@ -39,7 +39,7 @@ struct ClaimButtonView: View {
                 Task.init {
                     withAnimation {
                         networkProgress = true
-                        viewModel.claimCredit(ride: ride.id, { created in
+                        viewModel.claimCredit(ride: ride.id, type: "credit", { created in
                             hasCredit = created
                             
                             if (!ride.legacy) {

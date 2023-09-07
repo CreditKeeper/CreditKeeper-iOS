@@ -17,6 +17,7 @@
 		EB44A0782AA54F2C0008116D /* BackButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0772AA54F2C0008116D /* BackButtonView.swift */; };
 		EB44A07A2AA559AD0008116D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0792AA559AD0008116D /* LoginView.swift */; };
 		EB672B942AA94A0300723178 /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB672B932AA94A0300723178 /* RatingModel.swift */; };
+		EB73845D2AAA1C0E006B047F /* CreditCapsuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB73845C2AAA1C0E006B047F /* CreditCapsuleView.swift */; };
 		EB76ED752A9BC35200EFB341 /* NewsCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */; };
 		EB76ED792A9BD15000EFB341 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED782A9BD15000EFB341 /* SplashView.swift */; };
 		EB76ED7B2A9BD16100EFB341 /* IntroToCreditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76ED7A2A9BD16100EFB341 /* IntroToCreditView.swift */; };
@@ -97,6 +98,7 @@
 		EB44A0772AA54F2C0008116D /* BackButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButtonView.swift; sourceTree = "<group>"; };
 		EB44A0792AA559AD0008116D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		EB672B932AA94A0300723178 /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
+		EB73845C2AAA1C0E006B047F /* CreditCapsuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCapsuleView.swift; sourceTree = "<group>"; };
 		EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCarousel.swift; sourceTree = "<group>"; };
 		EB76ED782A9BD15000EFB341 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		EB76ED7A2A9BD16100EFB341 /* IntroToCreditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroToCreditView.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */,
 				EBE06CFC2AAA0E4600AE2D8D /* NewsDetailView.swift */,
 				EB44A0702AA5332D0008116D /* CreditFeedView.swift */,
+				EB73845C2AAA1C0E006B047F /* CreditCapsuleView.swift */,
 			);
 			path = FeedViews;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				EBE4B7582AA260F8007CF67F /* FirestoreManager.swift in Sources */,
 				EBEBEFA12AA7A66500880C0D /* StampView.swift in Sources */,
 				EBE06CF32AA9F79200AE2D8D /* MainViewModel_Auth.swift in Sources */,
+				EB73845D2AAA1C0E006B047F /* CreditCapsuleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

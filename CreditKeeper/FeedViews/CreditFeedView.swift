@@ -10,7 +10,13 @@ import SwiftUI
 struct CreditFeedView: View {
     @ObservedObject var viewModel: MainViewModel
     var body: some View {
-        Text("Yeppers")
+        VStack {
+            ForEach((1...10), id: \.self) { _ in
+                CreditCapsuleview(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 10)
+            }
+            
+            Spacer(minLength: 80)
+        }
     }
 }
 

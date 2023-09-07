@@ -11,5 +11,7 @@ struct Credit: Identifiable {
     var id: String
     let userID: String
     let rideID: String
+    let type: String
+    let likes : Int
     let created: Date
 }

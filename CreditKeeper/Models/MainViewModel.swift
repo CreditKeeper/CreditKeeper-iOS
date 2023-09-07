@@ -153,7 +153,11 @@ class MainViewModel: ObservableObject {
         
         Task.init {
             do {
-                let query = try await self.firestoreManager.db.collection("credit").getDocuments(source: .server)
+                let query = try await self.firestoreManager.db.collection("credit")
+                    .whereField("type", isEqualTo: "credit")
+                    .order(by: "created", descending: true)
+                    .getDocuments(source: .server)
+
                 for document in query.documents {
                     credits.append(self.firestoreManager.makeCredit(document: document))
                 }
@@ -167,12 +171,13 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    func claimCredit(ride: String, _ completion: @escaping (Bool) -> Void) {
+    func claimCredit(ride: String, type: String, _ completion: @escaping (Bool) -> Void) {
         var ref: DocumentReference? = nil
         let date = Date()
         ref = self.firestoreManager.db.collection("credit").addDocument(data: [
             "userID": self.currentUser?.id ?? "",
             "rideID": ride,
+            "type": type,
             "created": date.description
         ]) { err in
             if let err = err {
@@ -181,7 +186,7 @@ class MainViewModel: ObservableObject {
             } else {
                 print("Credit document added with ID: \(ref!.documentID)")
                 withAnimation {
-                    self.myCredits.append(Credit(id: ref!.documentID, userID: self.currentUser?.id ?? "", rideID: ride, created: date))
+                    self.myCredits.append(Credit(id: ref!.documentID, userID: self.currentUser?.id ?? "", rideID: ride, type: type, likes: 0, created: date))
                     completion(true)
                 }
             }
@@ -194,7 +199,7 @@ class MainViewModel: ObservableObject {
     
     // don't think this works right yet
     func rodeToday(ride: String) -> Bool {
-        var credit = self.myCredits.first(where: {$0.rideID == ride && $0.created == Date()})
+        let credit = self.myCredits.first(where: {$0.rideID == ride && $0.created == Date()})
         return credit != nil
     }
     
