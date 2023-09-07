@@ -22,7 +22,6 @@ struct SplashView: View {
                     .padding(.top)
                 
                 Image("creditKeeper")
-                    .colorInvert()
                     .shadow(radius: 10)
                     .foregroundStyle(.white)
                     .padding(.horizontal)
@@ -37,7 +36,6 @@ struct SplashView: View {
                 }
                 
                 Image("rollercoaster")
-                    .colorInvert()
                     .shadow(radius: 10)
                 
                 Spacer()

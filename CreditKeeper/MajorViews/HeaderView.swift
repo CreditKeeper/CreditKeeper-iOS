@@ -30,7 +30,7 @@ struct HeaderView: View {
             .padding(.bottom, 10)
         }
         .padding(.horizontal)
-        .background(.thinMaterial)
+        .background(.ultraThinMaterial)
         .environment(\.colorScheme, .dark)
         .shadow(radius: 20)
     }

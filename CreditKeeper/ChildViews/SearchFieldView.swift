@@ -34,7 +34,7 @@ struct SearchFieldView: View {
                 }, label: {
                     ZStack {
                         Circle()
-                            .foregroundStyle(.thinMaterial)
+                            .foregroundStyle(.ultraThinMaterial)
                             .frame(width: 40, height: 40)
                             .padding()
                         

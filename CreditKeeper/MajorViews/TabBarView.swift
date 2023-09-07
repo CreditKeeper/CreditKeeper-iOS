@@ -60,7 +60,6 @@ struct TabBarView: View {
                         case .ride :
                             Image("rollercoaster")
                                 .resizable()
-                                .colorInvert()
                                 .colorMultiply(selectedTab == .ride ? .red : .white)
                                 .frame(width: 28, height: 30)
                                 .shadow(radius: 10)
@@ -81,7 +80,7 @@ struct TabBarView: View {
                 }
             }
             .frame(width: nil, height: 50)
-            .background(.thinMaterial)
+            .background(.ultraThinMaterial)
             .environment(\.colorScheme, .dark)
             .cornerRadius(25)
             .padding(.horizontal, 10)
