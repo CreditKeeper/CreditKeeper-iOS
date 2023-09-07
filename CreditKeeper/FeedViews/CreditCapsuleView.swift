@@ -63,7 +63,7 @@ struct CreditCapsuleview: View {
                     .padding(.trailing, 6)
                 }
             }
-            .padding(.leading, 6)
+            .padding(.leading, 15)
             .padding(.trailing, 20)
             .padding(.bottom)
             
