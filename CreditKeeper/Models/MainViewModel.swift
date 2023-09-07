@@ -54,7 +54,6 @@ class MainViewModel: ObservableObject {
             if let storedUser = Auth.auth().currentUser {
                 self.loggedIn = true
                 self.initUser(user: storedUser)
-                getMyCredits()
             }
         }
         
@@ -84,6 +83,7 @@ class MainViewModel: ObservableObject {
         getAllParks()
         getAllRides()
         getNews()
+        getMyCredits()
     }
       
     func getAllParks() {
@@ -155,7 +155,6 @@ class MainViewModel: ObservableObject {
             do {
                 let query = try await self.firestoreManager.db.collection("credit")
                     .whereField("type", isEqualTo: "claimed")
-                    .order(by: "created", descending: true)
                     .getDocuments(source: .server)
 
                 for document in query.documents {
