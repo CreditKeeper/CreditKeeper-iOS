@@ -104,7 +104,7 @@ struct SettingsPageView: View {
             }
             .padding(.top, 50)
             .padding(.horizontal)
-            .padding(.bottom)
+            .padding(.bottom, 30)
         }
     }
 }

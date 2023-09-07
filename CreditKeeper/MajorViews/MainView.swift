@@ -10,7 +10,6 @@ import CoreData
 
 struct MainView: View {
     @State private var selectedTab : Tab = .feed
-    @State private var onboarding : Bool = false
     @State private var searchText : String = ""
     @State private var showTabView = true
     @State private var registeringUser = false
@@ -19,8 +18,8 @@ struct MainView: View {
     @StateObject var viewModel : MainViewModel
     
     var body: some View {
-        if (onboarding && UserDefaults.standard.bool(forKey: "KeyOnBoardingViewShown") == false) {
-            OnboardingView(onboarding: $onboarding)
+        if (viewModel.onboarding) {
+            OnboardingView(onboarding: $viewModel.onboarding)
                 .transition(.move(edge: .top))
             
         } else {

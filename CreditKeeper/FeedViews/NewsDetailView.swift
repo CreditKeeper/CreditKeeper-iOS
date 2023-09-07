@@ -18,7 +18,7 @@ struct NewsDetailView: View {
             VStack {
                 Text(news?.header ?? "Unknown")
                     .bold()
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.white)
                     .multilineTextAlignment(.center)
                     .font(.title)
                 
@@ -34,7 +34,7 @@ struct NewsDetailView: View {
                 Text(news?.body ?? "There seems to have been an issue getting this piece of news. We appologize for the issue. Please exit the news view.")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 18))
-                    .foregroundStyle(.black)
+                    .foregroundStyle(.white)
                 
                 Spacer()
                 

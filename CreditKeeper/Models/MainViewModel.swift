@@ -39,7 +39,7 @@ class MainViewModel: ObservableObject {
     
     // Settings
     @Published var tabBarGesture = true
-    @Published var onboarding = false
+    @Published var onboarding = true
     @Published var keyboardVisible = false
     
     @AppStorage("onboarding") var onboardingUD = true
