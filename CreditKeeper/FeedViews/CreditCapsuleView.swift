@@ -41,6 +41,7 @@ struct CreditCapsuleView: View {
                                 .font(.system(size: 15))
                                 .foregroundStyle(.white)
                                 .padding()
+                                .frame(width: 200)
                                 .multilineTextAlignment(.leading)
                             
                             Image(systemName: "chevron.right")
@@ -65,12 +66,11 @@ struct CreditCapsuleView: View {
                     }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(.white, lineWidth: 2)
-                                .foregroundStyle(.orange)
-                                .frame(width: 35, height: 50)
+                                .foregroundStyle(.thinMaterial)
+                                .frame(width: 40, height: 50)
                             
-                            Image(systemName: "person.circle.fill")
-                                .foregroundStyle(.white, .orange)
+                            Image(systemName: "person.fill")
+                                .foregroundStyle(.orange)
                                 .font(.system(size: 25))
                         }
                     })
@@ -86,7 +86,7 @@ struct CreditCapsuleView: View {
                             } else {
                                 likes-=1
                             }
-                            // actually send the like
+                            // actually send the like to firebase
                         }
                     }, label: {
                         ZStack {
