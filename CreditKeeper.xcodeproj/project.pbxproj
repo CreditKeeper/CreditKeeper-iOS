@@ -180,15 +180,6 @@
 			path = AuthViews;
 			sourceTree = "<group>";
 		};
-		EB76ED762A9BC36100EFB341 /* ParentViews */ = {
-			isa = PBXGroup;
-			children = (
-				EB44A06E2AA52BD10008116D /* MapView.swift */,
-				EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */,
-			);
-			path = ParentViews;
-			sourceTree = "<group>";
-		};
 		EB76ED772A9BD10A00EFB341 /* OnboardingViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,15 +205,7 @@
 		EB76ED852A9BE9F300EFB341 /* ChildViews */ = {
 			isa = PBXGroup;
 			children = (
-				EB44A0702AA5332D0008116D /* CreditFeedView.swift */,
-				EB76ED882A9BEBE900EFB341 /* RideCapsuleView.swift */,
-				EBF5A6272AA682810004B904 /* ClaimButtonView.swift */,
-				EBE06CED2AA9E8EA00AE2D8D /* SAConfettiView.swift */,
-				EBF5A6252AA682130004B904 /* RatingView.swift */,
-				EBEBEFA02AA7A66500880C0D /* StampView.swift */,
-				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,
 				EB44A0772AA54F2C0008116D /* BackButtonView.swift */,
-				EB76ED862A9BEA0A00EFB341 /* SearchFieldView.swift */,
 			);
 			path = ChildViews;
 			sourceTree = "<group>";
@@ -236,19 +219,6 @@
 				EB44A0752AA549080008116D /* AuthManager.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		EB89D2A52A9B7A4600A525BE /* PageViews */ = {
-			isa = PBXGroup;
-			children = (
-				EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */,
-				EB89D29D2A9AF2F700A525BE /* RidePageView.swift */,
-				EB89D2A62A9BADDF00A525BE /* MapPageView.swift */,
-				EB89D29F2A9AF30100A525BE /* ProfilePageView.swift */,
-				EB89D2A32A9B6AF100A525BE /* SettingsPageView.swift */,
-				EB88A61E2A9D87AE00819834 /* ProfileSettingCapsules.swift */,
-			);
-			path = PageViews;
 			sourceTree = "<group>";
 		};
 		EBCC85562A9826C000416D97 = {
@@ -286,9 +256,11 @@
 				EB76ED772A9BD10A00EFB341 /* OnboardingViews */,
 				EB44A0722AA534750008116D /* AuthViews */,
 				EB76ED842A9BE6F600EFB341 /* MajorViews */,
-				EB76ED762A9BC36100EFB341 /* ParentViews */,
+				EBE06CF42AA9FD5100AE2D8D /* FeedViews */,
+				EBE06CF52AA9FD7800AE2D8D /* RideViews */,
+				EBE06CF62AA9FDA300AE2D8D /* ParkViews */,
+				EBE06CF72AA9FDAA00AE2D8D /* ProfileViews */,
 				EB76ED852A9BE9F300EFB341 /* ChildViews */,
-				EB89D2A52A9B7A4600A525BE /* PageViews */,
 				EBCC856B2A9826C400416D97 /* Assets.xcassets */,
 				EBDBF3742AA502E500A3ED1D /* Launch Screen.storyboard */,
 				EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */,
@@ -321,6 +293,50 @@
 				EBCC85852A9826C400416D97 /* CreditKeeperUITestsLaunchTests.swift */,
 			);
 			path = CreditKeeperUITests;
+			sourceTree = "<group>";
+		};
+		EBE06CF42AA9FD5100AE2D8D /* FeedViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */,
+				EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */,
+				EB44A0702AA5332D0008116D /* CreditFeedView.swift */,
+			);
+			path = FeedViews;
+			sourceTree = "<group>";
+		};
+		EBE06CF52AA9FD7800AE2D8D /* RideViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB89D29D2A9AF2F700A525BE /* RidePageView.swift */,
+				EB76ED882A9BEBE900EFB341 /* RideCapsuleView.swift */,
+				EBF5A6272AA682810004B904 /* ClaimButtonView.swift */,
+				EBE06CED2AA9E8EA00AE2D8D /* SAConfettiView.swift */,
+				EBF5A6252AA682130004B904 /* RatingView.swift */,
+				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,
+				EB76ED862A9BEA0A00EFB341 /* SearchFieldView.swift */,
+			);
+			path = RideViews;
+			sourceTree = "<group>";
+		};
+		EBE06CF62AA9FDA300AE2D8D /* ParkViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB89D2A62A9BADDF00A525BE /* MapPageView.swift */,
+				EB44A06E2AA52BD10008116D /* MapView.swift */,
+			);
+			path = ParkViews;
+			sourceTree = "<group>";
+		};
+		EBE06CF72AA9FDAA00AE2D8D /* ProfileViews */ = {
+			isa = PBXGroup;
+			children = (
+				EB89D29F2A9AF30100A525BE /* ProfilePageView.swift */,
+				EB88A61E2A9D87AE00819834 /* ProfileSettingCapsules.swift */,
+				EBEBEFA02AA7A66500880C0D /* StampView.swift */,
+				EB89D2A32A9B6AF100A525BE /* SettingsPageView.swift */,
+			);
+			path = ProfileViews;
 			sourceTree = "<group>";
 		};
 		EBE4B7592AA2615D007CF67F /* Models */ = {
