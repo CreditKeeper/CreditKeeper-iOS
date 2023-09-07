@@ -16,6 +16,7 @@ class MainViewModel: ObservableObject {
     @Published var firestoreManager = FirestoreManager()
     @Published var rides = [Ride]() // all rides
     @Published var parks = [Park]() // all parks
+    @Published var news = [News]() // all news
     @Published var myCredits = [Credit]() // users credits
     
     // Selection
@@ -81,6 +82,7 @@ class MainViewModel: ObservableObject {
     func getAllTheGoods() {
         getAllParks()
         getAllRides()
+        getNews()
     }
       
     func getAllParks() {
@@ -122,6 +124,27 @@ class MainViewModel: ObservableObject {
             }
         }
     }
+    
+    func getNews() {
+        print("Retrieving latest news from Firebase...")
+        var news = [News]()
+        
+        Task.init {
+            do {
+                let query = try await self.firestoreManager.db.collection("news").getDocuments(source: .server)
+                for document in query.documents {
+                    news.append(self.firestoreManager.makeNews(document: document))
+                }
+                if (news.count > 0) {
+                    self.news = news
+                    print("News gathered!")
+                } else {
+                    print("Got no news.")
+                }
+            }
+        }
+    }
+    
     // this is currently getting all credits, change it to get my credits.
     func getMyCredits() {
         print("Retrieving my credits from Firebase...")
@@ -174,7 +197,7 @@ class MainViewModel: ObservableObject {
         return credit != nil
     }
     
-    // dont' think this works right yet. returning too early?
+    // don't think this works right yet. returning too early?
     func getRating(rideID: String) -> Rating {
         print("Retreiving Rating...")
         var rating = Rating(id: "", userID: "", rideID: "", rating: 0)
