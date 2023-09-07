@@ -81,4 +81,26 @@ class FirestoreManager {
         
         return Rating(id: id, userID: userID, rideID: rideID, rating: rating)
     }
+    
+    func makeRelation(document: DocumentSnapshot) -> Relation {
+        let id = document.documentID
+        let data = document.data()
+        let followerID = data?["followerID"] as? String ?? ""
+        let followingID = data?["followingID"] as? String ?? ""
+        let created = data?["created"] as? Date ?? Date()
+        
+        return Relation(id: id, followerID: followerID, followingID: followingID, created: created)
+    }
+    
+    func makeNews(document: DocumentSnapshot) -> News {
+        let id = document.documentID
+        let data = document.data()
+        let displayName = data?["displayName"] as? String ?? ""
+        let header = data?["header"] as? String ?? ""
+        let body = data?["body"] as? String ?? ""
+        let symbol = data?["symbol"] as? String ?? ""
+        let symbolColor = data?["symbolColor"] as? String ?? "white"
+        
+        return News(id: id, displayName: displayName, header: header, body: body, symbol: symbol, symbolColor: symbolColor)
+    }
 }
