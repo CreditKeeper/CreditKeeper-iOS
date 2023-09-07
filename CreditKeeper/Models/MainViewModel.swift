@@ -300,4 +300,33 @@ final class MainViewModel: ObservableObject {
             }
         }
     }
+    
+    func logOut() {
+        do {
+            try Auth.auth().signOut()
+            withAnimation {
+                self.loggedIn = false
+                self.currentUser = nil
+            }
+            
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func updateHandle(to handle: String) {
+        let db = Firestore.firestore()
+        let userRef = db.collection("user").document(self.currentUser!.id)
+        let oldHandle = (self.currentUser?.handle)!
+        self.currentUser?.handle = handle // preemptively set the local username property,
+        
+        userRef.updateData(["handle": handle]) { err in
+            if let err = err {
+                self.currentUser?.handle = oldHandle
+                print("Error writing new user handle: \(err)")
+            } else {
+                print("New handle successfully written!")
+            }
+        }
+    }
 }

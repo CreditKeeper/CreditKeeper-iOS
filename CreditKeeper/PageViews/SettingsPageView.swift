@@ -28,12 +28,23 @@ struct SettingsPageView: View {
                     Spacer()
                     
                     Button (action: {
-                        
+                        withAnimation {
+                            viewModel.logOut()
+                            showSettings = false
+                        }
                     }, label: {
-                        Image(systemName: "info.circle.fill")
-                            .font(.system(size: 25))
-                            .foregroundStyle(.white)
+                        ZStack {
+                            Capsule()
+                                .foregroundStyle(.white)
+                                .frame(width: 100, height: 40)
+                            
+                            Text("Log Out")
+                                .bold()
+                                .font(.title2)
+                                .foregroundStyle(.red)
+                        }
                     })
+                    
                 }
                 
                 Spacer()
@@ -44,20 +55,32 @@ struct SettingsPageView: View {
                 
                 Spacer()
                 
-                Button (action: {
-                    showSettings = false
-                }, label: {
-                    ZStack {
-                        Capsule()
-                            .foregroundStyle(.white)
-                            .frame(width: 100, height: 50)
+                HStack {
+                    Button (action: {
                         
-                        Text("Close")
-                            .bold()
-                            .font(.title2)
-                            .foregroundStyle(.orange)
-                    }
-                })
+                    }, label: {
+                        Image(systemName: "info.circle.fill")
+                            .font(.system(size: 30))
+                            .foregroundStyle(.white)
+                    })
+                    
+                    Spacer()
+                    
+                    Button (action: {
+                        showSettings = false
+                    }, label: {
+                        ZStack {
+                            Capsule()
+                                .foregroundStyle(.white)
+                                .frame(width: 100, height: 40)
+                            
+                            Text("Close")
+                                .bold()
+                                .font(.title2)
+                                .foregroundStyle(.orange)
+                        }
+                    })
+                }
             }
             .padding()
         }

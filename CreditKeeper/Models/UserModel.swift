@@ -9,7 +9,7 @@ import Foundation
 
 struct User: Identifiable {
     var id: String
-    let handle: String
+    var handle: String
     let email: String
     let favPark: String
     let admin: Bool
