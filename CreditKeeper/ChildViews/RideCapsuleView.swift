@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreLocation
+import ConfettiSwiftUI
 
 struct RideCapsuleView: View {
     @State var ride : Ride
@@ -14,10 +15,17 @@ struct RideCapsuleView: View {
     @State private var hasCredit = false
     @State private var rodeToday = false
     @State private var showRating = false
+    @State private var confettiCounter = 0
     @ObservedObject var viewModel : MainViewModel
     
     var body: some View {
         ZStack {
+            ConfettiCannon(
+                counter: $confettiCounter,
+                num: 100,
+                colors: [.blue, .red, .green, .yellow],
+                rainHeight: 300)
+            
             Rectangle()
                 .frame(width: nil, height: 90)
                 .cornerRadius(15)
@@ -25,7 +33,6 @@ struct RideCapsuleView: View {
             
             if (showRating) {
                 RatingView(viewModel: viewModel, ride: $ride, showRating: $showRating)
-                
             } else {
                 HStack {
                     Group {
@@ -44,7 +51,7 @@ struct RideCapsuleView: View {
                     }
                     
                     if (viewModel.loggedIn) {
-                        ClaimButtonView(viewModel: viewModel, ride: $ride, hasCredit: $hasCredit, rodeToday: $rodeToday, showReview: $showRating)
+                        ClaimButtonView(viewModel: viewModel, ride: $ride, hasCredit: $hasCredit, rodeToday: $rodeToday, showReview: $showRating, confettiCounter: $confettiCounter)
                         
                     } else {
                         Image(systemName: "chevron.right")

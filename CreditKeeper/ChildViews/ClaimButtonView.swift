@@ -9,11 +9,12 @@ import SwiftUI
 
 struct ClaimButtonView: View {
     @ObservedObject var viewModel : MainViewModel
+    @State private var networkProgress = false
     @Binding var ride : Ride
     @Binding var hasCredit : Bool
     @Binding var rodeToday : Bool
     @Binding var showReview : Bool
-    @State private var networkProgress = false
+    @Binding var confettiCounter : Int
     
     var body: some View {
         Button (action: {
@@ -24,6 +25,7 @@ struct ClaimButtonView: View {
                         networkProgress = true
                         viewModel.claimCredit(ride: ride.id, { created in
                             hasCredit = created
+                            confettiCounter+=1
                             playHaptic()
                             networkProgress = false
                             
@@ -40,6 +42,7 @@ struct ClaimButtonView: View {
                             
                             if (!ride.legacy) {
                                 showReview = true
+                                confettiCounter+=1
                             }
                             playHaptic()
                             networkProgress = false
@@ -107,5 +110,5 @@ struct ClaimButtonView: View {
 }
 
 #Preview {
-    ClaimButtonView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", manufacturer: "", opening: Date(), legacy: false, height: 0.0, length: 0.0, inversions: 2, thrillLevel: "", type: "", speed: 0.0, description: "")), hasCredit: .constant(false), rodeToday: .constant(false), showReview: .constant(false))
+    ClaimButtonView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", manufacturer: "", opening: Date(), legacy: false, height: 0.0, length: 0.0, inversions: 2, thrillLevel: "", type: "", speed: 0.0, description: "")), hasCredit: .constant(false), rodeToday: .constant(false), showReview: .constant(false), confettiCounter: .constant(0))
 }

@@ -29,6 +29,12 @@ final class MainViewModel: ObservableObject {
     @Published var showAuth = false
     @Published var loginType = ""
     @Published var onboarding = false
+    
+    
+    // Settings
+    @Published var tabBarGesture = true
+    
+    
     @AppStorage("onboarding") var onboardingUD = true
     
     let defaults = UserDefaults.standard

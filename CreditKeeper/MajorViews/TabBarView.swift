@@ -86,7 +86,7 @@ struct TabBarView: View {
             .cornerRadius(25)
             .padding(.horizontal, 10)
             .shadow(radius: 5, x: 6, y: 5)
-            .offset(x: offset.width * 0.08, y: offset.height * 0.08)
+            .offset(x: viewModel.tabBarGesture ? offset.width * 0.08 : 0, y: viewModel.tabBarGesture ? offset.height * 0.08 : 0)
         }
         .gesture(dragBar)
     }

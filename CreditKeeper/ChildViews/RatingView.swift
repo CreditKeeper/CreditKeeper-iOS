@@ -13,7 +13,7 @@ struct RatingView: View {
     @Binding var showRating : Bool
     @State var showThanks = false
     @State private var rating: Int = 0
-    
+ 
     var body: some View {
         HStack {
             if (showThanks) {
@@ -60,6 +60,7 @@ struct RatingView: View {
                 })
             }
         }
+        
         .transition(.opacity)
     }
 }
