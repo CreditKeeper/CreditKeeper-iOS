@@ -18,90 +18,98 @@ struct CreditCapsuleView: View {
     var body: some View {
         ZStack {
             Group {
-                RoundedRectangle(cornerRadius: 20)
-                    .stroke(.ultraThinMaterial, lineWidth: 7)
-                    .frame(width: nil, height: 50)
-            
-                RoundedRectangle(cornerRadius: 20)
-                    .foregroundStyle(Color("uiCapsuleBlue"))
-                    .frame(width: nil, height: 50)
-                
-                HStack {
-                    Button(action: {
-                        playHaptic()
-                        
-                    }, label: {
-                        Image(systemName: "person.circle.fill")
-                            .foregroundStyle(.white, .orange)
-                            .font(.system(size: 30))
-                    })
-                    .padding(.leading, 4)
-                    
-                    Spacer()
-                    
-                    Text(rider + " " + type + " " + ride)
-                        .font(.system(size: 15))
-                        .foregroundStyle(.white)
-                        .padding()
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        playHaptic()
-                        
-                    }, label: {
-                        ZStack {
-                            Circle()
-                                .foregroundStyle(.red)
-                                .frame(width: 30, height: 30)
-                            
-                            Image("rollercoaster")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                        }
-                    })
-                    .padding(.trailing, 6)
-                }
-            }
-            .padding(.leading, 15)
-            .padding(.trailing, 20)
-            
-            HStack {
-                Spacer()
-                
                 Button(action: {
                     playHaptic()
                     withAnimation {
-                        likeThisOne.toggle()
-                        if likeThisOne {
-                            likes+=1
-                        } else {
-                            likes-=1
-                        }
+                        // change selected tab
+                        // change selected ride
                     }
                 }, label: {
                     ZStack {
-                        Capsule()
-                            .foregroundStyle(.white)
-                            .frame(width: 60, height: 20)
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(.ultraThinMaterial, lineWidth: 7)
+                            .frame(width: nil, height: 50)
+                        
+                        RoundedRectangle(cornerRadius: 20)
+                            .foregroundStyle(Color("uiCapsuleBlue"))
+                            .frame(width: nil, height: 50)
                         
                         HStack {
-                            Image(systemName: likeThisOne ? "hand.thumbsup.fill" : "hand.thumbsup")
-                                .foregroundStyle(.blue)
-                                .font(.system(size: 15))
+                            Spacer()
                             
-                            Text(String(likes))
-                                .foregroundStyle(.black)
+                            Text(rider + " " + type + " " + ride)
                                 .font(.system(size: 15))
+                                .foregroundStyle(.white)
+                                .padding()
+                                .multilineTextAlignment(.leading)
+                            
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(.white)
+                                .font(.system(size: 10))
+                            
+                            Spacer()
                         }
-                        .frame(width: 60, height: 20)
+                        .padding(.trailing)
                     }
                 })
             }
-            .offset(x: -10, y: 20)
+            
+            Group {
+                HStack {
+                    Button(action: {
+                        playHaptic()
+                        withAnimation {
+                            // show user's profile
+                        }
+                        
+                    }, label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(.white, lineWidth: 2)
+                                .foregroundStyle(.orange)
+                                .frame(width: 35, height: 50)
+                            
+                            Image(systemName: "person.circle.fill")
+                                .foregroundStyle(.white, .orange)
+                                .font(.system(size: 25))
+                        }
+                    })
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        playHaptic()
+                        withAnimation {
+                            likeThisOne.toggle()
+                            if likeThisOne {
+                                likes+=1
+                            } else {
+                                likes-=1
+                            }
+                            // actually send the like
+                        }
+                    }, label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundStyle(.thinMaterial)
+                                .frame(width: 60, height: 50)
+                            
+                            HStack {
+                                Image(systemName: likeThisOne ? "hand.thumbsup.fill" : "hand.thumbsup")
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 15))
+                                
+                                Text(String(likes))
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 15))
+                            }
+                        }
+                    })
+                }
+            }
         }
         .shadow(radius: 10)
-        .padding(.bottom, 25)
+        .padding(.horizontal)
     }
 }
 

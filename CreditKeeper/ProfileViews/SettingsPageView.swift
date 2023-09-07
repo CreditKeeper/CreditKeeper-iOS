@@ -24,6 +24,7 @@ struct SettingsPageView: View {
                         .bold()
                         .foregroundStyle(.white)
                         .font(.title)
+                        .padding(.leading)
                     
                     Spacer()
                 }
@@ -72,6 +73,28 @@ struct SettingsPageView: View {
                 }
                 
                 HStack {
+                    HStack {
+                        Button(action: {
+                            playHaptic()
+                            withAnimation {
+                                showSettings = false
+                            }
+                        }, label: {
+                            HStack {
+                                Image(systemName: "arrow.left")
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 30))
+                                
+                                Text("Back")
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 20))
+                            }
+                        })
+                        
+                        Spacer()
+                    }
+                    .padding(.leading)
+                    
                     Button (action: {
                         playHaptic()
                     }, label: {
@@ -79,31 +102,12 @@ struct SettingsPageView: View {
                             .font(.system(size: 30))
                             .foregroundStyle(.white)
                     })
+                    .padding(.trailing)
                     
                     Spacer()
-                    
-                    Button (action: {
-                        playHaptic()
-                        withAnimation {
-                            showSettings = false
-                        }
-                        
-                    }, label: {
-                        ZStack {
-                            Capsule()
-                                .foregroundStyle(.white)
-                                .frame(width: 90, height: 35)
-                            
-                            Text("Close")
-                                .bold()
-                                .font(.title3)
-                                .foregroundStyle(.orange)
-                        }
-                    })
                 }
             }
             .padding(.top, 50)
-            .padding(.horizontal)
             .padding(.bottom, 30)
         }
     }
@@ -130,10 +134,5 @@ struct SettingsCapsuleView: View {
     
 
 #Preview {
-    ZStack {
-        RadialGradient(gradient: Gradient(colors: [.orange, .black]), center: .center, startRadius: 2, endRadius: 650)
-            .ignoresSafeArea()
-        
-        SettingsPageView(viewModel: MainViewModel(), showSettings: .constant(true))
-    }
+    SettingsPageView(viewModel: MainViewModel(), showSettings: .constant(true))
 }

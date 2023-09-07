@@ -63,7 +63,8 @@ struct MainView: View {
 
                         TabBarView(viewModel: viewModel, selectedTab: $selectedTab, searchText: $searchText, keyboardVisible: $viewModel.keyboardVisible)
                         
-                    }.transition(.opacity)
+                    }
+                    .transition(.opacity)
                 }
             }
         }
