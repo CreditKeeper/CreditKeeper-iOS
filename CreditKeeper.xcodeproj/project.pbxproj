@@ -49,6 +49,7 @@
 		EBDBF3772AA5059D00A3ED1D /* RideDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */; };
 		EBE06CEE2AA9E8EA00AE2D8D /* SAConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE06CED2AA9E8EA00AE2D8D /* SAConfettiView.swift */; };
 		EBE06CF12AA9E9DB00AE2D8D /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = EBE06CF02AA9E9DB00AE2D8D /* ConfettiSwiftUI */; };
+		EBE06CF32AA9F79200AE2D8D /* MainViewModel_Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE06CF22AA9F79200AE2D8D /* MainViewModel_Auth.swift */; };
 		EBE4B7562AA25F00007CF67F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBE4B7552AA25F00007CF67F /* GoogleService-Info.plist */; };
 		EBE4B7582AA260F8007CF67F /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7572AA260F8007CF67F /* FirestoreManager.swift */; };
 		EBE4B75B2AA26170007CF67F /* RideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B75A2AA26170007CF67F /* RideModel.swift */; };
@@ -126,6 +127,7 @@
 		EBDBF3742AA502E500A3ED1D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideDetailView.swift; sourceTree = "<group>"; };
 		EBE06CED2AA9E8EA00AE2D8D /* SAConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAConfettiView.swift; sourceTree = "<group>"; };
+		EBE06CF22AA9F79200AE2D8D /* MainViewModel_Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel_Auth.swift; sourceTree = "<group>"; };
 		EBE4B7552AA25F00007CF67F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBE4B7572AA260F8007CF67F /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		EBE4B75A2AA26170007CF67F /* RideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideModel.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				EBE4B7622AA2675A007CF67F /* MainViewModel.swift */,
+				EBE06CF22AA9F79200AE2D8D /* MainViewModel_Auth.swift */,
 				EBE4B75A2AA26170007CF67F /* RideModel.swift */,
 				EBE4B75C2AA26315007CF67F /* ParkModel.swift */,
 				EBE4B75E2AA26365007CF67F /* UserModel.swift */,
@@ -519,6 +522,7 @@
 				EBDBF3772AA5059D00A3ED1D /* RideDetailView.swift in Sources */,
 				EBE4B7582AA260F8007CF67F /* FirestoreManager.swift in Sources */,
 				EBEBEFA12AA7A66500880C0D /* StampView.swift in Sources */,
+				EBE06CF32AA9F79200AE2D8D /* MainViewModel_Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

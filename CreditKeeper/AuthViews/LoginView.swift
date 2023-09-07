@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 
-struct LoginView: View {
+struct LoginView: View, KeyboardReadable {
     @StateObject var viewModel : MainViewModel
     @State private var email = ""
     @State private var password = ""
@@ -47,9 +47,17 @@ struct LoginView: View {
                         .padding(.horizontal)
                         .keyboardType(.emailAddress)
                         .autocapitalization(.none)
+                        .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                                        print("Is keyboard visible? ", newIsKeyboardVisible)
+                                        viewModel.keyboardVisible = newIsKeyboardVisible
+                                    }
                     
                     SecureField("Password", text: $password)
                         .padding(.horizontal)
+                        .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                                        print("Is keyboard visible? ", newIsKeyboardVisible)
+                                        viewModel.keyboardVisible = newIsKeyboardVisible
+                                    }
                 }
                 .textFieldStyle(RoundedTextFieldStyle())
                 
@@ -179,11 +187,16 @@ struct LoginView: View {
                     Spacer()
                     
                     Text("Provide your account email:")
+                    
                     TextField("Account Email:", text: $email)
                         .frame(height: 50)
                         .padding(.horizontal)
                         .autocapitalization(.none)
                         .textFieldStyle(RoundedTextFieldStyle())
+                        .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                                        print("Is keyboard visible? ", newIsKeyboardVisible)
+                                        viewModel.keyboardVisible = newIsKeyboardVisible
+                                    }
                     
                     Button(action: {
                         withAnimation {

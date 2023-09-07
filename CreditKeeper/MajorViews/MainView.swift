@@ -59,8 +59,8 @@ struct MainView: View {
                         }
                         
                         Spacer()
-                        
-                        TabBarView(viewModel: viewModel, selectedTab: $selectedTab, searchText: $searchText)
+
+                        TabBarView(viewModel: viewModel, selectedTab: $selectedTab, searchText: $searchText, keyboardVisible: $viewModel.keyboardVisible)
                         
                     }.transition(.opacity)
                 }

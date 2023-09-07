@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
-struct RegisterView: View {
+struct RegisterView: View, KeyboardReadable {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var viewModel : MainViewModel
     @State private var email = ""
@@ -42,6 +42,10 @@ struct RegisterView: View {
                     .padding(.horizontal)
                     .keyboardType(.emailAddress)
                     .autocapitalization(.none)
+                    .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                                    print("Is keyboard visible? ", newIsKeyboardVisible)
+                                    viewModel.keyboardVisible = newIsKeyboardVisible
+                                }
                 
                 ZStack {
                     TextField("Username", text: $handle)
@@ -50,6 +54,10 @@ struct RegisterView: View {
                         .limitInputLength(value: $handle, length: 20)
                         .padding(.horizontal, 15)
                         .padding(.top, 3)
+                        .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                                        print("Is keyboard visible? ", newIsKeyboardVisible)
+                                        viewModel.keyboardVisible = newIsKeyboardVisible
+                                    }
                     
                     Text("\(handle.count)/20")
                         .font(.footnote)
@@ -60,10 +68,18 @@ struct RegisterView: View {
                 SecureField("Password", text: $password)
                     .border(password != confirmPassword ? Color.red : Color.clear)
                     .padding(.horizontal)
+                    .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                                    print("Is keyboard visible? ", newIsKeyboardVisible)
+                                    viewModel.keyboardVisible = newIsKeyboardVisible
+                                }
                 
                 SecureField("Confirm password", text: $confirmPassword)
                     .border(password != confirmPassword ? Color.red : Color.clear)
                     .padding(.horizontal)
+                    .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                                    print("Is keyboard visible? ", newIsKeyboardVisible)
+                                    viewModel.keyboardVisible = newIsKeyboardVisible
+                                }
             }
             .textFieldStyle(RoundedTextFieldStyle())
             .frame(maxWidth: 350)

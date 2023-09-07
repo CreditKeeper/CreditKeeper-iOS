@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SearchFieldView: View {
+struct SearchFieldView: View, KeyboardReadable {
     @StateObject var viewModel : MainViewModel
     @State private var showFilter = true
     @Binding var searchText : String
@@ -15,11 +15,9 @@ struct SearchFieldView: View {
     var body: some View {
         HStack {
             TextField("Search...", text: $searchText)
-                .onTapGesture {
-                    playHaptic()
-                    withAnimation (.linear) {
-                        showFilter = false
-                    }
+                .onReceive(keyboardPublisher) { newIsKeyboardVisible in
+                    print("Is keyboard visible? ", newIsKeyboardVisible)
+                    viewModel.keyboardVisible = newIsKeyboardVisible
                 }
                 .onSubmit {
                     withAnimation (.linear) {
@@ -27,6 +25,12 @@ struct SearchFieldView: View {
                     }
                 }
                 .padding(.vertical)
+                .onTapGesture {
+                    playHaptic()
+                    withAnimation (.linear) {
+                        showFilter = false
+                    }
+                }
             
             if (showFilter) {
                 Button(action: {
@@ -43,7 +47,6 @@ struct SearchFieldView: View {
                             .font(.system(size: 20))
                             
                     }
-            
                 })
             }
         }
