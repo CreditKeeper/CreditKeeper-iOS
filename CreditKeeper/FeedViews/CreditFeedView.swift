@@ -15,7 +15,7 @@ struct CreditFeedView: View {
                 CreditCapsuleview(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 10)
             }
             
-            Spacer(minLength: 80)
+            Spacer(minLength: 90)
         }
     }
 }

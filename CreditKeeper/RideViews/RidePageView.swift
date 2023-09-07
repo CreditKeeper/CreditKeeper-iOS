@@ -34,7 +34,8 @@ struct RidePageView: View {
                         
                     }
                     .padding(.horizontal, 10)
-                    .padding(.bottom, 120)
+                    
+                    Spacer(minLength: 90)
                 }
                 
                 if (viewModel.selectedRide != nil) {

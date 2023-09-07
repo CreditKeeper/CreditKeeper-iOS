@@ -19,7 +19,7 @@ struct CreditCapsuleview: View {
         ZStack {
             Group {
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.blue, lineWidth: 4)
+                    .stroke(Color("uiCapsuleBlue"), lineWidth: 7)
                     .frame(width: nil, height: 40)
             
                 RoundedRectangle(cornerRadius: 20)
@@ -35,12 +35,16 @@ struct CreditCapsuleview: View {
                             .foregroundStyle(.white, .orange)
                             .font(.system(size: 30))
                     })
+                    .padding(.leading, 4)
                     
+                    Spacer()
                     
                     Text(rider + " " + type + " " + ride)
                         .font(.system(size: 15))
                         .foregroundStyle(.white)
                         .padding()
+                    
+                    Spacer()
                     
                     Button(action: {
                         playHaptic()
@@ -56,6 +60,7 @@ struct CreditCapsuleview: View {
                                 .frame(width: 20, height: 20)
                         }
                     })
+                    .padding(.trailing, 6)
                 }
             }
             .padding(.leading, 6)
@@ -96,6 +101,7 @@ struct CreditCapsuleview: View {
             }
             .offset(x: -10, y: 20)
         }
+        .shadow(radius: 10)
     }
 }
 
