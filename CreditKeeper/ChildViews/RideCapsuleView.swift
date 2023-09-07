@@ -12,7 +12,8 @@ struct RideCapsuleView: View {
     @State var ride : Ride
     @State private var park = Park(id: "", name: "Unknown", address: "", city: "", region: "", country: "", owner: "", link: "", phone: "", location: CLLocation())
     @State private var hasCredit = false
-    @State private var showReview = false
+    @State private var rodeToday = false
+    @State private var showRating = false
     @ObservedObject var viewModel : MainViewModel
     
     var body: some View {
@@ -22,8 +23,8 @@ struct RideCapsuleView: View {
                 .cornerRadius(15)
                 .foregroundStyle(ride.legacy ? Color("uiCapsuleYellow") : (hasCredit ? Color("uiCapsuleGreen") :  Color("uiCapsuleRed")))
             
-            if (showReview) {
-                ReviewView(viewModel: viewModel, ride: $ride, showReview: $showReview)
+            if (showRating) {
+                RatingView(viewModel: viewModel, ride: $ride, showRating: $showRating)
                 
             } else {
                 HStack {
@@ -43,7 +44,7 @@ struct RideCapsuleView: View {
                     }
                     
                     if (viewModel.loggedIn) {
-                        ClaimButtonView(viewModel: viewModel, ride: $ride, hasCredit: $hasCredit, showReview: $showReview)
+                        ClaimButtonView(viewModel: viewModel, ride: $ride, hasCredit: $hasCredit, rodeToday: $rodeToday, showReview: $showRating)
                         
                     } else {
                         Image(systemName: "chevron.right")
@@ -75,6 +76,7 @@ struct RideCapsuleView: View {
         .padding(.vertical, 4)
         .onAppear {
             hasCredit = viewModel.checkCredit(ride: ride.id)
+            rodeToday = viewModel.rodeToday(ride: ride.id)
             park = viewModel.parks.first(where: {$0.id == ride.parkID}) ?? park
         }
         .onTapGesture {

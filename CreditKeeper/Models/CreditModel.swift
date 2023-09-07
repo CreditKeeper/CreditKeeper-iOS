@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import FirebaseCore
-import FirebaseFirestore
 
 struct Credit: Identifiable {
     var id: String

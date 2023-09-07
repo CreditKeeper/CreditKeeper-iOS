@@ -36,11 +36,11 @@ struct TermsConditionsView: View {
                     }, label: {
                         ZStack {
                             Capsule()
-                                .frame(width: 190, height: 50)
+                                .frame(width: 150, height: 50)
                                 .foregroundStyle(Color("uiCapsuleGreen"))
                                 .shadow(radius: 10)
                             
-                            Text("Almost There")
+                            Text("I Agree")
                                 .foregroundStyle(.white)
                                 .font(.title)
                         }

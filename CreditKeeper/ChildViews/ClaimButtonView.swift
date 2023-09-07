@@ -11,6 +11,7 @@ struct ClaimButtonView: View {
     @ObservedObject var viewModel : MainViewModel
     @Binding var ride : Ride
     @Binding var hasCredit : Bool
+    @Binding var rodeToday : Bool
     @Binding var showReview : Bool
     @State private var networkProgress = false
     
@@ -56,6 +57,7 @@ struct ClaimButtonView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .stroke(hasCredit ? Color("uiCapsuleGreen") : Color.white, lineWidth: 2)
                         )
+                    
                     if (networkProgress) {
                         ProgressView()
                             .progressViewStyle(.circular)
@@ -65,13 +67,18 @@ struct ClaimButtonView: View {
                             .foregroundStyle(ride.legacy ? Color("") : Color("uiCapsuleRed"))
                             .transition(.opacity)
                     }
-                    
                 }
             } else {
                 if (ride.legacy) {
                     Image(systemName: "chevron.right")
                         .foregroundStyle(.white)
                         .padding()
+                    
+                } else if (rodeToday) {
+                    Text("Ride again tomorrow!")
+                        .foregroundStyle(.white)
+                        .padding()
+                    
                 } else {
                     ZStack {
                         Capsule()
@@ -81,6 +88,7 @@ struct ClaimButtonView: View {
                                 RoundedRectangle(cornerRadius: 20)
                                     .stroke(.green, lineWidth: 2)
                             )
+                        
                         if (networkProgress) {
                             ProgressView()
                                 .progressViewStyle(.circular)
@@ -99,5 +107,5 @@ struct ClaimButtonView: View {
 }
 
 #Preview {
-    ClaimButtonView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", manufacturer: "", opening: Date(), legacy: false, height: 0.0, length: 0.0, inversions: 2, thrillLevel: "", type: "", speed: 0.0, description: "")), hasCredit: .constant(false), showReview: .constant(false))
+    ClaimButtonView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", manufacturer: "", opening: Date(), legacy: false, height: 0.0, length: 0.0, inversions: 2, thrillLevel: "", type: "", speed: 0.0, description: "")), hasCredit: .constant(false), rodeToday: .constant(false), showReview: .constant(false))
 }

@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import FirebaseCore
-import FirebaseFirestore
 
 struct User: Identifiable {
     var id: String

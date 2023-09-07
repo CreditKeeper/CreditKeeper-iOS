@@ -157,6 +157,59 @@ final class MainViewModel: ObservableObject {
         return self.myCredits.contains(where: {$0.rideID == ride})
     }
     
+    // don't think this works right yet
+    func rodeToday(ride: String) -> Bool {
+        var credit = self.myCredits.first(where: {$0.rideID == ride && $0.created == Date()})
+        return credit != nil
+    }
+    
+    // dont' think this works right yet. returning too early?
+    func getRating(rideID: String) -> Rating {
+        print("Retreiving Rating...")
+        var rating = Rating(id: "", userID: "", rideID: "", rating: 0)
+        
+        Task.init {
+            do {
+                let query = try await self.firestoreManager.db.collection("rating").getDocuments(source: .server)
+                for document in query.documents {
+                    rating = self.firestoreManager.makeRating(document: document)
+                }
+                if (rating.id != "") {
+                    print("Credits gathered!")
+                } else {
+                    print("Got zero credits.")
+                }
+            }
+            
+        }
+        return rating
+    }
+    
+//    func updateRating(ratingID: String) -> Rating {
+//        
+//    }
+    
+    func submitRating(rating: Int, ride: String, _ completion: @escaping (Bool) -> Void) {
+        var ref: DocumentReference? = nil
+        let date = Date()
+        ref = self.firestoreManager.db.collection("rating").addDocument(data: [
+            "userID": self.currentUser?.id ?? "",
+            "rideID": ride,
+            "created": date.description,
+            "rating": rating
+        ]) { err in
+            if let err = err {
+                print("Error adding rating document: \(err)")
+                completion(false)
+            } else {
+                print("Rating document added with ID: \(ref!.documentID)")
+                withAnimation {
+                    completion(true)
+                }
+            }
+        }
+    }
+
     func createUser(email: String, password: String, handle: String, _ completion: @escaping (Bool) -> Void) {
         usernameIsAvailable(username: handle, { available in
             if (!available) {

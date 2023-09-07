@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import FirebaseCore
-import FirebaseFirestore
 import CoreLocation
 
 struct Park: Identifiable {

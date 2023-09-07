@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import FirebaseCore
-import FirebaseFirestore
 
 struct Ride: Identifiable, Hashable {
     var id: String

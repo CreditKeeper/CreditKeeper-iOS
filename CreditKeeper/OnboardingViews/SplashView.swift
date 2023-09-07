@@ -21,10 +21,8 @@ struct SplashView: View {
                     .transition(.slide)
                     .padding(.top)
                 
-                Text("CreditKeeper")
-                    .font(.system(size: 40))
-                    .bold()
-                    .italic()
+                Image("creditKeeper")
+                    .colorInvert()
                     .shadow(radius: 10)
                     .foregroundStyle(.white)
                     .padding(.horizontal)
@@ -37,8 +35,6 @@ struct SplashView: View {
                         .font(.subheadline)
                         .transition(.scale)
                 }
-                
-                Spacer()
                 
                 Image("rollercoaster")
                     .colorInvert()
