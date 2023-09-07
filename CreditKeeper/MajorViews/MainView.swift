@@ -28,24 +28,25 @@ struct MainView: View {
                     switch (selectedTab) {
                     case .feed :
                         FeedPageView(viewModel: viewModel)
-                            .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
+                            .transition(.opacity)
                         
                     case .ride :
                         RidePageView(viewModel: viewModel)
-                            .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
+                            .transition(.opacity)
                         
                     case .map :
                         MapPageView(viewModel: viewModel)
-                            .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
+                            .transition(.opacity)
                         
                     case .profile :
                         if (viewModel.loggedIn) {
                             ProfilePageView(viewModel: viewModel, showSettings: $showSettings, editProfile: $editProfile)
                                 .environment(\.colorScheme, .dark)
-                                .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
+                                .transition(.opacity)
+                            
                         } else {
                             AuthView(viewModel: viewModel, registeringUser: $registeringUser)
-                                .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
+                                .transition(.opacity)
                         }
                     }
                 }

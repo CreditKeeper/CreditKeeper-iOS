@@ -24,14 +24,14 @@ struct ClaimButtonView: View {
                 Task.init {
                     withAnimation {
                         networkProgress = true
-                        viewModel.claimCredit(ride: ride.id, type: "rode", { created in
-                            hasCredit = created
-                            confettiCounter+=1
-                            playHaptic()
-                            AudioServicesPlaySystemSound(1407)
-                            networkProgress = false
-                            
-                        })
+//                        viewModel.claimCredit(ride: ride.id, type: "rode", { created in
+//                            hasCredit = created
+//                            confettiCounter+=1
+//                            playHaptic()
+//                            AudioServicesPlaySystemSound(1407)
+//                            networkProgress = false
+//                            
+//                        })
                     }
                 }
             }
@@ -39,7 +39,7 @@ struct ClaimButtonView: View {
                 Task.init {
                     withAnimation {
                         networkProgress = true
-                        viewModel.claimCredit(ride: ride.id, type: "claimed", { created in
+                        viewModel.claimCredit(ride: ride.id, { created in
                             hasCredit = created
                             
                             if (!ride.legacy) {

@@ -170,14 +170,14 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    func claimCredit(ride: String, type: String, _ completion: @escaping (Bool) -> Void) {
+    func claimCredit(ride: String, _ completion: @escaping (Bool) -> Void) {
         var ref: DocumentReference? = nil
-        let date = Date()
         ref = self.firestoreManager.db.collection("credit").addDocument(data: [
-            "userID": self.currentUser?.id ?? "",
             "rideID": ride,
-            "type": type,
-            "created": date.description
+            "userID": self.currentUser?.id ?? "",
+            "likes": 0,
+            "claimDate": Date(),
+            "lastRode": Date()
         ]) { err in
             if let err = err {
                 print("Error adding credit document: \(err)")
@@ -185,22 +185,34 @@ class MainViewModel: ObservableObject {
             } else {
                 print("Credit document added with ID: \(ref!.documentID)")
                 withAnimation {
-                    self.myCredits.append(Credit(id: ref!.documentID, rideID: ride, userID: self.currentUser?.id ?? "", type: type, likes: 0, claimDate: Date(), lastRode: Date()))
+                    self.myCredits.append(Credit(id: ref!.documentID, rideID: ride, userID: self.currentUser?.id ?? "", likes: 0, claimDate: Date(), lastRode: Date()))
                     completion(true)
                 }
             }
         }
     }
     
+    func updateCredit(ride: String, _ completion: @escaping (Bool) -> Void) {
+        let credit = self.myCredits.first(where: {$0.rideID == ride})
+        
+        // now update that credit
+        
+        
+        
+        
+        
+        
+    }
+    
     func checkCredit(ride: String) -> Bool {
         return self.myCredits.contains(where: {$0.rideID == ride})
     }
     
-    // don't think this works right yet
-//    func rodeToday(ride: String) -> Bool {
-//        let credit = self.myCredits.first(where: {$0.rideID == ride && $0.created == Date()})
-//        return credit != nil
-//    }
+    // don't think this works quite right yet
+    func rodeToday(ride: String) -> Bool {
+        let credit = self.myCredits.first(where: {$0.rideID == ride})
+        return credit?.lastRode ?? Date() == Date()
+    }
     
     // don't think this works right yet. returning too early?
     func getRating(rideID: String) -> Rating {

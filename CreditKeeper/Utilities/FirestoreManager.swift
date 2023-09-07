@@ -61,12 +61,11 @@ class FirestoreManager {
         let data = document.data()
         let rideID = data?["rideID"] as? String ?? ""
         let userID = data?["userID"] as? String ?? ""
-        let type = data?["type"] as? String ?? "ride"
         let likes = data?["likes"] as? Int ?? 0
         let claimDate = data?["claimDate"] as? Date ?? Date()
         let lastRode = data?["lastRode"] as? Date ?? Date()
         
-        return Credit(id: id, rideID: rideID, userID: userID, type: type, likes: likes, claimDate: claimDate, lastRode: lastRode)
+        return Credit(id: id, rideID: rideID, userID: userID, likes: likes, claimDate: claimDate, lastRode: lastRode)
     }
     
     func makeUser(document: DocumentSnapshot) -> User {
