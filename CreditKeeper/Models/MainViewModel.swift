@@ -154,7 +154,7 @@ class MainViewModel: ObservableObject {
         Task.init {
             do {
                 let query = try await self.firestoreManager.db.collection("credit")
-                    .whereField("type", isEqualTo: "credit")
+                    .whereField("type", isEqualTo: "claimed")
                     .order(by: "created", descending: true)
                     .getDocuments(source: .server)
 

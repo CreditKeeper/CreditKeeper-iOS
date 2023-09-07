@@ -11,13 +11,13 @@ struct RatingView: View {
     @ObservedObject var viewModel : MainViewModel
     @Binding var ride: Ride
     @Binding var showRating : Bool
-    @State var showThanks = false
+    @State var showCongrats = false
     @State private var rating: Int = 0
  
     var body: some View {
         HStack {
-            if (showThanks) {
-                Text("Thank you!")
+            if (showCongrats) {
+                Text("Congrats!")
                     .bold()
                     .foregroundStyle(.white)
                     .font(.title2)
@@ -34,11 +34,11 @@ struct RatingView: View {
                                 viewModel.submitRating(rating: rating, ride: ride.id, { success in
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                         withAnimation {
-                                            showThanks = true
+                                            showCongrats = true
                                         }
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                                             withAnimation {
-                                                showThanks = false
+                                                showCongrats = false
                                                 showRating = false
                                             }
                                         }
@@ -48,7 +48,7 @@ struct RatingView: View {
                         }
                 }
             }
-            if (!showThanks) {
+            if (!showCongrats) {
                 Button (action: {
                     withAnimation {
                         showRating = false

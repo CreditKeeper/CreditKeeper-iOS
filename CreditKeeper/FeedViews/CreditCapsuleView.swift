@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreditCapsuleview: View {
+struct CreditCapsuleView: View {
     @State var rider : String
     @State var type : String
     @State var ride : String
@@ -111,8 +111,8 @@ struct CreditCapsuleview: View {
             .ignoresSafeArea()
         
         VStack {
-            CreditCapsuleview(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 5)
-            CreditCapsuleview(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 5)
+            CreditCapsuleView(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 5)
+            CreditCapsuleView(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 5)
         }
     }
 }

@@ -12,7 +12,7 @@ struct CreditFeedView: View {
     var body: some View {
         VStack {
             ForEach((1...10), id: \.self) { _ in
-                CreditCapsuleview(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 10)
+                CreditCapsuleView(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 10)
             }
             
             Spacer(minLength: 90)

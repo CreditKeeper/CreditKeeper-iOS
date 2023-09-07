@@ -39,7 +39,7 @@ struct ClaimButtonView: View {
                 Task.init {
                     withAnimation {
                         networkProgress = true
-                        viewModel.claimCredit(ride: ride.id, type: "credit", { created in
+                        viewModel.claimCredit(ride: ride.id, type: "claimed", { created in
                             hasCredit = created
                             
                             if (!ride.legacy) {
