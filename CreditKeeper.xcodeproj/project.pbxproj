@@ -216,8 +216,8 @@
 			children = (
 				EB44A0702AA5332D0008116D /* CreditFeedView.swift */,
 				EB76ED882A9BEBE900EFB341 /* RideCapsuleView.swift */,
-				EBE06CED2AA9E8EA00AE2D8D /* SAConfettiView.swift */,
 				EBF5A6272AA682810004B904 /* ClaimButtonView.swift */,
+				EBE06CED2AA9E8EA00AE2D8D /* SAConfettiView.swift */,
 				EBF5A6252AA682130004B904 /* RatingView.swift */,
 				EBEBEFA02AA7A66500880C0D /* StampView.swift */,
 				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,

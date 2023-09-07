@@ -63,7 +63,7 @@ struct ClaimButtonView: View {
                     
                     if (networkProgress) {
                         ProgressView()
-                            .progressViewStyle(.circular)
+                            .progressViewStyle(CircularProgressViewStyle(tint: Color("uiCapsuleBlue")))
                     } else {
                         Text("Claim")
                             .fontWeight(.bold)

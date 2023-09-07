@@ -29,14 +29,19 @@ struct RegisterView: View, KeyboardReadable {
                 BackButtonView(text: "Log In Instead", color: Color.white)
             })
             
-            Spacer()
-            
             Text("Register as a New User")
+                .bold()
                 .font(.title)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.white)
                 .padding(.top, 20)
-
+            
+            Text("Sweeeeeeet")
+                .multilineTextAlignment(.center)
+                .foregroundStyle(.white)
+            
+            Spacer()
+            
             Group {
                 TextField("Email Address", text: $email)
                     .padding(.horizontal)
@@ -83,39 +88,38 @@ struct RegisterView: View, KeyboardReadable {
             }
             .textFieldStyle(RoundedTextFieldStyle())
             .frame(maxWidth: 350)
-            
-            if (!networkProgress) {
-                Group {
-                    Button(action: {
-                        networkProgress = true
-                        playHaptic()
-                        withAnimation {
-                            print("Registering new user")
-                            viewModel.createUser(email: email, password: password, handle: handle) { created in
-                                if (created) {
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }
-                                networkProgress = false
+
+            Group {
+                Button(action: {
+                    networkProgress = true
+                    playHaptic()
+                    withAnimation {
+                        print("Registering new user")
+                        viewModel.createUser(email: email, password: password, handle: handle) { created in
+                            if (created) {
+                                self.presentationMode.wrappedValue.dismiss()
                             }
+                            networkProgress = false
                         }
-                    }, label: {
-                        ZStack {
-                            Capsule()
-                                .frame(width: 100, height: 40)
-                                .foregroundStyle(.blue)
-                            
+                    }
+                }, label: {
+                    ZStack {
+                        Capsule()
+                            .frame(width: 100, height: 40)
+                            .foregroundStyle(.white)
+                        
+                        if (!networkProgress) {
                             Text("Register")
                                 .bold()
-                                .foregroundStyle(.white)
+                                .foregroundStyle(.blue)
+                        } else {
+                            ProgressView()
+                                .progressViewStyle(CircularProgressViewStyle(tint: Color.blue))
                         }
-                    })
-                    .disabled(password != confirmPassword)
-                    .padding()
-                    
-                    Spacer()
-                }
-            } else {
-                ProgressView()
+                    }
+                })
+                .disabled(password != confirmPassword || networkProgress)
+                .padding()
             }
         }
         .padding(.top, 50)

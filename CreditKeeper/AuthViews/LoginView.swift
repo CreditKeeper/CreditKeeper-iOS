@@ -80,24 +80,25 @@ struct LoginView: View, KeyboardReadable {
                     
                     Spacer()
                     
-                    if (!networkProgress) {
-                        Button(action: {
-                            authenticate()
-                        }, label: {
-                            ZStack {
-                                Capsule()
-                                    .frame(width: 100, height: 40)
-                                    .foregroundStyle(.blue)
-                                
-                                Text("Sign In")
-                                    .bold()
-                                    .foregroundStyle(.white)
+                    Button(action: {
+                        authenticate()
+                    }, label: {
+                        ZStack {
+                            Capsule()
+                                .frame(width: 100, height: 40)
+                                .foregroundStyle(.blue)
+                            
+                            if (!networkProgress) {
+                            Text("Sign In")
+                                .bold()
+                                .foregroundStyle(.white)
+                            } else {
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle(tint: Color.blue))
                             }
-                        })
-                        .padding(.trailing)
-                    } else {
-                        ProgressView()
-                    }
+                        }
+                    })
+                    .padding(.trailing)
                 }
                 .padding(.top)
                 
