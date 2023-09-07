@@ -11,7 +11,7 @@ import ConfettiSwiftUI
 
 struct RideCapsuleView: View {
     @State var ride : Ride
-    @State private var park = Park(id: "", name: "Unknown", address: "", city: "", region: "", country: "", owner: "", link: "", phone: "", location: CLLocation())
+    @State private var park = Park(id: "", address: "", city: "", region: "", country: "", name: "", owner: "", link: "", status: "", telephone: "", lastEdited: Date())
     @State private var hasCredit = false
     @State private var rodeToday = false
     @State private var showRating = false
@@ -83,7 +83,7 @@ struct RideCapsuleView: View {
         .padding(.vertical, 4)
         .onAppear {
             hasCredit = viewModel.checkCredit(ride: ride.id)
-            rodeToday = viewModel.rodeToday(ride: ride.id)
+            //rodeToday = viewModel.rodeToday(ride: ride.id)
             park = viewModel.parks.first(where: {$0.id == ride.parkID}) ?? park
         }
         .onTapGesture {
@@ -96,5 +96,5 @@ struct RideCapsuleView: View {
 }
 
 #Preview {
-    RideCapsuleView(ride: Ride(id: "", name: "A ride", parkID: "esdfsefsfsdfs", manufacturer: "Nick Inc", opening: Date(), legacy: false, height: 10.2, length: 12.2, inversions: 2, thrillLevel: "Thrilling", type: "Stand Up", speed: 200.3, description: "It's a big one"), viewModel: MainViewModel())
+    RideCapsuleView(ride: Ride(id: "", name: "BigRide", parkID: "", legacy: false, description: "This is a ride", opening: Date(), closing: Date(), thrillLevel: "Thrilling", type: "StandUp", height: 100.0, length: 101.0, speed: 102.0, inversions: 2, manufacturer: "NickInc", gforce: 10.0, previousRideID: "", averageRating: 4.3, lastEdited: Date()), viewModel: MainViewModel())
 }

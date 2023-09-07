@@ -185,7 +185,7 @@ class MainViewModel: ObservableObject {
             } else {
                 print("Credit document added with ID: \(ref!.documentID)")
                 withAnimation {
-                    self.myCredits.append(Credit(id: ref!.documentID, userID: self.currentUser?.id ?? "", rideID: ride, type: type, likes: 0, created: date))
+                    self.myCredits.append(Credit(id: ref!.documentID, rideID: ride, userID: self.currentUser?.id ?? "", type: type, likes: 0, claimDate: Date(), lastRode: Date()))
                     completion(true)
                 }
             }
@@ -197,15 +197,15 @@ class MainViewModel: ObservableObject {
     }
     
     // don't think this works right yet
-    func rodeToday(ride: String) -> Bool {
-        let credit = self.myCredits.first(where: {$0.rideID == ride && $0.created == Date()})
-        return credit != nil
-    }
+//    func rodeToday(ride: String) -> Bool {
+//        let credit = self.myCredits.first(where: {$0.rideID == ride && $0.created == Date()})
+//        return credit != nil
+//    }
     
     // don't think this works right yet. returning too early?
     func getRating(rideID: String) -> Rating {
         print("Retreiving Rating...")
-        var rating = Rating(id: "", userID: "", rideID: "", rating: 0)
+        var rating = Rating(id: "", userID: "", rideID: "", rating: 0, editedAt: Date())
         
         Task.init {
             do {

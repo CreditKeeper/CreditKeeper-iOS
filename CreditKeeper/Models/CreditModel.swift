@@ -7,11 +7,12 @@
 
 import Foundation
 
-struct Credit: Identifiable {
+struct Credit: Identifiable, Hashable {
     var id: String
-    let userID: String
     let rideID: String
+    let userID: String
     let type: String
-    let likes : Int
-    let created: Date
+    let likes: Int
+    let claimDate: Date
+    let lastRode: Date
 }

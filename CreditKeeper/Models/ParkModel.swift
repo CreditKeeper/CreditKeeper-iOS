@@ -8,15 +8,16 @@
 import Foundation
 import CoreLocation
 
-struct Park: Identifiable {
+struct Park: Identifiable, Hashable {
     var id: String
-    let name: String
     let address: String
     let city: String
     let region: String
     let country: String
+    let name: String
     let owner: String
     let link: String
-    let phone: String
-    let location: CLLocation
+    let status: String
+    let telephone: String
+    let lastEdited: Date
 }

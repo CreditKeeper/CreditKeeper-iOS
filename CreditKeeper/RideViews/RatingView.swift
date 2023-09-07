@@ -60,11 +60,10 @@ struct RatingView: View {
                 })
             }
         }
-        
         .transition(.opacity)
     }
 }
 
 #Preview {
-    RatingView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", manufacturer: "", opening: Date(), legacy: false, height: 0.0, length: 0.0, inversions: 2, thrillLevel: "", type: "", speed: 0.0, description: "")), showRating: .constant(true))
+    RatingView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", legacy: false, description: "", opening: Date(), closing: Date(), thrillLevel: "", type: "", height: 0.0, length: 0.0, speed: 0.0, inversions: 2, manufacturer: "", gforce: 0.0, previousRideID: "", averageRating: 0.0, lastEdited: Date())), showRating: .constant(true))
 }

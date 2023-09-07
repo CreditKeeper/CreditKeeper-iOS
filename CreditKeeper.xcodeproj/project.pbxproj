@@ -354,12 +354,12 @@
 			children = (
 				EBE4B7622AA2675A007CF67F /* MainViewModel.swift */,
 				EBE06CF22AA9F79200AE2D8D /* MainViewModel_Auth.swift */,
-				EBE4B75A2AA26170007CF67F /* RideModel.swift */,
 				EBE4B75C2AA26315007CF67F /* ParkModel.swift */,
-				EBE4B75E2AA26365007CF67F /* UserModel.swift */,
+				EBE4B75A2AA26170007CF67F /* RideModel.swift */,
 				EBE4B7602AA263C5007CF67F /* CreditModel.swift */,
-				EB672B932AA94A0300723178 /* RatingModel.swift */,
+				EBE4B75E2AA26365007CF67F /* UserModel.swift */,
 				EBE06CFA2AA9FE7F00AE2D8D /* RelationModel.swift */,
+				EB672B932AA94A0300723178 /* RatingModel.swift */,
 				EBE06CF82AA9FE7300AE2D8D /* NewsModel.swift */,
 			);
 			path = Models;

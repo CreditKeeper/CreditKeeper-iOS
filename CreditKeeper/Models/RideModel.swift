@@ -11,14 +11,20 @@ struct Ride: Identifiable, Hashable {
     var id: String
     let name: String
     let parkID: String
-    let manufacturer: String
-    let opening: Date
     let legacy: Bool
-    let height: Float
-    let length: Float
-    let inversions: Int
+    let description: String
+    let opening: Date
+    let closing: Date
     let thrillLevel: String
     let type: String
+    let height: Float
+    let length: Float
     let speed: Float
-    let description: String
+    let inversions: Int
+    let manufacturer: String
+    let gforce: Float
+    let previousRideID: String
+    let averageRating: Float
+    let lastEdited: Date
+    
 }

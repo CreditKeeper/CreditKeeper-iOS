@@ -71,5 +71,5 @@ struct RideDetailView: View {
 }
 
 #Preview {
-    RideDetailView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "A ride", parkID: "esdfsefsfsdfs", manufacturer: "Nick Inc", opening: Date(), legacy: false, height: 10.2, length: 12.2, inversions: 2, thrillLevel: "Thrilling", type: "Stand Up", speed: 200.3, description: "It's a big one")))
+    RideDetailView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "BigRide", parkID: "", legacy: false, description: "This is a big ride.", opening: Date(), closing: Date(), thrillLevel: "Thrilling", type: "StandUp", height: 100.0, length: 101.0, speed: 102.0, inversions: 2, manufacturer: "NickInc", gforce: 10.0, previousRideID: "", averageRating: 4.3, lastEdited: Date())))
 }

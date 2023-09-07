@@ -113,5 +113,5 @@ struct ClaimButtonView: View {
 }
 
 #Preview {
-    ClaimButtonView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", manufacturer: "", opening: Date(), legacy: false, height: 0.0, length: 0.0, inversions: 2, thrillLevel: "", type: "", speed: 0.0, description: "")), hasCredit: .constant(false), rodeToday: .constant(false), showReview: .constant(false), confettiCounter: .constant(0))
+    ClaimButtonView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", legacy: false, description: "", opening: Date(), closing: Date(), thrillLevel: "", type: "", height: 0.0, length: 0.0, speed: 0.0, inversions: 2, manufacturer: "", gforce: 0.0, previousRideID: "", averageRating: 0.0, lastEdited: Date())), hasCredit: .constant(false), rodeToday: .constant(false), showReview: .constant(false), confettiCounter: .constant(0))
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Relation: Identifiable {
+struct Relation: Identifiable, Hashable {
     var id: String
     let followerID: String
     let followingID: String

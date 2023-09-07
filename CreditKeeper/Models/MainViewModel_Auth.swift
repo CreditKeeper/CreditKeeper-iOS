@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import SwiftUI
+import FirebaseAuth
 
 extension MainViewModel {
     
@@ -32,7 +33,7 @@ extension MainViewModel {
                                     print("Successfully created user: \(authResult.user)")
                                     self.loggedIn = true
                                     self.showAuth = false
-                                    let newUser = User(id: UUID().uuidString, handle: handle, email: email, favPark: "", admin: false, joined: Date())
+                                    let newUser = User(id: UUID().uuidString, handle: handle, email: email, admin: false, bio: "", pro: false, favoritePark: "", topFive: Array<String>(), profileImage: "", joined: Date())
                                     self.currentUser = newUser
                                     self.writeUserDocument(user: self.currentUser!)
                                     completion(true)
