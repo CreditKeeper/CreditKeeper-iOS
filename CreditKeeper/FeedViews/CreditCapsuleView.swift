@@ -19,12 +19,12 @@ struct CreditCapsuleview: View {
         ZStack {
             Group {
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color("uiCapsuleBlue"), lineWidth: 7)
-                    .frame(width: nil, height: 40)
+                    .stroke(.ultraThinMaterial, lineWidth: 7)
+                    .frame(width: nil, height: 50)
             
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(.ultraThinMaterial)
-                    .frame(width: nil, height: 40)
+                    .foregroundStyle(Color("uiCapsuleBlue"))
+                    .frame(width: nil, height: 50)
                 
                 HStack {
                     Button(action: {
@@ -65,7 +65,6 @@ struct CreditCapsuleview: View {
             }
             .padding(.leading, 15)
             .padding(.trailing, 20)
-            .padding(.bottom)
             
             HStack {
                 Spacer()
@@ -102,9 +101,18 @@ struct CreditCapsuleview: View {
             .offset(x: -10, y: 20)
         }
         .shadow(radius: 10)
+        .padding(.bottom, 25)
     }
 }
 
 #Preview {
-    CreditCapsuleview(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 5)
+    ZStack {
+        RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .feed), .black]), center: .center, startRadius: 2, endRadius: 650)
+            .ignoresSafeArea()
+        
+        VStack {
+            CreditCapsuleview(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 5)
+            CreditCapsuleview(rider: "Nick", type: "claimed", ride: "Banshee", rideID: "", likes: 5)
+        }
+    }
 }

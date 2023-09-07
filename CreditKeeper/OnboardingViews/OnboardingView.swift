@@ -20,7 +20,7 @@ struct OnboardingView: View {
     
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [getBackgroundColor(page: onboardingPage), .black]), center: .center, startRadius: 2, endRadius: 650)
+            LinearGradient(gradient: Gradient(colors: [getBackgroundColor(page: onboardingPage), .black, .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
             switch (onboardingPage) {

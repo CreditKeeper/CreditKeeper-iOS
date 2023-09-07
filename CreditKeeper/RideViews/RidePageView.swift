@@ -13,36 +13,33 @@ struct RidePageView: View {
     @State private var atAPark = true
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .ride), .black]), center: .center, startRadius: 2, endRadius: 650)
-                    .ignoresSafeArea()
-                
-                VStack {
-                    ScrollView {
-                        Text("Looks like you're at Cedar Point...\nHere ya go! Or start typing.")
-                            .bold()
-                            .foregroundStyle(.white)
-                            .padding(.top, 70)
-                            .font(.system(size: 15))
-                            .multilineTextAlignment(.center)
-                        
-                        ForEach(viewModel.rides, id: \.self) { ride in
-                            RideCapsuleView(ride: ride, viewModel: viewModel)
-                        }
-                        .padding(.bottom, -10)
-                        
-                    }
-                    .padding(.horizontal, 10)
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .ride), .black, .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                .ignoresSafeArea()
+            
+            VStack {
+                ScrollView {
+                    Text("Looks like you're at Cedar Point...\nHere ya go! Or start typing.")
+                        .bold()
+                        .foregroundStyle(.white)
+                        .padding(.top, 70)
+                        .font(.system(size: 15))
+                        .multilineTextAlignment(.center)
                     
-                    Spacer(minLength: 90)
+                    ForEach(viewModel.rides, id: \.self) { ride in
+                        RideCapsuleView(ride: ride, viewModel: viewModel)
+                    }
+                    .padding(.bottom, -10)
+                    
                 }
-                
-                if (viewModel.selectedRide != nil) {
-                    RideDetailView(viewModel: viewModel, ride: $viewModel.selectedRide)
-                        .transition(.move(edge: .bottom))
-                }
+                .padding(.horizontal, 10)
             }
+            .padding(.vertical, 90)
+            
+            if (viewModel.selectedRide != nil) {
+                RideDetailView(viewModel: viewModel, ride: $viewModel.selectedRide)
+                    .transition(.move(edge: .bottom))
+            } 
         }
     }
 }

@@ -11,9 +11,8 @@ struct FeedPageView: View {
     @StateObject var viewModel : MainViewModel
     var body: some View {
         ZStack {
-            RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .feed), .black]), center: .center, startRadius: 2, endRadius: 650)
+            LinearGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .feed), .black, .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
-            
             
             ScrollView {
                 VStack {
