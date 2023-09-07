@@ -87,6 +87,7 @@ struct RideCapsuleView: View {
             park = viewModel.parks.first(where: {$0.id == ride.parkID}) ?? park
         }
         .onTapGesture {
+            playHaptic()
             withAnimation {
                 viewModel.selectedRide = ride
             }

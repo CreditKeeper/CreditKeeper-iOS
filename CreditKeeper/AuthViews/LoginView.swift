@@ -81,7 +81,15 @@ struct LoginView: View, KeyboardReadable {
                     Spacer()
                     
                     Button(action: {
-                        authenticate()
+                        withAnimation {
+                            authenticate()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation {
+                                    viewModel.keyboardVisible = false
+                                }
+                            }
+                            
+                        }
                     }, label: {
                         ZStack {
                             Capsule()
@@ -94,7 +102,7 @@ struct LoginView: View, KeyboardReadable {
                                 .foregroundStyle(.white)
                             } else {
                                 ProgressView()
-                                    .progressViewStyle(CircularProgressViewStyle(tint: Color.blue))
+                                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
                             }
                         }
                     })

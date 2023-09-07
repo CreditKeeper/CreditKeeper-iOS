@@ -15,6 +15,7 @@ struct ProfileSettingCapsules: View {
         Group {
             HStack {
                 Button (action: {
+                    playHaptic()
                     withAnimation {
                         editProflie = true
                     }
@@ -31,6 +32,7 @@ struct ProfileSettingCapsules: View {
                 })
                 
                 Button (action: {
+                    playHaptic()
                     withAnimation {
                         showSettings = true
                     }

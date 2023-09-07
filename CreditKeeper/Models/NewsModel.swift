@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct News: Identifiable {
+struct News: Identifiable, Hashable {
     var id: String
     let displayName: String
     let header: String

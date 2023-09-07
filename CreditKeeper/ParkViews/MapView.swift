@@ -15,7 +15,6 @@ struct MapView: View {
     var body: some View {
         Map(coordinateRegion: .constant(viewModel.region), interactionModes: .all, showsUserLocation: true, userTrackingMode: $userTrackingMode)
             .ignoresSafeArea()
-        
     }
 }
 

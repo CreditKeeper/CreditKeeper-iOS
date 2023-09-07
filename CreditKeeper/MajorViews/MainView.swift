@@ -21,7 +21,7 @@ struct MainView: View {
     var body: some View {
         if (onboarding && UserDefaults.standard.bool(forKey: "KeyOnBoardingViewShown") == false) {
             OnboardingView(onboarding: $onboarding)
-                .transition(.move(edge: .trailing))
+                .transition(.move(edge: .top))
             
         } else {
             ZStack {
@@ -29,23 +29,24 @@ struct MainView: View {
                     switch (selectedTab) {
                     case .feed :
                         FeedPageView(viewModel: viewModel)
-                            .transition(.slide)
+                            .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
                         
                     case .ride :
                         RidePageView(viewModel: viewModel)
-                            .transition(.slide)
+                            .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
                         
                     case .map :
                         MapPageView(viewModel: viewModel)
-                            .transition(.slide)
+                            .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
                         
                     case .profile :
                         if (viewModel.loggedIn) {
                             ProfilePageView(viewModel: viewModel, showSettings: $showSettings, editProfile: $editProfile)
                                 .environment(\.colorScheme, .dark)
-                                .transition(.slide)
+                                .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
                         } else {
                             AuthView(viewModel: viewModel, registeringUser: $registeringUser)
+                                .transition(.asymmetric(insertion: .move(edge: .top), removal: .move(edge: .bottom)))
                         }
                     }
                 }
@@ -65,7 +66,6 @@ struct MainView: View {
                     }.transition(.opacity)
                 }
             }
-            .transition(.move(edge: .trailing))
         }
     }
 }

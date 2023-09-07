@@ -20,12 +20,9 @@ struct HeaderView: View {
                                 
                 Spacer()
                 
-                Button(action: {
-                    playHaptic()
-                }, label: {
-                   Image(systemName: "cloud.sun")
-                        .foregroundStyle(.white)
-                })
+                // add in weather
+//                   Image(systemName: "cloud.sun")
+//                        .foregroundStyle(.white)
             }
             .padding(.bottom, 10)
         }

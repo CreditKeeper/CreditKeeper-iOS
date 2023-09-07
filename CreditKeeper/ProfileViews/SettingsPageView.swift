@@ -13,10 +13,7 @@ struct SettingsPageView: View {
     
     
     var body: some View {
-        
-        
         ZStack {
-            
             Rectangle()
                 .foregroundStyle(.ultraThinMaterial)
                 .ignoresSafeArea()
@@ -39,6 +36,7 @@ struct SettingsPageView: View {
                             Spacer()
                             
                             Button (action: {
+                                playHaptic()
                                 withAnimation {
                                     viewModel.logOut()
                                     showSettings = false
@@ -75,7 +73,7 @@ struct SettingsPageView: View {
                 
                 HStack {
                     Button (action: {
-                        
+                        playHaptic()
                     }, label: {
                         Image(systemName: "info.circle.fill")
                             .font(.system(size: 30))
@@ -85,7 +83,11 @@ struct SettingsPageView: View {
                     Spacer()
                     
                     Button (action: {
-                        showSettings = false
+                        playHaptic()
+                        withAnimation {
+                            showSettings = false
+                        }
+                        
                     }, label: {
                         ZStack {
                             Capsule()

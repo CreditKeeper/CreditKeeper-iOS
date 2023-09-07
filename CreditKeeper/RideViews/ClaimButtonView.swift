@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ClaimButtonView: View {
     @ObservedObject var viewModel : MainViewModel
@@ -27,6 +28,7 @@ struct ClaimButtonView: View {
                             hasCredit = created
                             confettiCounter+=1
                             playHaptic()
+                            AudioServicesPlaySystemSound(1407)
                             networkProgress = false
                             
                         })
@@ -45,6 +47,7 @@ struct ClaimButtonView: View {
                                 confettiCounter+=1
                             }
                             playHaptic()
+                            AudioServicesPlaySystemSound(1407)
                             networkProgress = false
                         })
                     }

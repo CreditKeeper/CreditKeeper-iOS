@@ -22,6 +22,7 @@ class MainViewModel: ObservableObject {
     // Selection
     @Published var selectedRide : Ride? = nil // the ride, if any, currently selected in the Rides view
     @Published var selectedPark : Park? = nil // the park, if any, currently selected in the Parks view
+    @Published var selectedNews : News? = nil // the news article, if any, currently selected in the Feeds view
     @Published var latestCredits : [Credit] = [] // the Credits, if any, currently displayed in the Feed view
 
     // Location - broken

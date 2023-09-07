@@ -52,6 +52,7 @@
 		EBE06CF32AA9F79200AE2D8D /* MainViewModel_Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE06CF22AA9F79200AE2D8D /* MainViewModel_Auth.swift */; };
 		EBE06CF92AA9FE7300AE2D8D /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE06CF82AA9FE7300AE2D8D /* NewsModel.swift */; };
 		EBE06CFB2AA9FE7F00AE2D8D /* RelationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE06CFA2AA9FE7F00AE2D8D /* RelationModel.swift */; };
+		EBE06CFD2AAA0E4600AE2D8D /* NewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE06CFC2AAA0E4600AE2D8D /* NewsDetailView.swift */; };
 		EBE4B7562AA25F00007CF67F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EBE4B7552AA25F00007CF67F /* GoogleService-Info.plist */; };
 		EBE4B7582AA260F8007CF67F /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B7572AA260F8007CF67F /* FirestoreManager.swift */; };
 		EBE4B75B2AA26170007CF67F /* RideModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE4B75A2AA26170007CF67F /* RideModel.swift */; };
@@ -132,6 +133,7 @@
 		EBE06CF22AA9F79200AE2D8D /* MainViewModel_Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel_Auth.swift; sourceTree = "<group>"; };
 		EBE06CF82AA9FE7300AE2D8D /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		EBE06CFA2AA9FE7F00AE2D8D /* RelationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationModel.swift; sourceTree = "<group>"; };
+		EBE06CFC2AAA0E4600AE2D8D /* NewsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailView.swift; sourceTree = "<group>"; };
 		EBE4B7552AA25F00007CF67F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBE4B7572AA260F8007CF67F /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
 		EBE4B75A2AA26170007CF67F /* RideModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideModel.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				EB89D29B2A9AF2E700A525BE /* FeedPageView.swift */,
 				EB76ED742A9BC35200EFB341 /* NewsCarousel.swift */,
+				EBE06CFC2AAA0E4600AE2D8D /* NewsDetailView.swift */,
 				EB44A0702AA5332D0008116D /* CreditFeedView.swift */,
 			);
 			path = FeedViews;
@@ -522,6 +525,7 @@
 				EB672B942AA94A0300723178 /* RatingModel.swift in Sources */,
 				EB76ED872A9BEA0A00EFB341 /* SearchFieldView.swift in Sources */,
 				EB44A0742AA5348F0008116D /* RegisterView.swift in Sources */,
+				EBE06CFD2AAA0E4600AE2D8D /* NewsDetailView.swift in Sources */,
 				EBE06CEE2AA9E8EA00AE2D8D /* SAConfettiView.swift in Sources */,
 				EB89D29C2A9AF2E700A525BE /* FeedPageView.swift in Sources */,
 				EBE06CFB2AA9FE7F00AE2D8D /* RelationModel.swift in Sources */,
@@ -635,7 +639,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -692,7 +696,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -731,7 +735,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
@@ -777,7 +781,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
@@ -847,7 +851,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8Q8DM58C6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperUITests;
@@ -869,7 +873,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8Q8DM58C6;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nickmolargik.CreditKeeperUITests;

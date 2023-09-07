@@ -22,10 +22,13 @@ struct MapPageView: View {
                 
                 HStack {
                     Button (action: {
-                        if (userTrackingMode == .follow) {
-                            userTrackingMode = .none
-                        } else {
-                            userTrackingMode = .follow
+                        playHaptic()
+                        withAnimation {
+                            if (userTrackingMode == .follow) {
+                                userTrackingMode = .none
+                            } else {
+                                userTrackingMode = .follow
+                            }
                         }
                     }, label: {
                         ZStack {

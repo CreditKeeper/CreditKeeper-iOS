@@ -14,6 +14,7 @@ struct FeedPageView: View {
             RadialGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .feed), .black]), center: .center, startRadius: 2, endRadius: 650)
                 .ignoresSafeArea()
             
+            
             ScrollView {
                 VStack {
                     NewsCarousel(viewModel: viewModel)
@@ -22,12 +23,15 @@ struct FeedPageView: View {
                     
                     Spacer()
                 }
-                .padding(.top, 10)
+                .padding(.top, 90)
             }
             .refreshable {
-                
+                viewModel.getNews()
             }
-        .padding(.top, 90)
+            
+            if (viewModel.selectedNews != nil) {
+                NewsDetailView(news: $viewModel.selectedNews)
+            }
         }
     }
 }
