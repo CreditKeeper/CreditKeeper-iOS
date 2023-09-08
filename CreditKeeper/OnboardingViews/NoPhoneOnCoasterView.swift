@@ -33,7 +33,7 @@ struct NoPhoneOnCoasterView: View {
                     
                     Image(systemName: "circle.slash")
                         .font(.system(size: 200))
-                        .foregroundStyle(.red)
+                        .foregroundStyle(.red, .white)
                 }
                 .shadow(radius: 10)
                 

@@ -110,6 +110,7 @@ struct CreditCapsuleView: View {
         }
         .shadow(radius: 10)
         .padding(.horizontal)
+        .padding(.bottom, 10)
     }
 }
 
