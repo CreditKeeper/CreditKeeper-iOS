@@ -120,7 +120,7 @@
 		EBCC85642A9826C000416D97 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		EBCC85672A9826C000416D97 /* CreditKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CreditKeeper.xcdatamodel; sourceTree = "<group>"; };
 		EBCC85692A9826C000416D97 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		EBCC856B2A9826C400416D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "/Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/Assets.xcassets"; sourceTree = "<absolute>"; };
+		EBCC856B2A9826C400416D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = CreditKeeper/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		EBCC856D2A9826C400416D97 /* CreditKeeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CreditKeeper.entitlements; sourceTree = "<group>"; };
 		EBCC856F2A9826C400416D97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBCC85752A9826C400416D97 /* CreditKeeperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditKeeperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
