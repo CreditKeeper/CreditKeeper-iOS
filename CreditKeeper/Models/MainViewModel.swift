@@ -250,14 +250,17 @@ class MainViewModel: ObservableObject {
         return self.myCredits.contains(where: {$0.rideID == ride})
     }
     
-    // don't think this works quite right yet
     func rodeToday(ride: String) -> Bool {
         let credit = self.myCredits.first(where: {$0.rideID == ride})
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        
-        return dateFormatter.string(from: credit?.lastRode ?? Date()) == dateFormatter.string(from: Date())
+        if (credit != nil) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy"
+            
+            return dateFormatter.string(from: credit!.lastRode) == dateFormatter.string(from: Date())
+        } else {
+            return false
+        }
     }
     
     // don't think this works right yet. returning too early?

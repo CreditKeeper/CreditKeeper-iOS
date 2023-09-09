@@ -161,5 +161,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3453CD8A-F16A-4C4A-AF2A-58A5A54374C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CreditKeeper/Models/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
+            landmarkName = "rodeToday(ride:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3453CD8A-F16A-4C4A-AF2A-58A5A54374C3 - 59aa2b758cfdd500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CreditKeeper.MainViewModel.rodeToday(ride: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/Models/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "260"
+                  endingLineNumber = "260"
+                  offsetFromSymbolStart = "736">
+               </Location>
+               <Location
+                  uuid = "3453CD8A-F16A-4C4A-AF2A-58A5A54374C3 - 59aa2b758cfdd500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CreditKeeper.MainViewModel.rodeToday(ride: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/Models/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "260"
+                  endingLineNumber = "260"
+                  offsetFromSymbolStart = "824">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
