@@ -10,6 +10,7 @@ import CoreLocation
 import SwiftUI
 import MapKit
 import Firebase
+import FirebaseFirestore
 
 @MainActor
 class MainViewModel: ObservableObject {
@@ -51,9 +52,11 @@ class MainViewModel: ObservableObject {
         
         if (!self.loggedIn) {
 
-            if let storedUser = Auth.auth().currentUser {
-                self.loggedIn = true
-                self.initUser(user: storedUser)
+            if Auth.auth().currentUser != nil {
+                withAnimation {
+                    self.loggedIn = true
+                    self.initUser()
+                }
             }
         }
         
@@ -81,7 +84,7 @@ class MainViewModel: ObservableObject {
     
     func getAllTheGoods() {
         getAllParks()
-        getAllRides()
+        getSomeRides()
         getNews()
         getMyCredits()
     }
@@ -92,7 +95,9 @@ class MainViewModel: ObservableObject {
         
         Task.init {
             do {
-                let query = try await self.firestoreManager.db.collection("park").getDocuments(source: .server)
+                let query = try await self.firestoreManager.db.collection("park")
+                    .getDocuments(source: .server)
+                
                 for document in query.documents {
                     parks.append(self.firestoreManager.makePark(document: document))
                 }
@@ -106,13 +111,16 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    func getAllRides() {
+    func getSomeRides() {
         print("Retrieving all rides from Firebase...")
         var rides = [Ride]()
         
         Task.init {
             do {
-                let query = try await self.firestoreManager.db.collection("ride").getDocuments(source: .server)
+                let query = try await self.firestoreManager.db.collection("ride")
+                    .limit(to: 20)
+                    .getDocuments(source: .server)
+                
                 for document in query.documents {
                     rides.append(self.firestoreManager.makeRide(document: document))
                 }
@@ -126,13 +134,40 @@ class MainViewModel: ObservableObject {
         }
     }
     
+    func rideSearch(rideName: String) {
+        print("Searching for rides...")
+        var rides = [Ride]()
+        
+        Task.init {
+            do {
+                let query = try await self.firestoreManager.db.collection("ride")
+                    .whereField("name", isEqualTo: rideName)
+                    .limit(to: 20)
+                    .getDocuments(source: .server)
+                
+                for document in query.documents {
+                    rides.append(self.firestoreManager.makeRide(document: document))
+                }
+                if (rides.count > 0) {
+                    self.rides = rides
+                    print("Searched Rides gathered!")
+                } else {
+                    self.rides = rides
+                    print("Got zero searched rides.")
+                }
+            }
+        }
+    }
+    
     func getNews() {
         print("Retrieving latest news from Firebase...")
         var news = [News]()
         
         Task.init {
             do {
-                let query = try await self.firestoreManager.db.collection("news").getDocuments(source: .server)
+                let query = try await self.firestoreManager.db.collection("news")
+                    .getDocuments(source: .server)
+                
                 for document in query.documents {
                     news.append(self.firestoreManager.makeNews(document: document))
                 }
@@ -146,7 +181,6 @@ class MainViewModel: ObservableObject {
         }
     }
     
-    // this is currently getting all credits, change it to get my credits.
     func getMyCredits() {
         print("Retrieving my credits from Firebase...")
         var credits = [Credit]()
@@ -154,7 +188,7 @@ class MainViewModel: ObservableObject {
         Task.init {
             do {
                 let query = try await self.firestoreManager.db.collection("credit")
-                    .whereField("type", isEqualTo: "claimed")
+                    .whereField("userID", isEqualTo: Auth.auth().currentUser?.uid ?? 0)
                     .getDocuments(source: .server)
 
                 for document in query.documents {
@@ -172,13 +206,14 @@ class MainViewModel: ObservableObject {
     
     func claimCredit(ride: String, _ completion: @escaping (Bool) -> Void) {
         var ref: DocumentReference? = nil
-        ref = self.firestoreManager.db.collection("credit").addDocument(data: [
+        ref = self.firestoreManager.db.collection("credit")
+            .addDocument(data: [
             "rideID": ride,
             "userID": self.currentUser?.id ?? "",
             "likes": 0,
             "claimDate": Date(),
-            "lastRode": Date()
-        ]) { err in
+            "lastRode": Date()]) { err in
+                
             if let err = err {
                 print("Error adding credit document: \(err)")
                 completion(false)
@@ -195,13 +230,20 @@ class MainViewModel: ObservableObject {
     func updateCredit(ride: String, _ completion: @escaping (Bool) -> Void) {
         let credit = self.myCredits.first(where: {$0.rideID == ride})
         
-        // now update that credit
-        
-        
-        
-        
-        
-        
+        if (credit == nil) {
+            completion(false)
+        } else {
+            let creditRef = self.firestoreManager.db.collection("credit").document(credit!.id)
+            creditRef.updateData([
+                "lastRode": Date()
+            ]) { error in
+                if let error = error {
+                    completion(false)
+                } else {
+                    completion(true)
+                }
+            }
+        }
     }
     
     func checkCredit(ride: String) -> Bool {
@@ -211,7 +253,11 @@ class MainViewModel: ObservableObject {
     // don't think this works quite right yet
     func rodeToday(ride: String) -> Bool {
         let credit = self.myCredits.first(where: {$0.rideID == ride})
-        return credit?.lastRode ?? Date() == Date()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        
+        return dateFormatter.string(from: credit?.lastRode ?? Date()) == dateFormatter.string(from: Date())
     }
     
     // don't think this works right yet. returning too early?
@@ -242,12 +288,11 @@ class MainViewModel: ObservableObject {
     
     func submitRating(rating: Int, ride: String, _ completion: @escaping (Bool) -> Void) {
         var ref: DocumentReference? = nil
-        let date = Date()
         ref = self.firestoreManager.db.collection("rating").addDocument(data: [
             "userID": self.currentUser?.id ?? "",
             "rideID": ride,
-            "created": date.description,
-            "rating": rating
+            "rating": rating,
+            "editedAt": Date()
         ]) { err in
             if let err = err {
                 print("Error adding rating document: \(err)")

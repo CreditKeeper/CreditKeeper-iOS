@@ -20,5 +20,146 @@
             landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97E2A3DE-747C-4A24-8AE8-5A458B9F505F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CreditKeeper/Models/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
+            landmarkName = "claimCredit(ride:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "97E2A3DE-747C-4A24-8AE8-5A458B9F505F - b543f6625cbaeb5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CreditKeeper.MainViewModel.checkCredit(ride: Swift.String) -&gt; Swift.Bool"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/Models/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "97E2A3DE-747C-4A24-8AE8-5A458B9F505F - 34e96a14fa15277d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CreditKeeper.MainViewModel.claimCredit(ride: Swift.String, _: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/Models/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "1392">
+               </Location>
+               <Location
+                  uuid = "97E2A3DE-747C-4A24-8AE8-5A458B9F505F - 34e96a14fa15277d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in CreditKeeper.MainViewModel.claimCredit(ride: Swift.String, _: (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/Models/MainViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "223"
+                  endingLineNumber = "223"
+                  offsetFromSymbolStart = "488">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D39EECD7-9916-4D11-936B-6365DAF53E23"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CreditKeeper/AuthViews/LoginView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "286"
+            endingLineNumber = "286"
+            landmarkName = "authenticate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D39EECD7-9916-4D11-936B-6365DAF53E23 - cb8b2825cb7f936e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in CreditKeeper.LoginView.authenticate() -&gt; ()"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/AuthViews/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "286"
+                  endingLineNumber = "286"
+                  offsetFromSymbolStart = "2316">
+               </Location>
+               <Location
+                  uuid = "D39EECD7-9916-4D11-936B-6365DAF53E23 - 443f0cdf41d91eaa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in CreditKeeper.LoginView.authenticate() -&gt; ()"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/AuthViews/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "286"
+                  endingLineNumber = "286"
+                  offsetFromSymbolStart = "1200">
+               </Location>
+               <Location
+                  uuid = "D39EECD7-9916-4D11-936B-6365DAF53E23 - cb8b2825cb7f936e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRDocumentSnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in CreditKeeper.LoginView.authenticate() -&gt; ()"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/AuthViews/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "286"
+                  endingLineNumber = "286"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "D39EECD7-9916-4D11-936B-6365DAF53E23 - 443f0cdf41d91eaa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 () -&gt; () in CreditKeeper.LoginView.authenticate() -&gt; ()"
+                  moduleName = "CreditKeeper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nickmolargik/Developer/CreditKeeper-iOS/CreditKeeper/AuthViews/LoginView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "286"
+                  endingLineNumber = "286"
+                  offsetFromSymbolStart = "1188">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -7,8 +7,9 @@
 
 import Foundation
 import Firebase
-import SwiftUI
+import FirebaseFirestore
 import FirebaseAuth
+import SwiftUI
 
 extension MainViewModel {
     
@@ -33,7 +34,7 @@ extension MainViewModel {
                                     print("Successfully created user: \(authResult.user)")
                                     self.loggedIn = true
                                     self.showAuth = false
-                                    let newUser = User(id: UUID().uuidString, handle: handle, email: email, admin: false, bio: "", pro: false, favoritePark: "", topFive: Array<String>(), profileImage: "", joined: Date())
+                                    let newUser = User(id: Auth.auth().currentUser!.uid, handle: handle, email: email, admin: false, bio: "", pro: false, favoritePark: "", topFive: Array<String>(), profileImage: "", joined: Date())
                                     self.currentUser = newUser
                                     self.writeUserDocument(user: self.currentUser!)
                                     completion(true)
@@ -48,9 +49,8 @@ extension MainViewModel {
     
     func writeUserDocument(user: User) {
         let db = Firestore.firestore()
-        let userRef = db.collection("user").document(user.id)
-        
-        userRef.setData(["handle": user.handle,"email": self.currentUser?.email ?? "", "bio": "", "admin": false, "pro": false, "authID": self.currentUser?.id ?? ""]) { err in
+        let userRef = db.collection("user").document(Auth.auth().currentUser!.uid)
+        userRef.setData(["handle": user.handle,"email": self.currentUser?.email ?? "", "admin": false, "bio": "", "pro": false, "favoritePark": "", "topFive": ["", "", "", "", ""], "profileImage": "", "joined": Timestamp(date: Date()) ]) { err in
             if let err = err {
                 print("Error writing document: \(err)")
             } else {
@@ -59,13 +59,13 @@ extension MainViewModel {
         }
     }
     
-    func initUser(user: FirebaseAuth.User?) {
+    func initUser() {
         withAnimation {
             self.loggedIn = true
             self.showAuth = false
         }
         
-        let userDocRef = Firestore.firestore().collection("user").document(user!.uid)
+        let userDocRef = Firestore.firestore().collection("user").document(Auth.auth().currentUser!.uid)
         userDocRef.getDocument { (snapshot, error) in
             if error == nil && snapshot?.exists == false {
                 self.authError = "An error has occured. Network connection lost or no account found!"

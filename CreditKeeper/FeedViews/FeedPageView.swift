@@ -25,7 +25,9 @@ struct FeedPageView: View {
                 .padding(.top, 90)
             }
             .refreshable {
-                viewModel.getNews()
+                withAnimation {
+                    viewModel.getNews()
+                }
             }
             
             if (viewModel.selectedNews != nil) {

@@ -79,6 +79,20 @@ struct RegisterView: View, KeyboardReadable {
                                     print("Is keyboard visible? ", newIsKeyboardVisible)
                                     viewModel.keyboardVisible = newIsKeyboardVisible
                                 }
+                    .onSubmit {
+                        networkProgress = true
+                        playHaptic()
+                        withAnimation {
+                            print("Registering new user")
+                            viewModel.createUser(email: email, password: password, handle: handle) { created in
+                                if (created) {
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }
+                                networkProgress = false
+                                viewModel.keyboardVisible = false
+                            }
+                        }
+                    }
             }
             .textFieldStyle(RoundedTextFieldStyle())
             .frame(maxWidth: 350)

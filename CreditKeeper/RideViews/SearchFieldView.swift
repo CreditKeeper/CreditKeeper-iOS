@@ -22,6 +22,11 @@ struct SearchFieldView: View, KeyboardReadable {
                 .onSubmit {
                     withAnimation (.linear) {
                         showFilter = true
+                        if (searchText == "") {
+                            viewModel.getSomeRides()
+                        } else {
+                            viewModel.rideSearch(rideName: searchText)
+                        }
                     }
                 }
                 .padding(.vertical)
@@ -31,6 +36,7 @@ struct SearchFieldView: View, KeyboardReadable {
                         showFilter = false
                     }
                 }
+                
             
             if (showFilter) {
                 Button(action: {

@@ -31,7 +31,7 @@ struct MainView: View {
                             .transition(.opacity)
                         
                     case .ride :
-                        RidePageView(viewModel: viewModel)
+                        RidePageView(viewModel: viewModel, searchText: $searchText)
                             .transition(.opacity)
                         
                     case .map :

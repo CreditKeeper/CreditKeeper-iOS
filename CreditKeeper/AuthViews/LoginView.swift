@@ -60,6 +60,17 @@ struct LoginView: View, KeyboardReadable {
                                         print("Is keyboard visible? ", newIsKeyboardVisible)
                                         viewModel.keyboardVisible = newIsKeyboardVisible
                                     }
+                        .onSubmit {
+                            withAnimation {
+                                authenticate()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    withAnimation {
+                                        viewModel.keyboardVisible = false
+                                    }
+                                }
+                                
+                            }
+                        }
                 }
                 .textFieldStyle(RoundedTextFieldStyle())
                 
@@ -272,21 +283,18 @@ struct LoginView: View, KeyboardReadable {
                         let userId = authResult.user.uid
                         
                         //Get the user's username from Firestore
-                        viewModel.firestoreManager.db.collection("users").document(userId).getDocument { (snapshot, error) in
-                            if let error = error {
-                                // there was an error getting the username
-                                print("Error getting username: \(error)")
+                        let docRef = viewModel.firestoreManager.db.collection("user").document(authResult.user.uid)
+
+                        docRef.getDocument { (document, error) in
+                            if let document = document, document.exists {
+                                viewModel.currentUser = viewModel.firestoreManager.makeUser(document: document)
                             } else {
-                                // the username was successfully retrieved
-                                if let snapshot = snapshot, let data = snapshot.data(), let handle = data["handle"] as? String {
-                                    print("Successfully retrieved handle: \(handle)")
-                                    viewModel.currentUser = viewModel.firestoreManager.makeUser(document: snapshot)
-                                }
+                                print("User document does not exist for sign in")
                             }
                         }
-                        print("Successfully logged in user: \(userId)")
                     }
                     viewModel.loggedIn = true
+                    viewModel.getMyCredits()
                 }
                 networkProgress = false
             }

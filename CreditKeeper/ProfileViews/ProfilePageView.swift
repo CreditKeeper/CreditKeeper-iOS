@@ -24,12 +24,21 @@ struct ProfilePageView: View {
                             .frame(width: 100, height: 100)
                             .foregroundStyle(.thinMaterial)
                         
-                        Rectangle()
-                            .frame(width: nil, height: 100)
-                            .cornerRadius(20)
-                            .foregroundStyle(.thinMaterial)
+                        Text(viewModel.currentUser?.handle ?? "")
+                            .font(.largeTitle)
+                            .multilineTextAlignment(.leading)
+                            .shadow(radius: 4)
+                            .padding(.leading)
+                        
+                        Spacer()
                     }
-                    .padding()
+                    .padding(.horizontal)
+                    
+                    Rectangle()
+                        .frame(width: nil, height: 100)
+                        .cornerRadius(20)
+                        .foregroundStyle(.thinMaterial)
+                        .padding(.horizontal)
                     
                     ProfileSettingCapsules(showSettings: $showSettings, editProflie: $editProfile)
                     
@@ -85,7 +94,7 @@ struct ProfilePageView: View {
                     }
                 }
             }
-            .padding(.top, 100)
+            .padding(.top, 110)
             
             if (showSettings) {
                 SettingsPageView(viewModel: viewModel, showSettings: $showSettings)

@@ -11,6 +11,7 @@ import AVFoundation
 struct ClaimButtonView: View {
     @ObservedObject var viewModel : MainViewModel
     @State private var networkProgress = false
+    @State private var alertText = ""
     @Binding var ride : Ride
     @Binding var hasCredit : Bool
     @Binding var rodeToday : Bool
@@ -24,14 +25,22 @@ struct ClaimButtonView: View {
                 Task.init {
                     withAnimation {
                         networkProgress = true
-//                        viewModel.claimCredit(ride: ride.id, type: "rode", { created in
-//                            hasCredit = created
-//                            confettiCounter+=1
-//                            playHaptic()
-//                            AudioServicesPlaySystemSound(1407)
-//                            networkProgress = false
-//                            
-//                        })
+                        viewModel.updateCredit(ride: ride.id, { success in
+                            if success {
+                                withAnimation {
+                                    confettiCounter+=1
+                                    playHaptic()
+                                    AudioServicesPlaySystemSound(1407)
+                                    networkProgress = false
+                                }
+                            } else {
+                                withAnimation {
+                                    playHaptic()
+                                    networkProgress = false
+                                    alertText = "There was an error uploading your ride log. Check your network connection."
+                                }
+                            }
+                        })
                     }
                 }
             }
@@ -108,7 +117,9 @@ struct ClaimButtonView: View {
                 }
             }
         })
-        .disabled(networkProgress)
+        .disabled(networkProgress || rodeToday)
+        .alert("Ride Alert", isPresented: .constant(alertText != ""), actions: {Button (action: {
+            alertText = ""}, label: {Text("Ok")})}, message: {Text(alertText)})
     }
 }
 

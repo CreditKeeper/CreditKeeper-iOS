@@ -83,7 +83,7 @@ struct RideCapsuleView: View {
         .padding(.vertical, 4)
         .onAppear {
             hasCredit = viewModel.checkCredit(ride: ride.id)
-            //rodeToday = viewModel.rodeToday(ride: ride.id)
+            rodeToday = viewModel.rodeToday(ride: ride.id)
             park = viewModel.parks.first(where: {$0.id == ride.parkID}) ?? park
         }
         .onTapGesture {

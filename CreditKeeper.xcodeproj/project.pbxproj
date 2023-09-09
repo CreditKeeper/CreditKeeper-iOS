@@ -723,6 +723,7 @@
 				INFOPLIST_FILE = CreditKeeper/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CreditKeeper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Your location is used to determine the rides nearest to you.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to determine the rides nearest to you.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -769,6 +770,7 @@
 				INFOPLIST_FILE = CreditKeeper/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CreditKeeper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Your location is used to determine the rides nearest to you.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Your location is used to determine the rides nearest to you.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;

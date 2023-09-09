@@ -35,7 +35,7 @@ struct RideDetailView: View {
                     // all sorts of stuff, including a second place to claim / ride
                     
                 }
-                .padding(.top, 40)
+                .padding(.top, 50)
             }
             
             VStack {
