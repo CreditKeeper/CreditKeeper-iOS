@@ -15,7 +15,7 @@ struct FeedPageView: View {
                 .ignoresSafeArea()
             
             ScrollView {
-                VStack {
+                LazyVStack {
                     NewsCarousel(viewModel: viewModel)
                     
                     CreditFeedView(viewModel: viewModel)

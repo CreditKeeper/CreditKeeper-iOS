@@ -41,7 +41,6 @@ struct RidePageView: View {
                     
                 }
                 .padding(.horizontal, 10)
-                .padding(.top, 50)
                 .refreshable {
                     withAnimation {
                         searchText = ""
@@ -49,7 +48,7 @@ struct RidePageView: View {
                     }
                 }
             }
-            .padding(.vertical, 90)
+            .padding(.vertical, 100)
             
             if (viewModel.selectedRide != nil) {
                 RideDetailView(viewModel: viewModel, ride: $viewModel.selectedRide)
