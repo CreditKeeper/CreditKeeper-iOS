@@ -12,6 +12,7 @@ struct CreditKeeperApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var viewModel = MainViewModel()
     let persistenceController = PersistenceController.shared
+    let localDBController = LocalDBController.shared
 
     var body: some Scene {
         WindowGroup {

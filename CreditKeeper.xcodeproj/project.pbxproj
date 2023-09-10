@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B51893362A9BB4810073D3B1 /* CodeSigning.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B51893342A9BB4810073D3B1 /* CodeSigning.xcconfig */; };
 		B51893372A9BB4810073D3B1 /* Build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B51893352A9BB4810073D3B1 /* Build.xcconfig */; };
+		B530135D2AAE638B00A596D9 /* LocalDBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530135C2AAE638B00A596D9 /* LocalDBController.swift */; };
+		B53013602AAE63D500A596D9 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = B530135F2AAE63D500A596D9 /* SQLite */; };
+		B5837C702AAE682C00F131A1 /* ckdata.db in Resources */ = {isa = PBXBuildFile; fileRef = B5837C6F2AAE682C00F131A1 /* ckdata.db */; };
 		EB44A06C2AA529190008116D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A06B2AA529190008116D /* LocationManager.swift */; };
 		EB44A06F2AA52BD10008116D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A06E2AA52BD10008116D /* MapView.swift */; };
 		EB44A0712AA5332D0008116D /* CreditFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0702AA5332D0008116D /* CreditFeedView.swift */; };
@@ -88,6 +91,8 @@
 		B51893342A9BB4810073D3B1 /* CodeSigning.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = CodeSigning.xcconfig; sourceTree = "<group>"; };
 		B51893352A9BB4810073D3B1 /* Build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Build.xcconfig; sourceTree = "<group>"; };
 		B51893382A9BB4CE0073D3B1 /* CodeSigning.xcconfig.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeSigning.xcconfig.sample; sourceTree = "<group>"; };
+		B530135C2AAE638B00A596D9 /* LocalDBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDBController.swift; sourceTree = "<group>"; };
+		B5837C6F2AAE682C00F131A1 /* ckdata.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = ckdata.db; path = CreditKeeper/ckdata.db; sourceTree = SOURCE_ROOT; };
 		EB44A06B2AA529190008116D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		EB44A06D2AA52B590008116D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB44A06E2AA52BD10008116D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53013602AAE63D500A596D9 /* SQLite in Frameworks */,
 				EB89D2942A9AE83100A525BE /* FirebaseAnalytics in Frameworks */,
 				EB89D2962A9AE83100A525BE /* FirebaseAuth in Frameworks */,
 				EBE06CF12AA9E9DB00AE2D8D /* ConfettiSwiftUI in Frameworks */,
@@ -256,6 +262,8 @@
 			children = (
 				EB44A06D2AA52B590008116D /* Info.plist */,
 				EBCC85622A9826C000416D97 /* CreditKeeperApp.swift */,
+				B5837C6F2AAE682C00F131A1 /* ckdata.db */,
+				B530135C2AAE638B00A596D9 /* LocalDBController.swift */,
 				EBCC85642A9826C000416D97 /* Persistence.swift */,
 				EBE4B7592AA2615D007CF67F /* Models */,
 				EB89D2912A9AE78200A525BE /* Utilities */,
@@ -383,6 +391,7 @@
 				EB89D2952A9AE83100A525BE /* FirebaseAuth */,
 				EB89D2972A9AE83100A525BE /* FirebaseFirestore */,
 				EBE06CF02AA9E9DB00AE2D8D /* ConfettiSwiftUI */,
+				B530135F2AAE63D500A596D9 /* SQLite */,
 			);
 			productName = CreditKeeper;
 			productReference = EBCC855F2A9826C000416D97 /* CreditKeeper.app */;
@@ -459,6 +468,7 @@
 			packageReferences = (
 				EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				EBE06CEF2AA9E9DB00AE2D8D /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+				B530135E2AAE63D500A596D9 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
 			);
 			productRefGroup = EBCC85602A9826C000416D97 /* Products */;
 			projectDirPath = "";
@@ -479,6 +489,7 @@
 				EBDBF3752AA502E500A3ED1D /* Launch Screen.storyboard in Resources */,
 				EBCC85702A9826C400416D97 /* Preview Assets.xcassets in Resources */,
 				B51893372A9BB4810073D3B1 /* Build.xcconfig in Resources */,
+				B5837C702AAE682C00F131A1 /* ckdata.db in Resources */,
 				EBE4B7562AA25F00007CF67F /* GoogleService-Info.plist in Resources */,
 				EBEBEF9D2AA758E000880C0D /* Assets.xcassets in Resources */,
 				B51893362A9BB4810073D3B1 /* CodeSigning.xcconfig in Resources */,
@@ -529,6 +540,7 @@
 				EB89D29C2A9AF2E700A525BE /* FeedPageView.swift in Sources */,
 				EBE06CFB2AA9FE7F00AE2D8D /* RelationModel.swift in Sources */,
 				EB76ED892A9BEBE900EFB341 /* RideCapsuleView.swift in Sources */,
+				B530135D2AAE638B00A596D9 /* LocalDBController.swift in Sources */,
 				EB76ED7D2A9BD35100EFB341 /* NoPhoneOnCoasterView.swift in Sources */,
 				EB89D2A42A9B6AF100A525BE /* SettingsPageView.swift in Sources */,
 				EBCC85682A9826C000416D97 /* CreditKeeper.xcdatamodeld in Sources */,
@@ -931,6 +943,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B530135E2AAE63D500A596D9 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.14.1;
+			};
+		};
 		EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -950,6 +970,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B530135F2AAE63D500A596D9 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B530135E2AAE63D500A596D9 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
 		EB89D2932A9AE83100A525BE /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EB89D2922A9AE83100A525BE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
