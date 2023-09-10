@@ -14,6 +14,10 @@ struct FeedPageView: View {
             LinearGradient(gradient: Gradient(colors: [getBackgroundColor(tab: .feed), .black, .black]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             
+            if (viewModel.selectedNews != nil) {
+                NewsDetailView(news: $viewModel.selectedNews)
+            }
+            
             ScrollView {
                 LazyVStack {
                     NewsCarousel(viewModel: viewModel)
@@ -28,10 +32,6 @@ struct FeedPageView: View {
                 withAnimation {
                     viewModel.getNews()
                 }
-            }
-            
-            if (viewModel.selectedNews != nil) {
-                NewsDetailView(news: $viewModel.selectedNews)
             }
         }
     }

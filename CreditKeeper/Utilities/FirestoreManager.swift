@@ -73,7 +73,6 @@ class FirestoreManager {
         let data = document.data()
         let handle = data?["handle"] as? String ?? "Unknown"
         let email = data?["email"] as? String ?? ""
-        // auth id?
         let admin = data?["admin"] as? Bool ?? false
         let bio = data?["bio"] as? String ?? ""
         let pro = data?["pro"] as? Bool ?? false

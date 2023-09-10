@@ -11,7 +11,6 @@ struct User: Identifiable, Hashable {
     var id: String
     var handle: String
     let email: String
-    // authID?
     let admin: Bool
     let bio: String
     let pro: Bool

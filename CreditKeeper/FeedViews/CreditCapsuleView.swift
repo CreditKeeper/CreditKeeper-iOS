@@ -66,7 +66,7 @@ struct CreditCapsuleView: View {
                     }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
-                                .foregroundStyle(.thinMaterial)
+                                .stroke(.white, lineWidth: 2)
                                 .frame(width: 40, height: 50)
                             
                             Image(systemName: "person.fill")
@@ -91,7 +91,7 @@ struct CreditCapsuleView: View {
                     }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
-                                .foregroundStyle(.thinMaterial)
+                                .stroke(.white, lineWidth: 2)
                                 .frame(width: 60, height: 50)
                             
                             HStack {
