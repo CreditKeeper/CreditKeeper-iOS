@@ -96,5 +96,5 @@ struct RideCapsuleView: View {
 }
 
 #Preview {
-    RideCapsuleView(ride: Ride(id: "", name: "BigRide", parkID: "", legacy: false, description: "This is a ride", opening: Date(), closing: Date(), thrillLevel: "Thrilling", type: "StandUp", height: 100.0, length: 101.0, speed: 102.0, inversions: 2, manufacturer: "NickInc", gforce: 10.0, previousRideID: "", averageRating: 4.3, lastEdited: Date()), viewModel: MainViewModel())
+    RideCapsuleView(ride: Ride(id: "", name: "BigRide", parkID: "", legacy: false, description: "This is a ride", opening: Date(), closing: Date(), thrillLevel: "Thrilling", type: "StandUp", height: 100.0, length: 101.0, speed: 102.0, inversions: 2, manufacturer: "NickInc", gforce: 10.0, duration: 2.46, capacity: 1600, previousRideID: "", averageRating: 4.3, lastEdited: Date()), viewModel: MainViewModel())
 }

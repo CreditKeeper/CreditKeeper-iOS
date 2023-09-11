@@ -49,11 +49,13 @@ class FirestoreManager {
         let inversions = data["inversions"] as? Int ?? 0
         let manufacturer = data["manufacturer"] as? String ?? "Unknown"
         let gforce = data["gforce"] as? Float ?? 0.0
+        let duration = data["duration"] as? Float ?? 0.0
+        let capacity = data["capacity"] as? Int ?? 1
         let previousRideID = data["previousRideID"] as? String ?? ""
         let averageRating = data["averageRating"] as? Float ?? 0.0
         let lastEdited = data["lastEdited"] as? Date ?? Date()
         
-        return Ride(id: id, name: name, parkID: parkID, legacy: legacy, description: description, opening: opening, closing: closing, thrillLevel: thrillLevel, type: type, height: height, length: length, speed: speed, inversions: inversions, manufacturer: manufacturer, gforce: gforce, previousRideID: previousRideID, averageRating: averageRating, lastEdited: lastEdited)
+        return Ride(id: id, name: name, parkID: parkID, legacy: legacy, description: description, opening: opening, closing: closing, thrillLevel: thrillLevel, type: type, height: height, length: length, speed: speed, inversions: inversions, manufacturer: manufacturer, gforce: gforce, duration: duration, capacity: capacity, previousRideID: previousRideID, averageRating: averageRating, lastEdited: lastEdited)
     }
     
     func makeCredit(document: DocumentSnapshot) -> Credit {

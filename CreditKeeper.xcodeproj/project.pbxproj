@@ -12,6 +12,7 @@
 		B530135D2AAE638B00A596D9 /* LocalDBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530135C2AAE638B00A596D9 /* LocalDBController.swift */; };
 		B53013602AAE63D500A596D9 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = B530135F2AAE63D500A596D9 /* SQLite */; };
 		B5837C702AAE682C00F131A1 /* ckdata.db in Resources */ = {isa = PBXBuildFile; fileRef = B5837C6F2AAE682C00F131A1 /* ckdata.db */; };
+		EB23B8242AAE8FFD006935C9 /* RideStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB23B8232AAE8FFD006935C9 /* RideStatsView.swift */; };
 		EB44A06C2AA529190008116D /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A06B2AA529190008116D /* LocationManager.swift */; };
 		EB44A06F2AA52BD10008116D /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A06E2AA52BD10008116D /* MapView.swift */; };
 		EB44A0712AA5332D0008116D /* CreditFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB44A0702AA5332D0008116D /* CreditFeedView.swift */; };
@@ -93,6 +94,7 @@
 		B51893382A9BB4CE0073D3B1 /* CodeSigning.xcconfig.sample */ = {isa = PBXFileReference; lastKnownFileType = text; path = CodeSigning.xcconfig.sample; sourceTree = "<group>"; };
 		B530135C2AAE638B00A596D9 /* LocalDBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDBController.swift; sourceTree = "<group>"; };
 		B5837C6F2AAE682C00F131A1 /* ckdata.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = ckdata.db; path = CreditKeeper/ckdata.db; sourceTree = SOURCE_ROOT; };
+		EB23B8232AAE8FFD006935C9 /* RideStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideStatsView.swift; sourceTree = "<group>"; };
 		EB44A06B2AA529190008116D /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		EB44A06D2AA52B590008116D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EB44A06E2AA52BD10008116D /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				EBF5A6272AA682810004B904 /* ClaimButtonView.swift */,
 				EBF5A6252AA682130004B904 /* RatingView.swift */,
 				EBDBF3762AA5059D00A3ED1D /* RideDetailView.swift */,
+				EB23B8232AAE8FFD006935C9 /* RideStatsView.swift */,
 				EB76ED862A9BEA0A00EFB341 /* SearchFieldView.swift */,
 			);
 			path = RideViews;
@@ -517,6 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB23B8242AAE8FFD006935C9 /* RideStatsView.swift in Sources */,
 				EB89D2A72A9BADDF00A525BE /* MapPageView.swift in Sources */,
 				EBE4B75D2AA26315007CF67F /* ParkModel.swift in Sources */,
 				EBCC85632A9826C000416D97 /* CreditKeeperApp.swift in Sources */,

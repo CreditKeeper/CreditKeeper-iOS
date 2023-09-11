@@ -65,5 +65,5 @@ struct RatingView: View {
 }
 
 #Preview {
-    RatingView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", legacy: false, description: "", opening: Date(), closing: Date(), thrillLevel: "", type: "", height: 0.0, length: 0.0, speed: 0.0, inversions: 2, manufacturer: "", gforce: 0.0, previousRideID: "", averageRating: 0.0, lastEdited: Date())), showRating: .constant(true))
+    RatingView(viewModel: MainViewModel(), ride: .constant(Ride(id: "", name: "", parkID: "", legacy: false, description: "", opening: Date(), closing: Date(), thrillLevel: "", type: "", height: 0.0, length: 0.0, speed: 0.0, inversions: 2, manufacturer: "", gforce: 0.0, duration: 2.46, capacity: 1600, previousRideID: "", averageRating: 0.0, lastEdited: Date())), showRating: .constant(true))
 }

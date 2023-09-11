@@ -23,6 +23,8 @@ struct Ride: Identifiable, Hashable {
     let inversions: Int
     let manufacturer: String
     let gforce: Float
+    let duration: Float
+    let capacity: Int
     let previousRideID: String
     let averageRating: Float
     let lastEdited: Date
